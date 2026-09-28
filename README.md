@@ -1,75 +1,54 @@
-# React + TypeScript + Vite
+# El Arrecife — sitio web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los clientes una carta digital y facilitar la gestión de la información y los pedidos del restaurante.
 
-Currently, two official plugins are available:
+## Estado del proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+**En desarrollo.** El repositorio contiene por ahora la base de React, TypeScript y Vite. La interfaz visible todavía es la plantilla inicial; las funciones del restaurante descritas a continuación están previstas y no se encuentran implementadas.
 
-## React Compiler
+## Alcance previsto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Mostrar la carta con platos, precios y disponibilidad.
+- Permitir que el personal actualice la información de los platos.
+- Incorporar un flujo para registrar pedidos y consultar su estado.
+- Adaptar la interfaz a computadoras y teléfonos.
 
-## Expanding the ESLint configuration
+El alcance se ajustará según las necesidades acordadas con el restaurante. Los pagos en línea y las reservas no forman parte de las funciones actuales.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologías
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React y TypeScript para la interfaz.
+- Vite para el entorno de desarrollo y la compilación.
+- ESLint para revisar el código.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Ejecutar el proyecto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Necesitas Node.js y npm instalados. Desde la carpeta del proyecto, ejecuta:
 
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Abre en el navegador la dirección local que indique Vite en la terminal.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Comandos disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev      # Inicia el servidor de desarrollo
+npm run build    # Comprueba TypeScript y genera la versión de producción
+npm run preview  # Previsualiza la versión compilada
+npm run lint     # Ejecuta ESLint
 ```
+
+## Estructura principal
+
+```text
+public/       Archivos públicos
+src/          Código de la aplicación
+src/assets/   Recursos gráficos
+```
+
+## Seguimiento del trabajo
+
+Los cambios del proyecto se registran en el historial de Git. A medida que avance el desarrollo, este README se actualizará para distinguir las funciones implementadas de las que sigan pendientes.
