@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** El repositorio contiene por ahora la base de React, TypeScript y Vite. La interfaz visible todavía es la plantilla inicial; las funciones del restaurante descritas a continuación están previstas y no se encuentran implementadas.
+**En desarrollo.** El repositorio conserva la plantilla inicial de Vite con React y TypeScript. Se revisó la configuración y se comprobaron los comandos de lint y compilación. La interfaz del restaurante todavía no está implementada.
 
 ## Alcance previsto
 
@@ -13,7 +13,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 - Incorporar un flujo para registrar pedidos y consultar su estado.
 - Adaptar la interfaz a computadoras y teléfonos.
 
-El alcance se ajustará según las necesidades acordadas con el restaurante. Los pagos en línea y las reservas no forman parte de las funciones actuales.
+El alcance se ajustará según las necesidades acordadas con el restaurante. Los pagos en línea no forman parte de este plan. La bitácora incluye un prototipo de reservas, que todavía no está implementado.
 
 ## Tecnologías
 
@@ -52,3 +52,7 @@ src/assets/   Recursos gráficos
 ## Seguimiento del trabajo
 
 Los cambios del proyecto se registran en el historial de Git. A medida que avance el desarrollo, este README se actualizará para distinguir las funciones implementadas de las que sigan pendientes.
+
+El [plan diario hasta el 15 de octubre de 2026](docs/plan-hasta-15-octubre-2026.md) define los entregables previstos y la información que se necesita del restaurante. El plan no indica funciones ya implementadas.
+
+La [bitácora diaria](docs/bitacora-diaria.md) permite registrar avances comprobados, horas reales, bloqueos y el punto exacto desde el que continuar la próxima jornada.
