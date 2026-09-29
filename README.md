@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** El repositorio conserva la plantilla inicial de Vite con React y TypeScript. Se revisó la configuración y se comprobaron los comandos de lint y compilación. La interfaz del restaurante todavía no está implementada.
+**En desarrollo.** La configuración de Vite, React y TypeScript está revisada. Se retiró la interfaz de ejemplo y ahora se muestra una pantalla mínima de «El Arrecife». La navegación y las funciones del restaurante aún no están implementadas.
 
 ## Alcance previsto
 
