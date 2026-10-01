@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 4 — jueves 01/10/2026, en curso.
+- **Día actual:** día 4 — jueves 01/10/2026, tareas técnicas completadas; horas pendientes de registrar.
 - **Avance horario previsto al cierre del día 3:** 15/320 h; al cierre del día 4: 20/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, revisión de configuración, limpieza de plantilla, React Router y Header/Footer.
-- **Siguiente tarea técnica:** crear las tarjetas de platos y categorías de la Carta Pública del día 4.
+- **Siguiente tarea técnica:** día 5 — completar los datos del menú y revisar categorías vacías. La carta inicial de 7 platos y 5 categorías ya está disponible en `/carta`.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
@@ -93,7 +93,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 4 — Jueves 01/10/2026 — Carta
 
-- **Estado:** En curso.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 20/320 h.
 - [x] Actualizar el calendario a 64 jornadas de 5 horas desde el 28/09/2026.
 - [x] Definir los datos mínimos de un plato y solicitar carta, precios e imágenes al restaurante.
@@ -103,13 +103,13 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - [x] Revisar el PDF original y aclarar chaufa de cecina, pollada y filete a la plancha (página 4).
 - [x] Registrar la nota de recargos para bebidas de la página 8.
 - [x] Aclarar con el usuario el 01/10/2026 las cuatro presentaciones restantes: El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa (ver [datos de la carta](datos-carta.md)).
-- [ ] Creación de componentes de tarjeta de plato y listado de categorías.
-- [ ] Comprobar nombres largos, precios y tarjetas sin imagen.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Creación de componentes de tarjeta de plato y listado de categorías.
+- [x] Comprobar nombres largos, precios y tarjetas sin imagen.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Las cuatro presentaciones restantes fueron aclaradas por el usuario y actualizadas en el menú y en los datos de la carta. Los componentes visuales siguen pendientes.
-- **Commits / evidencia:** cambios locales sin commit. Mensaje sugerido para este paso: `feat: define menu categories and dish presentation types`.
-- **Pendientes y siguiente paso:** crear las tarjetas y el listado de categorías con los datos inequívocos del menú recibido; recibir fotografías y definir la aplicación de recargos de bebidas en fechas coincidentes. Se puede avanzar sin imágenes. No hay cambios visuales todavía.
+- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Las cuatro presentaciones restantes fueron aclaradas por el usuario y actualizadas en el menú y en los datos de la carta. Carta en `/carta` con 7 platos reales y 5 categorías, mediante `DishCard`, `CategoryList` y `MenuPage`. Precios PEN contrastados; navegación por categorías comprobada. Revisión de tarjetas sin imagen y nombres largos en 375 y 1440 px sin desbordamiento horizontal; sin errores de consola. Lint y build pasan con estos cambios.
+- **Commits / evidencia:** cambios locales sin commit. Mensaje sugerido para este paso: `feat: add dish cards and category navigation to the public menu`.
+- **Pendientes y siguiente paso:** completar la carga del menú en el día 5 (la selección inicial usa datos reales en TypeScript), recibir fotografías y definir recargos de bebidas en fechas coincidentes. Registrar el tiempo efectivo del día.
 
 ### Día 5 — Viernes 02/10/2026 — Carta
 

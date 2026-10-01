@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** La configuración de Vite, React y TypeScript está revisada y se retiró la interfaz de ejemplo. El sitio ya tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. Estas rutas muestran pantallas temporales; la carta y las demás funciones del restaurante aún no están implementadas.
+**En desarrollo.** La configuración de Vite, React y TypeScript está revisada y se retiró la interfaz de ejemplo. El sitio ya tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra una selección inicial de 7 platos con precios y presentaciones confirmados, agrupados en 5 categorías con navegación por enlaces. Las tarjetas son adaptables y funcionan sin fotografías. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; la carga completa del menú y las funciones de pedidos están pendientes.
 
 ## Alcance previsto
 

@@ -90,5 +90,6 @@ También necesitamos el orden de las categorías y los colores o logo que el res
 - [x] Corregir Jalea Arrecife a S/ 48.00.
 - [x] Revisar el PDF y aclarar las presentaciones de chaufa de cecina, pollada y filete a la plancha.
 - [x] Aclarar con el usuario las presentaciones de El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa.
-- [ ] Recibir fotografías autorizadas o continuar con tarjetas sin imagen.
-- [ ] Crear los componentes visuales de tarjetas y categorías.
+- [x] Continuar con tarjetas sin imagen; las fotografías autorizadas se pueden incorporar después.
+- [x] Crear `DishCard`, `CategoryList` y la página `/carta` con 7 platos reales y 5 categorías.
+- [ ] Completar la carga del resto de la carta.
