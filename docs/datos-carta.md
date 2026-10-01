@@ -1,6 +1,6 @@
 # Datos para la Carta Pública
 
-Estructura inicial definida en `src/types/menu.ts`. Se recibió la [carta de El Arrecife de Mamafé](menu_arrecife_mamafe.md), basada en el menú de febrero de 2026. La vigencia de los precios y la disponibilidad fueron confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026. Se corrigió Jalea Arrecife a S/ 48.00; algunas presentaciones siguen pendientes de aclarar.
+Estructura inicial definida en `src/types/menu.ts`. Se recibió la [carta de El Arrecife de Mamafé](menu_arrecife_mamafe.md), basada en el menú de febrero de 2026. La vigencia de los precios y la disponibilidad fueron confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026. Se corrigió Jalea Arrecife a S/ 48.00; las siete presentaciones inicialmente ambiguas quedaron aclaradas con el PDF y las indicaciones del usuario.
 
 ## Confirmación del propietario — 01/10/2026
 
@@ -23,16 +23,18 @@ La carta contiene platos, presentaciones, precios en soles, bebidas sin alcohol 
 | 1/4 Pollada Limeña | Con papas sancochadas: S/ 19.50; con papas andinas fritas: S/ 23.00 | Página 4: correspondencia según el orden de acompañamientos e importes. |
 | Filete a la Plancha | Con papas sancochadas: S/ 21.00; con papas andinas fritas: S/ 24.50 | Página 4: correspondencia según el orden de acompañamientos e importes. |
 
-### Presentaciones aún pendientes
+### Presentaciones aclaradas por el usuario — 01/10/2026
 
-| Producto | Precios recibidos | Qué falta aclarar en el PDF |
-| --- | --- | --- |
-| El Carretillero | S/ 27.50 / S/ 22.50 | Página 1 describe el plato, pero no distingue las dos opciones. |
-| Mi Causa la Novia | S/ 33.00 / S/ 40.00 | Página 2 describe causa y cebiche Velo de Novia, sin asignar una porción a cada importe. |
-| Arroz con Pato + papa a la huancaína + leche de tigre | S/ 38.00 / S/ 45.00 / S/ 50.00 | Página 5 enumera ingredientes, sin especificar qué incluye cada precio. |
-| Panceta con Chaufa al Cilindro + Leche de Tigre | S/ 38.50 / S/ 32.50 | Página 6 menciona leche de tigre, pero no asigna explícitamente cada precio a una opción. |
+Los importes siguientes son precios totales de cada opción, no importes adicionales a sumar:
 
-No se trasladará la indicación «media o completa» de Causa Acebichada a Mi Causa la Novia sin confirmación. Tampoco se asignarán los importes de panceta o arroz con pato basándose solo en diferencias de precio.
+| Producto | Presentaciones y precios |
+| --- | --- |
+| El Carretillero | Cebiche de pota con chicharrón de pota: S/ 22.50; cebiche de pescado con chicharrón de pota: S/ 27.50. |
+| Mi Causa la Novia | Causa sin cebiche: S/ 33.00; causa con cebiche Velo de Novia: S/ 40.00. |
+| Arroz con Pato | Solo: S/ 38.00; con papa a la huancaína: S/ 45.00; con papa a la huancaína y leche de tigre: S/ 50.00. |
+| Panceta con Chaufa al Cilindro | Sin leche de tigre: S/ 32.50; con leche de tigre: S/ 38.50. |
+
+Estas aclaraciones sustituyen las descripciones ambiguas del Markdown inicial; el PDF original se conserva sin modificar.
 
 ### Nota al pie sobre bebidas
 
@@ -87,6 +89,6 @@ También necesitamos el orden de las categorías y los colores o logo que el res
 - [x] Confirmar vigencia de precios, igualdad entre sedes y disponibilidad con el propietario, según lo comunicado por el usuario.
 - [x] Corregir Jalea Arrecife a S/ 48.00.
 - [x] Revisar el PDF y aclarar las presentaciones de chaufa de cecina, pollada y filete a la plancha.
-- [ ] Aclarar los cuatro productos restantes de la tabla de pendientes.
+- [x] Aclarar con el usuario las presentaciones de El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa.
 - [ ] Recibir fotografías autorizadas o continuar con tarjetas sin imagen.
 - [ ] Crear los componentes visuales de tarjetas y categorías.

@@ -19,7 +19,7 @@
 - **Siguiente tarea técnica:** crear las tarjetas de platos y categorías de la Carta Pública del día 4.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
-- **Datos pendientes:** presentaciones ambiguas, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
+- **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
 - **Referencia histórica:** [bitácora anterior](bitacora-septiembre-octubre-2026.md); sus avances están integrados aquí y no se suman dos veces.
 
 ## Rutina y registro de las 5 horas
@@ -102,14 +102,14 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - [x] Corregir Jalea Arrecife a S/ 48.00 en el menú del repositorio.
 - [x] Revisar el PDF original y aclarar chaufa de cecina, pollada y filete a la plancha (página 4).
 - [x] Registrar la nota de recargos para bebidas de la página 8.
-- [ ] Aclarar las cuatro presentaciones restantes: El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa (ver [datos de la carta](datos-carta.md)).
+- [x] Aclarar con el usuario el 01/10/2026 las cuatro presentaciones restantes: El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa (ver [datos de la carta](datos-carta.md)).
 - [ ] Creación de componentes de tarjeta de plato y listado de categorías.
 - [ ] Comprobar nombres largos, precios y tarjetas sin imagen.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Los componentes visuales siguen pendientes.
+- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Las cuatro presentaciones restantes fueron aclaradas por el usuario y actualizadas en el menú y en los datos de la carta. Los componentes visuales siguen pendientes.
 - **Commits / evidencia:** cambios locales sin commit. Mensaje sugerido para este paso: `feat: define menu categories and dish presentation types`.
-- **Pendientes y siguiente paso:** crear las tarjetas y el listado de categorías con los datos inequívocos del menú recibido; resolver las aclaraciones de precios y recibir fotografías. Se puede avanzar sin imágenes. No hay cambios visuales todavía.
+- **Pendientes y siguiente paso:** crear las tarjetas y el listado de categorías con los datos inequívocos del menú recibido; recibir fotografías y definir la aplicación de recargos de bebidas en fechas coincidentes. Se puede avanzar sin imágenes. No hay cambios visuales todavía.
 
 ### Día 5 — Viernes 02/10/2026 — Carta
 

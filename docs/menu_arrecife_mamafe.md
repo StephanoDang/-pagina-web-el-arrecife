@@ -5,7 +5,7 @@
 > Vigencia, igualdad entre ambas sedes y disponibilidad confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026.
 > Corrección confirmada: Jalea Arrecife a S/ 48.00, también en piqueos para 2 personas (el archivo recibido indicaba S/ 47.50 en esa sección).
 
-Fuente complementaria: [PDF original de febrero de 2026](fuentes/carta-febrero-2026.pdf). Presentaciones de la página 4 incorporadas el 01/10/2026; las aclaraciones restantes se registran en [datos de la carta](datos-carta.md).
+Fuente complementaria: [PDF original de febrero de 2026](fuentes/carta-febrero-2026.pdf). Presentaciones de la página 4 incorporadas el 01/10/2026; las aclaraciones adicionales del usuario se registran en [datos de la carta](datos-carta.md).
 
 ## Cebiches y Causas
 
@@ -51,8 +51,9 @@ Todos acompañados con chicharrón de pota.
   Pescado y langostinos en crema de 3 ajíes: rocoto, ají amarillo y ají limo.
 - **Cebiche Dí — S/ 35.00**  
   Cebiche chiclayano acompañado de 6 tortitas de choclo.
-- **El Carretillero — S/ 27.50 / S/ 22.50**  
-  Cebiche de pota y pescado con chicharrón de pota.
+- **El Carretillero — S/ 22.50 de pota / S/ 27.50 de pescado**
+
+  Cebiche de pota o pescado, acompañado de chicharrón de pota.
 
 ### Conchas Negras
 
@@ -100,7 +101,7 @@ Todos acompañados con chicharrón de pota.
 - **Pollo-Causa — S/ 23.00** — Rellena de pollo con chicharrones de pollo.
 - **Causa Acebichada — S/ 29.00 / S/ 37.00** — Media o completa.
 - **Causa a la Huancaína — S/ 30.00**
-- **Mi Causa la Novia — S/ 33.00 / S/ 40.00**
+- **Mi Causa la Novia — S/ 33.00 sin cebiche / S/ 40.00 con cebiche Velo de Novia**
 - **Causa con Pulpo al Olivo — S/ 36.00**
 - **Pulpo al Olivo — S/ 43.00**
 - **Causa Mar y Tierra — S/ 39.00**
@@ -247,7 +248,7 @@ Todos acompañados con chicharrón de pota.
 
 - **Tamalitos Verdes — S/ 9.00**
 - **Cebiche Dí — S/ 35.00**
-- **Arroz con Pato + papa a la huancaína + leche de tigre — S/ 38.00 / S/ 45.00 / S/ 50.00**
+- **Arroz con Pato — S/ 38.00 solo / S/ 45.00 con papa a la huancaína / S/ 50.00 con papa a la huancaína y leche de tigre**
 - **Seco de Pato a la Norteña con Frejoles — S/ 38.00**
 - **Pato a la Piurana — S/ 45.00**
 - **Seco de Cordero a la Norteña con Frejoles — S/ 32.00**
@@ -302,7 +303,7 @@ Todos acompañados con chicharrón de pota.
 ### Panceta al Cilindro (300 g)
 
 - **Tradicional — S/ 32.50**
-- **Con Chaufa al Cilindro + Leche de Tigre — S/ 38.50 / S/ 32.50**
+- **Con Chaufa al Cilindro — S/ 32.50 sin leche de tigre / S/ 38.50 con leche de tigre**
 - **Con Fetuchinis a la Huancaína — S/ 36.00**
 - **Con Tacu Tacu — S/ 36.00**
 
