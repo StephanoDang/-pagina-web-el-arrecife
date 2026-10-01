@@ -5,6 +5,8 @@
 > Vigencia, igualdad entre ambas sedes y disponibilidad confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026.
 > Corrección confirmada: Jalea Arrecife a S/ 48.00, también en piqueos para 2 personas (el archivo recibido indicaba S/ 47.50 en esa sección).
 
+Fuente complementaria: [PDF original de febrero de 2026](fuentes/carta-febrero-2026.pdf). Presentaciones de la página 4 incorporadas el 01/10/2026; las aclaraciones restantes se registran en [datos de la carta](datos-carta.md).
+
 ## Cebiches y Causas
 
 ### Leches
@@ -190,7 +192,7 @@ Todos acompañados con chicharrón de pota.
 
 - **Cebiche de Cecina — S/ 30.00**
 - **Tacu Tacu con Cecina al Jugo — S/ 33.50**
-- **Chaufa de Cecina + Leche de Tigre — S/ 30.00 / S/ 36.00**
+- **Chaufa de Cecina — S/ 30.00 sin leche de tigre / S/ 36.00 con leche de tigre**
 
 ## Fetuchinis
 
@@ -230,8 +232,8 @@ Todos acompañados con chicharrón de pota.
 
 ## Pollo
 
-- **1/4 Pollada Limeña — S/ 19.50 / S/ 23.00**
-- **Filete a la Plancha — S/ 21.00 / S/ 24.50**
+- **1/4 Pollada Limeña — S/ 19.50 con papas sancochadas / S/ 23.00 con papas andinas fritas**
+- **Filete a la Plancha — S/ 21.00 con papas sancochadas / S/ 24.50 con papas andinas fritas**
 - **Pollo Saltado — S/ 25.00**
 - **Dieta de Pollo — S/ 19.50**
 - **Chicharrón de Pollo — S/ 25.00**
@@ -373,6 +375,10 @@ Todos acompañados con chicharrón de pota.
 - **Tetera 1 litro — S/ 14.50**
 
 ---
+
+### Recargos de bebidas
+
+Según la nota al pie de la página 8 del PDF: recargo de **S/ 0.50 a todas las bebidas los sábados y domingos**, y de **S/ 1.00 los feriados o festivos**. La regla para fechas coincidentes queda pendiente de aclarar antes de automatizarla.
 
 ## Información del restaurante
 

@@ -100,12 +100,14 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - [x] Recibir y conservar el menú con los precios proporcionados por el usuario.
 - [x] Confirmar vigencia, igualdad de carta y precios entre sedes y disponibilidad: confirmado por el propietario, según lo comunicado por el usuario el 01/10/2026.
 - [x] Corregir Jalea Arrecife a S/ 48.00 en el menú del repositorio.
-- [ ] Aclarar las presentaciones con varios precios (ver [datos de la carta](datos-carta.md)).
+- [x] Revisar el PDF original y aclarar chaufa de cecina, pollada y filete a la plancha (página 4).
+- [x] Registrar la nota de recargos para bebidas de la página 8.
+- [ ] Aclarar las cuatro presentaciones restantes: El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa (ver [datos de la carta](datos-carta.md)).
 - [ ] Creación de componentes de tarjeta de plato y listado de categorías.
 - [ ] Comprobar nombres largos, precios y tarjetas sin imagen.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. Los componentes visuales siguen pendientes.
+- **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Los componentes visuales siguen pendientes.
 - **Commits / evidencia:** cambios locales sin commit. Mensaje sugerido para este paso: `feat: define menu categories and dish presentation types`.
 - **Pendientes y siguiente paso:** crear las tarjetas y el listado de categorías con los datos inequívocos del menú recibido; resolver las aclaraciones de precios y recibir fotografías. Se puede avanzar sin imágenes. No hay cambios visuales todavía.
 

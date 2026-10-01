@@ -13,21 +13,32 @@ Confirmación transmitida por el usuario:
 
 ## Fuente recibida y aclaraciones pendientes
 
-La carta contiene platos, presentaciones, precios en soles, bebidas sin alcohol y direcciones de las sedes Maestro y Retablo. Se conservará su orden como base inicial. La sección de bebidas con alcohol no está incluida en el archivo recibido.
+La carta contiene platos, presentaciones, precios en soles, bebidas sin alcohol y direcciones de las sedes Maestro y Retablo. Se conservará su orden como base inicial. El Markdown recibido omite las bebidas con alcohol; el [PDF original](fuentes/carta-febrero-2026.pdf), recibido y revisado el 01/10/2026, sí las incluye en su página 8.
 
-Antes de convertir los precios ambiguos en opciones seleccionables, confirmar:
+### Presentaciones aclaradas mediante el PDF
 
-| Producto | Precios recibidos | Dato pendiente |
+| Producto | Presentaciones y precios | Fuente |
 | --- | --- | --- |
-| El Carretillero | S/ 27.50 / S/ 22.50 | Nombre de cada presentación. |
-| Mi Causa la Novia | S/ 33.00 / S/ 40.00 | Nombre de cada presentación. |
-| Chaufa de Cecina + Leche de Tigre | S/ 30.00 / S/ 36.00 | Qué incluye cada precio. |
-| 1/4 Pollada Limeña | S/ 19.50 / S/ 23.00 | Qué incluye cada precio. |
-| Filete a la Plancha | S/ 21.00 / S/ 24.50 | Qué incluye cada precio. |
-| Arroz con Pato + papa a la huancaína + leche de tigre | S/ 38.00 / S/ 45.00 / S/ 50.00 | Qué incluye cada precio. |
-| Panceta con Chaufa al Cilindro + Leche de Tigre | S/ 38.50 / S/ 32.50 | Qué incluye cada precio; conservar el orden recibido hasta aclararlo. |
+| Chaufa de Cecina | Sin leche de tigre: S/ 30.00; con leche de tigre: S/ 36.00 | Página 4: el segundo importe lleva la indicación «Con leche de tigre». |
+| 1/4 Pollada Limeña | Con papas sancochadas: S/ 19.50; con papas andinas fritas: S/ 23.00 | Página 4: correspondencia según el orden de acompañamientos e importes. |
+| Filete a la Plancha | Con papas sancochadas: S/ 21.00; con papas andinas fritas: S/ 24.50 | Página 4: correspondencia según el orden de acompañamientos e importes. |
 
-La confirmación de vigencia no identifica qué incluye cada precio de la tabla anterior; esas presentaciones permanecen pendientes.
+### Presentaciones aún pendientes
+
+| Producto | Precios recibidos | Qué falta aclarar en el PDF |
+| --- | --- | --- |
+| El Carretillero | S/ 27.50 / S/ 22.50 | Página 1 describe el plato, pero no distingue las dos opciones. |
+| Mi Causa la Novia | S/ 33.00 / S/ 40.00 | Página 2 describe causa y cebiche Velo de Novia, sin asignar una porción a cada importe. |
+| Arroz con Pato + papa a la huancaína + leche de tigre | S/ 38.00 / S/ 45.00 / S/ 50.00 | Página 5 enumera ingredientes, sin especificar qué incluye cada precio. |
+| Panceta con Chaufa al Cilindro + Leche de Tigre | S/ 38.50 / S/ 32.50 | Página 6 menciona leche de tigre, pero no asigna explícitamente cada precio a una opción. |
+
+No se trasladará la indicación «media o completa» de Causa Acebichada a Mi Causa la Novia sin confirmación. Tampoco se asignarán los importes de panceta o arroz con pato basándose solo en diferencias de precio.
+
+### Nota al pie sobre bebidas
+
+La página 8 indica un recargo a todas las bebidas de **S/ 0.50 los sábados y domingos**, y **S/ 1.00 en feriados o festivos**. Esta nota se incorpora al menú de referencia; no explica los precios dobles de los platos. Antes de automatizar el cálculo, confirmar cómo tratar un feriado que coincida con fin de semana y qué fechas considera el restaurante como festivas.
+
+La corrección de Jalea Arrecife a S/ 48.00, confirmada por el propietario, prevalece sobre el precio de S/ 47.50 que aún aparece en la página 7 del PDF original. El PDF se conserva sin modificar.
 
 Los productos que aparecen en varias secciones se revisarán al preparar los datos para evitar duplicaciones involuntarias; no se eliminarán de la fuente. No se inventarán ingredientes para los platos sin descripción.
 
@@ -75,6 +86,7 @@ También necesitamos el orden de las categorías y los colores o logo que el res
 - [x] Recibir el menú con platos y precios y conservar la fuente en el repositorio.
 - [x] Confirmar vigencia de precios, igualdad entre sedes y disponibilidad con el propietario, según lo comunicado por el usuario.
 - [x] Corregir Jalea Arrecife a S/ 48.00.
-- [ ] Aclarar las presentaciones con varios precios indicadas arriba.
+- [x] Revisar el PDF y aclarar las presentaciones de chaufa de cecina, pollada y filete a la plancha.
+- [ ] Aclarar los cuatro productos restantes de la tabla de pendientes.
 - [ ] Recibir fotografías autorizadas o continuar con tarjetas sin imagen.
 - [ ] Crear los componentes visuales de tarjetas y categorías.
