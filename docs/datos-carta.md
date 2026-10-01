@@ -1,6 +1,15 @@
 # Datos para la Carta Pública
 
-Estructura inicial definida en `src/types/menu.ts`. Se recibió la [carta de El Arrecife de Mamafé](menu_arrecife_mamafe.md), basada en el menú de febrero de 2026. La copia conserva el contenido y los precios del archivo recibido; falta confirmar su vigencia y algunas presentaciones.
+Estructura inicial definida en `src/types/menu.ts`. Se recibió la [carta de El Arrecife de Mamafé](menu_arrecife_mamafe.md), basada en el menú de febrero de 2026. La vigencia de los precios y la disponibilidad fueron confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026. Se corrigió Jalea Arrecife a S/ 48.00; algunas presentaciones siguen pendientes de aclarar.
+
+## Confirmación del propietario — 01/10/2026
+
+Confirmación transmitida por el usuario:
+
+- Los precios siguen vigentes.
+- La carta y los precios son iguales en las sedes Maestro y Retablo.
+- Todos los platos siguen disponibles.
+- Jalea Arrecife cuesta **S/ 48.00**. Se corrigió la mención de S/ 47.50 en piqueos para 2 personas en la copia del menú del repositorio.
 
 ## Fuente recibida y aclaraciones pendientes
 
@@ -10,7 +19,6 @@ Antes de convertir los precios ambiguos en opciones seleccionables, confirmar:
 
 | Producto | Precios recibidos | Dato pendiente |
 | --- | --- | --- |
-| Jalea Arrecife | S/ 48.00 y S/ 47.50 en piqueos para 2 | Confirmar si son presentaciones distintas o corregir el importe. |
 | El Carretillero | S/ 27.50 / S/ 22.50 | Nombre de cada presentación. |
 | Mi Causa la Novia | S/ 33.00 / S/ 40.00 | Nombre de cada presentación. |
 | Chaufa de Cecina + Leche de Tigre | S/ 30.00 / S/ 36.00 | Qué incluye cada precio. |
@@ -19,7 +27,7 @@ Antes de convertir los precios ambiguos en opciones seleccionables, confirmar:
 | Arroz con Pato + papa a la huancaína + leche de tigre | S/ 38.00 / S/ 45.00 / S/ 50.00 | Qué incluye cada precio. |
 | Panceta con Chaufa al Cilindro + Leche de Tigre | S/ 38.50 / S/ 32.50 | Qué incluye cada precio; conservar el orden recibido hasta aclararlo. |
 
-También falta confirmar vigencia de precios, diferencias entre sedes y disponibilidad. No se deducirá disponibilidad actual por la sola presencia de un plato en la carta.
+La confirmación de vigencia no identifica qué incluye cada precio de la tabla anterior; esas presentaciones permanecen pendientes.
 
 Los productos que aparecen en varias secciones se revisarán al preparar los datos para evitar duplicaciones involuntarias; no se eliminarán de la fuente. No se inventarán ingredientes para los platos sin descripción.
 
@@ -65,6 +73,8 @@ También necesitamos el orden de las categorías y los colores o logo que el res
 - [x] Definir los tipos de categoría, plato y presentación.
 - [x] Preparar el formato para solicitar información al restaurante.
 - [x] Recibir el menú con platos y precios y conservar la fuente en el repositorio.
-- [ ] Confirmar vigencia, disponibilidad y las diferencias indicadas arriba.
+- [x] Confirmar vigencia de precios, igualdad entre sedes y disponibilidad con el propietario, según lo comunicado por el usuario.
+- [x] Corregir Jalea Arrecife a S/ 48.00.
+- [ ] Aclarar las presentaciones con varios precios indicadas arriba.
 - [ ] Recibir fotografías autorizadas o continuar con tarjetas sin imagen.
 - [ ] Crear los componentes visuales de tarjetas y categorías.

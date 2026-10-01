@@ -18,7 +18,8 @@
 - **Hecho:** inicio del proyecto, README, revisión de configuración, limpieza de plantilla, React Router y Header/Footer.
 - **Siguiente tarea técnica:** crear las tarjetas de platos y categorías de la Carta Pública del día 4.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
-- **Datos pendientes:** vigencia de precios, presentaciones ambiguas, disponibilidad, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
+- **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
+- **Datos pendientes:** presentaciones ambiguas, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
 - **Referencia histórica:** [bitácora anterior](bitacora-septiembre-octubre-2026.md); sus avances están integrados aquí y no se suman dos veces.
 
 ## Rutina y registro de las 5 horas
@@ -97,7 +98,9 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - [x] Actualizar el calendario a 64 jornadas de 5 horas desde el 28/09/2026.
 - [x] Definir los datos mínimos de un plato y solicitar carta, precios e imágenes al restaurante.
 - [x] Recibir y conservar el menú con los precios proporcionados por el usuario.
-- [ ] Confirmar vigencia, disponibilidad y presentaciones ambiguas (ver [datos de la carta](datos-carta.md)).
+- [x] Confirmar vigencia, igualdad de carta y precios entre sedes y disponibilidad: confirmado por el propietario, según lo comunicado por el usuario el 01/10/2026.
+- [x] Corregir Jalea Arrecife a S/ 48.00 en el menú del repositorio.
+- [ ] Aclarar las presentaciones con varios precios (ver [datos de la carta](datos-carta.md)).
 - [ ] Creación de componentes de tarjeta de plato y listado de categorías.
 - [ ] Comprobar nombres largos, precios y tarjetas sin imagen.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.

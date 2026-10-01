@@ -2,6 +2,8 @@
 
 > Carta basada en el menú de febrero de 2026.  
 > Precios en soles (S/).
+> Vigencia, igualdad entre ambas sedes y disponibilidad confirmadas por el propietario, según lo comunicado por el usuario el 01/10/2026.
+> Corrección confirmada: Jalea Arrecife a S/ 48.00, también en piqueos para 2 personas (el archivo recibido indicaba S/ 47.50 en esa sección).
 
 ## Cebiches y Causas
 
@@ -322,7 +324,7 @@ Todos acompañados con chicharrón de pota.
 - **Cebiche Extra Mixto — S/ 48.00**
 - **Mi Causa y sus Amigos — S/ 48.00**
 - **Chicharrón Arrecife — S/ 47.50**
-- **Jalea Arrecife — S/ 47.50**
+- **Jalea Arrecife — S/ 48.00**
 - **Trío Marino — S/ 46.00**
 - **Pocker Marino 4 en 1 — S/ 55.00**
 - **Ronda Marina 5 en 1 — S/ 70.00**
