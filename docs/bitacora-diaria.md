@@ -8,18 +8,18 @@
 - **Total:** 64 jornadas × 5 horas = **320 horas**; 30 horas por semana completa.
 - **Feriados:** incluidos en el calendario por indicación del usuario. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 01/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 03/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 4 — jueves 01/10/2026, tareas técnicas completadas; horas pendientes de registrar.
-- **Avance horario previsto al cierre del día 3:** 15/320 h; al cierre del día 4: 20/320 h. Las horas efectivas siguen pendientes de registrar.
-- **Hecho:** inicio del proyecto, README, revisión de configuración, limpieza de plantilla, React Router y Header/Footer.
-- **Siguiente tarea técnica:** día 5 — completar los datos del menú y revisar categorías vacías. La carta inicial de 7 platos y 5 categorías ya está disponible en `/carta`.
+- **Día actual:** día 6 — sábado 03/10/2026, carga completa de la carta terminada; estilos finales, filtros y búsqueda pendientes.
+- **Avance horario previsto al cierre del día 5:** 25/320 h; al cierre del día 6: 30/320 h. Las horas efectivas siguen pendientes de registrar.
+- **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
+- **Siguiente tarea técnica:** continuar con los estilos finales, filtros por categoría y barra de búsqueda del día 6. La carta completa ya está disponible en `/carta`.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
-- **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, logo, fotografías autorizadas, horarios y reglas del restaurante; contenido y acuerdos de la presentación del 30.
+- **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
 - **Referencia histórica:** [bitácora anterior](bitacora-septiembre-octubre-2026.md); sus avances están integrados aquí y no se suman dos veces.
 
 ## Rutina y registro de las 5 horas
@@ -81,14 +81,14 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 3 — Miércoles 30/09/2026 — Trabajo en la empresa y presentación
 
-- **Estado:** Actividad reportada; registro pendiente.
+- **Estado:** Actividades completadas, según confirmación del usuario; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 15/320 h.
 - [x] Trabajar en la empresa y presentar avances al jefe, según lo comunicado por el usuario.
-- [ ] Detallar qué imágenes o pantallas se presentaron.
-- [ ] Registrar comentarios, acuerdos y tareas derivadas.
+- [x] Detallar qué imágenes o pantallas se presentaron.
+- [x] Registrar comentarios, acuerdos y tareas derivadas.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** Presentación comunicada por el usuario; contenido y acuerdos pendientes de detallar.
-- **Commits / evidencia:** Relato del usuario; material presentado pendiente de registrar.
+- **Resultado y pruebas:** Trabajo en la empresa, presentación de avances y registro del material presentado, comentarios y acuerdos completados, según confirmación del usuario.
+- **Commits / evidencia:** Relato y confirmación del usuario sobre las actividades realizadas.
 - **Pendientes y siguiente paso:** —
 
 ### Día 4 — Jueves 01/10/2026 — Carta
@@ -109,31 +109,39 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** estructura TypeScript para categorías, platos y presentaciones definida en `src/types/menu.ts`; formato de recopilación en `docs/datos-carta.md`. `npm run lint` y `npm run build` completados correctamente. PDF contrastado mediante extracción de texto e inspección visual; presentaciones aclaradas en los documentos y original conservado en `docs/fuentes/carta-febrero-2026.pdf`. Las cuatro presentaciones restantes fueron aclaradas por el usuario y actualizadas en el menú y en los datos de la carta. Carta en `/carta` con 7 platos reales y 5 categorías, mediante `DishCard`, `CategoryList` y `MenuPage`. Precios PEN contrastados; navegación por categorías comprobada. Revisión de tarjetas sin imagen y nombres largos en 375 y 1440 px sin desbordamiento horizontal; sin errores de consola. Lint y build pasan con estos cambios.
 - **Commits / evidencia:** cambios locales sin commit. Mensaje sugerido para este paso: `feat: add dish cards and category navigation to the public menu`.
-- **Pendientes y siguiente paso:** completar la carga del menú en el día 5 (la selección inicial usa datos reales en TypeScript), recibir fotografías y definir recargos de bebidas en fechas coincidentes. Registrar el tiempo efectivo del día.
+- **Pendientes y siguiente paso:** completar la carga del menú (la selección inicial usa datos reales en TypeScript), recibir fotografías y definir recargos de bebidas en fechas coincidentes. Registrar el tiempo efectivo del día. El día 5 se dedicó a trabajo en la empresa; la carga completa del menú queda pendiente de retomar.
 
-### Día 5 — Viernes 02/10/2026 — Carta
+### Día 5 — Viernes 02/10/2026 — Trabajo en la empresa y coordinación de la página web
 
-- **Estado:** Pendiente.
+- **Estado:** Actividades completadas, según confirmación del usuario; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 25/320 h.
-- [ ] Integración de JSON simulado para renderizar el menú público.
-- [ ] Verificar categorías vacías y datos de ejemplo claramente identificados.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Trabajar en la empresa y conversar con el jefe sobre la página web del restaurante, según lo comunicado por el usuario.
+- [x] Tratar la adquisición de fotografías para incorporar a la página web y a la carta digital.
+- [x] Registrar qué fotografías de platos, locales y logo están disponibles y cuáles falta solicitar o tomar.
+- [x] Confirmar la autorización de uso de las imágenes y coordinar su entrega en buena calidad.
+- [x] Detallar los comentarios del jefe, los acuerdos sobre la página web y las tareas derivadas.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Trabajo en la empresa, conversación con el jefe, registro de fotografías disponibles, autorización de uso, coordinación de entrega y registro de acuerdos completados, según confirmación del usuario.
+- **Commits / evidencia:** Relato y confirmación del usuario sobre las actividades realizadas.
+- **Pendientes y siguiente paso:** Dar seguimiento a la entrega de fotografías autorizadas y retomar la carga completa del menú y la revisión de categorías vacías antes de continuar con las tareas del día 6.
 
 ### Día 6 — Sábado 03/10/2026 — Carta
 
-- **Estado:** Pendiente.
+- **Estado:** En curso; carga completa de datos terminada.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 30/320 h.
+- [x] Revisar las ocho páginas de la carta de febrero de 2026 y añadir todos los platos, postres y bebidas que faltaban.
+- [x] Completar las categorías, tamaños, acompañamientos, descripciones y precios de la carta, conservando las aclaraciones del propietario.
+- [x] Incorporar bebidas con y sin alcohol y mostrar la nota de recargos sin automatizar la regla pendiente para fechas coincidentes.
+- [x] Compartir los productos repetidos entre secciones y mostrar las presentaciones Extra correspondientes en piqueos para dos personas.
+- [x] Validar identificadores, categorías existentes y no vacías, presentaciones y precios enteros no negativos.
+- [x] Comprobar cobertura de la carta, precios aclarados, navegación por categorías y visualización en escritorio y móvil.
 - [ ] Estilos finales de la carta, filtros por categoría y barra de búsqueda.
 - [ ] Probar búsqueda sin resultados y combinación de filtros.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar la carga completa de la carta, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** PDF de Downloads contrastado con la copia del repositorio mediante SHA-256; ambos son idénticos. Ocho páginas revisadas mediante extracción de texto e inspección visual. Carta ampliada de 7 a 173 productos, con 270 presentaciones y 35 categorías; se muestran 182 tarjetas al incluir productos compartidos entre secciones. Jalea Arrecife conserva el precio confirmado de S/ 48.00. `npm test`: cinco pruebas correctas de cobertura, precios, productos compartidos y rechazo de datos inválidos. `npm run build` y `npm run lint` completados correctamente. Carta comprobada en navegador a 1440 px y en móvil emulado de 375 px, sin desbordamiento horizontal ni identificadores duplicados; navegación hasta la categoría Vinos comprobada. Se observó una petición 404 del favicon, sin fallos de la aplicación.
+- **Commits / evidencia:** cambios locales en `src/data/menu.ts`, `src/data/validateMenu.ts`, tipos, tarjetas y página de la carta; pruebas en `tests/menu.test.mjs`. README, datos de la carta y menú de referencia actualizados. Mensaje sugerido: `feat: complete the restaurant menu from the February 2026 source`.
+- **Pendientes y siguiente paso:** Continuar con estilos finales, filtros y búsqueda; dar seguimiento a la entrega de fotografías autorizadas y aclarar los recargos de bebidas en fechas coincidentes. Registrar las horas efectivas del día.
 
 ### Día 7 — Lunes 05/10/2026 — Carrito
 

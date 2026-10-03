@@ -377,6 +377,47 @@ Todos acompañados con chicharrón de pota.
 
 ---
 
+## Bebidas con alcohol
+
+Incorporadas desde la página 8 del PDF el 03/10/2026. Importes base en soles.
+
+### Cervezas (630 ml)
+
+| Producto | Precio |
+|---|---:|
+| Amstel | S/ 11.00 |
+| Heineken | S/ 12.50 |
+| Budwaiser | S/ 11.00 |
+| Cuzqueña Trigo | S/ 12.50 |
+| Pilsen | S/ 11.50 |
+| Cuzqueña Malta | S/ 12.50 |
+
+### Pisco
+
+| Producto | Individual | 1 litro |
+|---|---:|---:|
+| Pisco Sour | S/ 15.00 | S/ 44.00 |
+| Maracuyá Sour | S/ 16.00 | S/ 47.00 |
+
+- **Algarrobina — S/ 19.00**
+- **Chilcano — S/ 14.00**
+- **Chilcano de Maracuyá — S/ 15.00**
+- **Piscola — S/ 14.00**
+- **Inca Pisco — S/ 15.00** — Pisco con Inca Kola.
+
+### Sangría Tabernero
+
+| Tamaño | Precio |
+|---|---:|
+| Copa | S/ 6.50 |
+| 1/2 litro | S/ 15.00 |
+| 1 litro | S/ 25.00 |
+
+### Vinos
+
+- **Santiago Queirolo — S/ 28.00**
+- **Intipalka Sauvignon Blanc — S/ 50.00**
+
 ### Recargos de bebidas
 
 Según la nota al pie de la página 8 del PDF: recargo de **S/ 0.50 a todas las bebidas los sábados y domingos**, y de **S/ 1.00 los feriados o festivos**. La regla para fechas coincidentes queda pendiente de aclarar antes de automatizarla.
@@ -388,4 +429,4 @@ Según la nota al pie de la página 8 del PDF: recargo de **S/ 0.50 a todas las 
 - **Sede Maestro:** Av. El Maestro Peruano 570, Comas.
 - **Sede Retablo:** Pasaje Garcilaso de la Vega N.º 314, Urb. El Retablo, Comas.
 
-> Nota: La carta original también contiene una sección de bebidas con alcohol, no incluida en este archivo Markdown.
+> La carta digital incorpora también las descripciones adicionales del PDF. Los productos que aparecen en varias secciones comparten datos y precios; las presentaciones Extra se muestran en piqueos para dos personas.

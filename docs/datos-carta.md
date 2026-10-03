@@ -13,7 +13,7 @@ Confirmación transmitida por el usuario:
 
 ## Fuente recibida y aclaraciones pendientes
 
-La carta contiene platos, presentaciones, precios en soles, bebidas sin alcohol y direcciones de las sedes Maestro y Retablo. Se conservará su orden como base inicial. El Markdown recibido omite las bebidas con alcohol; el [PDF original](fuentes/carta-febrero-2026.pdf), recibido y revisado el 01/10/2026, sí las incluye en su página 8.
+La carta contiene platos, presentaciones, precios en soles, bebidas y direcciones de las sedes Maestro y Retablo. Se conserva su orden como base inicial. El Markdown recibido inicialmente omitía las bebidas con alcohol; se incorporaron desde la página 8 del [PDF original](fuentes/carta-febrero-2026.pdf) el 03/10/2026.
 
 ### Presentaciones aclaradas mediante el PDF
 
@@ -92,4 +92,7 @@ También necesitamos el orden de las categorías y los colores o logo que el res
 - [x] Aclarar con el usuario las presentaciones de El Carretillero, Mi Causa la Novia, Arroz con Pato y Panceta con Chaufa.
 - [x] Continuar con tarjetas sin imagen; las fotografías autorizadas se pueden incorporar después.
 - [x] Crear `DishCard`, `CategoryList` y la página `/carta` con 7 platos reales y 5 categorías.
-- [ ] Completar la carga del resto de la carta.
+- [x] Completar la carga del resto de la carta: 173 productos, 270 presentaciones y 35 categorías, contrastados con las ocho páginas del PDF el 03/10/2026.
+- [x] Incorporar bebidas con alcohol y tamaños de bebidas; mostrar la nota de recargos sin automatizar las fechas coincidentes.
+- [x] Compartir productos repetidos entre categorías y limitar a Extra los cebiches y Negra Diabla de piqueos para dos.
+- [x] Validar categorías, identificadores, presentaciones y precios enteros no negativos; comprobar cobertura y aclaraciones mediante `npm test`.

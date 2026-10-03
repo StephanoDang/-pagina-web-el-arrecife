@@ -13,6 +13,8 @@ export interface DishPresentation {
 export interface Dish {
   id: string
   categoryId: MenuCategory['id']
+  /** Secciones adicionales del PDF que ofrecen el mismo producto y precio. */
+  additionalCategoryIds?: MenuCategory['id'][]
   name: string
   description: string
   available: boolean

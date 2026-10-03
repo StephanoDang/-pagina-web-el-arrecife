@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** La configuración de Vite, React y TypeScript está revisada y se retiró la interfaz de ejemplo. El sitio ya tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra una selección inicial de 7 platos con precios y presentaciones confirmados, agrupados en 5 categorías con navegación por enlaces. Las tarjetas son adaptables y funcionan sin fotografías. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; la carga completa del menú y las funciones de pedidos están pendientes.
+**En desarrollo.** El sitio tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra la carta completa del PDF de febrero de 2026: 173 productos, 270 presentaciones y 35 categorías, incluyendo postres y bebidas con y sin alcohol. Conserva las aclaraciones del propietario y muestra los recargos de bebidas como una nota, sin automatizar la regla pendiente para fechas coincidentes. Los productos repetidos comparten precios entre secciones. Las tarjetas funcionan sin fotografías. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; los filtros, la búsqueda y las funciones de pedidos están pendientes.
 
 ## Alcance previsto
 
@@ -24,7 +24,7 @@ El alcance se ajustará según las necesidades acordadas con el restaurante. Los
 
 ## Ejecutar el proyecto
 
-Necesitas Node.js y npm instalados. Desde la carpeta del proyecto, ejecuta:
+Necesitas Node.js 22.12 o posterior y npm instalados. Desde la carpeta del proyecto, ejecuta:
 
 ```bash
 npm install
@@ -40,6 +40,7 @@ npm run dev      # Inicia el servidor de desarrollo
 npm run build    # Comprueba TypeScript y genera la versión de producción
 npm run preview  # Previsualiza la versión compilada
 npm run lint     # Ejecuta ESLint
+npm test         # Comprueba cobertura de la carta, precios y validación de datos
 ```
 
 ## Estructura principal
