@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 6 — sábado 03/10/2026, carga completa de la carta terminada; estilos finales, filtros y búsqueda pendientes.
+- **Día actual:** día 6 — sábado 03/10/2026, carga completa, estilos finales, filtros y búsqueda terminados; horas efectivas pendientes de registrar.
 - **Avance horario previsto al cierre del día 5:** 25/320 h; al cierre del día 6: 30/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea técnica:** continuar con los estilos finales, filtros por categoría y barra de búsqueda del día 6. La carta completa ya está disponible en `/carta`.
+- **Siguiente tarea técnica:** día 7 — preparar el estado compartido del carrito. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -127,7 +127,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 6 — Sábado 03/10/2026 — Carta
 
-- **Estado:** En curso; carga completa de datos terminada.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 30/320 h.
 - [x] Revisar las ocho páginas de la carta de febrero de 2026 y añadir todos los platos, postres y bebidas que faltaban.
 - [x] Completar las categorías, tamaños, acompañamientos, descripciones y precios de la carta, conservando las aclaraciones del propietario.
@@ -135,13 +135,16 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - [x] Compartir los productos repetidos entre secciones y mostrar las presentaciones Extra correspondientes en piqueos para dos personas.
 - [x] Validar identificadores, categorías existentes y no vacías, presentaciones y precios enteros no negativos.
 - [x] Comprobar cobertura de la carta, precios aclarados, navegación por categorías y visualización en escritorio y móvil.
-- [ ] Estilos finales de la carta, filtros por categoría y barra de búsqueda.
-- [ ] Probar búsqueda sin resultados y combinación de filtros.
-- [x] Documentar la carga completa de la carta, resultados de las pruebas y el punto para continuar.
+- [x] Estilos finales de la carta, filtros por categoría y barra de búsqueda.
+- [x] Probar búsqueda sin resultados y combinación de filtros.
+- [x] Documentar la carta completa, los estilos, las interacciones, los resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** PDF de Downloads contrastado con la copia del repositorio mediante SHA-256; ambos son idénticos. Ocho páginas revisadas mediante extracción de texto e inspección visual. Carta ampliada de 7 a 173 productos, con 270 presentaciones y 35 categorías; se muestran 182 tarjetas al incluir productos compartidos entre secciones. Jalea Arrecife conserva el precio confirmado de S/ 48.00. `npm test`: cinco pruebas correctas de cobertura, precios, productos compartidos y rechazo de datos inválidos. `npm run build` y `npm run lint` completados correctamente. Carta comprobada en navegador a 1440 px y en móvil emulado de 375 px, sin desbordamiento horizontal ni identificadores duplicados; navegación hasta la categoría Vinos comprobada. Se observó una petición 404 del favicon, sin fallos de la aplicación.
-- **Commits / evidencia:** cambios locales en `src/data/menu.ts`, `src/data/validateMenu.ts`, tipos, tarjetas y página de la carta; pruebas en `tests/menu.test.mjs`. README, datos de la carta y menú de referencia actualizados. Mensaje sugerido: `feat: complete the restaurant menu from the February 2026 source`.
-- **Pendientes y siguiente paso:** Continuar con estilos finales, filtros y búsqueda; dar seguimiento a la entrega de fotografías autorizadas y aclarar los recargos de bebidas en fechas coincidentes. Registrar las horas efectivas del día.
+- **Estilos e interacción:** Cabecera en verde marino, fondo cálido, tipografía editorial, tarjetas con precios y presentaciones desplegables y nota de recargos consultable. Categorías agrupadas en un panel lateral en escritorio; selector y accesos rápidos en móvil. Búsqueda inmediata por nombre, descripción, presentación o categoría, sin distinguir tildes ni mayúsculas; combinable con la categoría seleccionada. Contadores de productos únicos, estado sin resultados y botones para limpiar búsqueda o todos los filtros. Búsqueda y categoría se conservan en la URL. Campos de 16 px, controles táctiles, foco visible y respeto a movimiento reducido.
+- **Validación final:** `npm test`: 12 pruebas correctas, incluidas siete de búsqueda, combinación de filtros, contadores y conservación del catálogo. `npm run build` y `npm run lint` completados correctamente. Navegador comprobado en 1440 px y con vistas emuladas de 320, 375 y 768 px, sin desbordamiento horizontal ni identificadores duplicados. Escritura rápida, búsqueda «huancaina leche» con Cocina del Norte, precios de Arroz con Pato (S/ 38.00, S/ 45.00 y S/ 50.00), búsqueda «MARACUYA» con Bebidas sin Alcohol, tamaños y precios, limpieza de búsqueda, recuperación desde cero resultados, consulta directa por URL y apertura/cierre de presentaciones con teclado comprobados. Sin errores de consola en la revisión final. La respuesta al teclado virtual, las áreas seguras y el tacto requieren validación posterior en un teléfono real.
+- **Revisión de UI/UX:** Cabecera y contenido alineados a 1220 px; hero más compacto; textos secundarios y precios más legibles; tarjetas de altura consistente y sin repetir visualmente la categoría. Limpieza de filtros disponible en la barra fija, cuya altura se mide para ajustar el panel lateral y el desplazamiento. Navegación móvil con objetivos táctiles de 44 px, foco visible y enlace para saltar al contenido. Inicio, secciones pendientes y página no encontrada comparten estilos y enlace a la carta; pie con direcciones de ambas sedes. Primera tarjeta visible a unos 625 px en móvil emulado de 320 px, sin desbordamiento; búsqueda combinada y barra de filtros comprobadas. Se mantienen los 173 productos, precios, presentaciones y rutas existentes. `npm test`: 12 pruebas correctas; compilación y lint correctos. Validación en teléfono real pendiente.
+- **Commits / evidencia:** Datos completos de carta, tipos, validaciones y pruebas de cobertura registrados en el paso anterior. Nuevos cambios en `MenuPage`, `MenuCategories`, `MenuIcon`, `DishCard`, estilos adaptables, metadatos de móvil y búsqueda en `src/data/filterMenu.ts`; pruebas en `tests/menu-filters.test.mjs`. README y bitácora actualizados. Mensaje sugerido: `feat: redesign the restaurant menu with responsive styles, category filters, instant search, expandable prices, tests, and updated documentation`.
+- **Pendientes y siguiente paso:** Continuar con el estado compartido del carrito del día 7; validar el comportamiento táctil en un teléfono real, dar seguimiento a la entrega de fotografías autorizadas y aclarar los recargos de bebidas en fechas coincidentes. Registrar las horas efectivas del día.
 
 ### Día 7 — Lunes 05/10/2026 — Carrito
 

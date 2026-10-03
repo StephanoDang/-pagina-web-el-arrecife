@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** El sitio tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra la carta completa del PDF de febrero de 2026: 173 productos, 270 presentaciones y 35 categorías, incluyendo postres y bebidas con y sin alcohol. Conserva las aclaraciones del propietario y muestra los recargos de bebidas como una nota, sin automatizar la regla pendiente para fechas coincidentes. Los productos repetidos comparten precios entre secciones. Las tarjetas funcionan sin fotografías. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; los filtros, la búsqueda y las funciones de pedidos están pendientes.
+**En desarrollo.** El sitio tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra la carta completa del PDF de febrero de 2026: 173 productos, 270 presentaciones y 35 categorías, incluyendo postres y bebidas con y sin alcohol. Conserva las aclaraciones del propietario y muestra los recargos de bebidas como una nota consultable, sin automatizar la regla pendiente para fechas coincidentes. La carta tiene estilos adaptables, filtros por categoría, búsqueda inmediata sin distinguir tildes ni mayúsculas, contadores y recuperación cuando no hay resultados. Las presentaciones y sus precios se pueden desplegar en las tarjetas, que funcionan sin fotografías. Los productos repetidos comparten precios entre secciones y se cuentan una sola vez. Búsqueda y categoría se conservan en la URL. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; el carrito y las funciones de pedidos están pendientes.
 
 ## Alcance previsto
 

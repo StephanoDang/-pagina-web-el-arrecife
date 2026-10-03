@@ -12,7 +12,8 @@ function Header() {
     <header className="site-header">
       <div className="site-container header-content">
         <Link className="wordmark" to="/" aria-label="El Arrecife, ir al inicio">
-          El Arrecife
+          <span className="wordmark-name">El Arrecife</span>
+          <span className="wordmark-description">de Mamafé</span>
         </Link>
         <nav aria-label="Navegación principal">
           <ul className="nav-list">
