@@ -8,15 +8,15 @@
 - **Total:** 64 jornadas × 5 horas = **320 horas**; 30 horas por semana completa.
 - **Feriados:** incluidos en el calendario por indicación del usuario. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 03/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 05/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 6 — sábado 03/10/2026, carga completa, estilos finales, filtros y búsqueda terminados; horas efectivas pendientes de registrar.
+- **Día actual:** día 7 — lunes 05/10/2026, base del estado compartido del carrito y pruebas de consumo completadas; horas efectivas pendientes de registrar.
 - **Avance horario previsto al cierre del día 5:** 25/320 h; al cierre del día 6: 30/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea técnica:** día 7 — preparar el estado compartido del carrito. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`.
+- **Siguiente tarea técnica:** día 8 — agregar productos al carrito y comprobar duplicados y disponibilidad. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -148,15 +148,15 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 7 — Lunes 05/10/2026 — Carrito
 
-- **Estado:** En curso; primer paso implementado.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 35/320 h.
 - [x] Configuración de Context API/Zustand para estado global del carrito.
-- [ ] Verificar que distintas vistas comparten el mismo carrito.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Verificar que distintas vistas comparten el mismo carrito.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** Base del carrito vacío configurada mediante Context API. `CartProvider` envuelve la aplicación dentro de `BrowserRouter`, por encima de las rutas; `useCart` permite leer el estado y detecta su uso fuera del proveedor. Cada elemento identifica el plato, su presentación y la cantidad. `npm run build`, `npm run lint` y `git diff --check` correctos. Verificación de navegación compartida pendiente; aún no hay acciones ni interfaz de carrito.
-- **Commits / evidencia:** Tipos en `src/types/cart.ts`, contexto y proveedor en `src/context/`, hook en `src/hooks/useCart.ts` e integración en `src/main.tsx`. Sin commit todavía.
-- **Pendientes y siguiente paso:** Revisar este primer paso y comprobar que dos vistas consumen el mismo carrito antes de cerrar el día 7. La lógica de adición corresponde al día 8. Horas efectivas pendientes de registrar.
+- **Resultado y pruebas:** Base del carrito vacío configurada mediante Context API. `CartProvider` envuelve la aplicación dentro de `BrowserRouter`, por encima de las rutas; `useCart` permite leer el estado y detecta su uso fuera del proveedor. Cada elemento identifica el plato, su presentación y la cantidad. En el primer paso, compilación, lint y revisión del diff correctos. En el segundo paso, `npm test`: 14 pruebas correctas, incluidas dos nuevas pruebas de integración que renderizan consumidores con los archivos TSX reales: dos vistas reciben la misma instancia del carrito vacío y el hook informa su uso fuera del proveedor. Esta comprobación usa renderizado en servidor; no verifica todavía cambios de ruta con productos añadidos. Aún no hay acciones ni interfaz de carrito.
+- **Commits / evidencia:** Tipos en `src/types/cart.ts`, contexto y proveedor en `src/context/`, hook en `src/hooks/useCart.ts` e integración en `src/main.tsx`. Segundo paso: pruebas en `tests/cart-context.test.mjs`; bitácora actualizada.
+- **Pendientes y siguiente paso:** Revisar los resultados del día 7. Continuar con la lógica de adición del día 8 y verificar entonces que los productos se conservan al navegar. Horas efectivas pendientes de registrar.
 
 ### Día 8 — Martes 06/10/2026 — Carrito
 
