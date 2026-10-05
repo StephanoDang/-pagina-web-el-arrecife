@@ -148,15 +148,15 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 7 — Lunes 05/10/2026 — Carrito
 
-- **Estado:** Pendiente.
+- **Estado:** En curso; primer paso implementado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 35/320 h.
-- [ ] Configuración de Context API/Zustand para estado global del carrito.
+- [x] Configuración de Context API/Zustand para estado global del carrito.
 - [ ] Verificar que distintas vistas comparten el mismo carrito.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Base del carrito vacío configurada mediante Context API. `CartProvider` envuelve la aplicación dentro de `BrowserRouter`, por encima de las rutas; `useCart` permite leer el estado y detecta su uso fuera del proveedor. Cada elemento identifica el plato, su presentación y la cantidad. `npm run build`, `npm run lint` y `git diff --check` correctos. Verificación de navegación compartida pendiente; aún no hay acciones ni interfaz de carrito.
+- **Commits / evidencia:** Tipos en `src/types/cart.ts`, contexto y proveedor en `src/context/`, hook en `src/hooks/useCart.ts` e integración en `src/main.tsx`. Sin commit todavía.
+- **Pendientes y siguiente paso:** Revisar este primer paso y comprobar que dos vistas consumen el mismo carrito antes de cerrar el día 7. La lógica de adición corresponde al día 8. Horas efectivas pendientes de registrar.
 
 ### Día 8 — Martes 06/10/2026 — Carrito
 
