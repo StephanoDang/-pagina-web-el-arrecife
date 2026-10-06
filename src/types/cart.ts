@@ -9,3 +9,7 @@ export interface CartItem {
 export interface CartState {
   items: readonly CartItem[]
 }
+
+export interface CartContextValue extends CartState {
+  addItem: (dishId: Dish['id'], presentationId: DishPresentation['id']) => void
+}

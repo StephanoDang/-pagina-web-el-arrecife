@@ -1,4 +1,4 @@
 import { createContext } from 'react'
-import type { CartState } from '../types/cart'
+import type { CartContextValue } from '../types/cart'
 
-export const CartContext = createContext<CartState | undefined>(undefined)
+export const CartContext = createContext<CartContextValue | undefined>(undefined)
