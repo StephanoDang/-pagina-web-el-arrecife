@@ -4,7 +4,7 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 
 ## Estado del proyecto
 
-**En desarrollo.** El sitio tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra la carta completa del PDF de febrero de 2026: 173 productos, 270 presentaciones y 35 categorías, incluyendo postres y bebidas con y sin alcohol. Conserva las aclaraciones del propietario y muestra los recargos de bebidas como una nota consultable, sin automatizar la regla pendiente para fechas coincidentes. La carta tiene estilos adaptables, filtros por categoría, búsqueda inmediata sin distinguir tildes ni mayúsculas, contadores y recuperación cuando no hay resultados. Las presentaciones y sus precios se pueden desplegar en las tarjetas, que funcionan sin fotografías. Los productos repetidos comparten precios entre secciones y se cuentan una sola vez. Búsqueda y categoría se conservan en la URL. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; el carrito y las funciones de pedidos están pendientes.
+**En desarrollo.** El sitio tiene Header y Footer adaptables, con enlaces a Inicio, Carta, Pedidos y Reservas. La ruta `/carta` muestra la carta completa del PDF de febrero de 2026: 173 productos, 270 presentaciones y 35 categorías, incluyendo postres y bebidas con y sin alcohol. Conserva las aclaraciones del propietario y muestra los recargos de bebidas como una nota consultable, sin automatizar la regla pendiente para fechas coincidentes. La carta tiene estilos adaptables, filtros por categoría, búsqueda inmediata sin distinguir tildes ni mayúsculas, contadores y recuperación cuando no hay resultados. Las presentaciones y sus precios se pueden desplegar en las tarjetas, que funcionan sin fotografías. Los productos repetidos comparten precios entre secciones y se cuentan una sola vez. Búsqueda y categoría se conservan en la URL. Inicio, Pedidos y Reservas siguen mostrando pantallas temporales; la interfaz del carrito y las funciones de pedidos están pendientes.
 
 ## Alcance previsto
 
@@ -14,6 +14,8 @@ Proyecto web para el restaurante **El Arrecife**. Su objetivo es ofrecer a los c
 - Adaptar la interfaz a computadoras y teléfonos.
 
 El alcance se ajustará según las necesidades acordadas con el restaurante. Los pagos en línea no forman parte de este plan. La bitácora incluye un prototipo de reservas, que todavía no está implementado.
+
+La base del carrito ya está implementada mediante Context API y `useCart`. Su acción `addItem` agrega una unidad por combinación de plato y presentación, suma las adiciones repetidas y rechaza platos no disponibles o identificadores inválidos. Esta lógica aún no está conectada a controles visibles; el panel del carrito, los cambios de cantidades y la persistencia tras recargar están pendientes.
 
 ## Tecnologías
 
@@ -40,7 +42,7 @@ npm run dev      # Inicia el servidor de desarrollo
 npm run build    # Comprueba TypeScript y genera la versión de producción
 npm run preview  # Previsualiza la versión compilada
 npm run lint     # Ejecuta ESLint
-npm test         # Comprueba cobertura de la carta, precios y validación de datos
+npm test         # Comprueba la carta, sus filtros, el contexto y la lógica del carrito
 ```
 
 ## Estructura principal

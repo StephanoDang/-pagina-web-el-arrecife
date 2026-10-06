@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 8 — martes 06/10/2026, lógica de adición y pruebas de comportamiento completadas; documentación de cierre pendiente.
-- **Avance horario previsto al cierre del día 5:** 25/320 h; al cierre del día 6: 30/320 h. Las horas efectivas siguen pendientes de registrar.
+- **Día actual:** día 8 — martes 06/10/2026, tareas técnicas y documentación completadas; horas efectivas pendientes de registrar.
+- **Avance horario previsto al cierre del día 8:** 40/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 8, tercera tarea — documentar los cambios, resultados y el punto para continuar. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`.
+- **Siguiente tarea:** día 9, primera tarea — crear el panel lateral para visualizar los elementos del carrito. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`; la lógica del carrito todavía no tiene controles visibles.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -160,15 +160,15 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 8 — Martes 06/10/2026 — Carrito
 
-- **Estado:** En curso; primera y segunda tareas completadas.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 40/320 h.
 - [x] Lógica para agregar y verificar duplicados en el carrito.
 - [x] Probar adiciones repetidas y platos no disponibles.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** `useCart` expone `addItem(dishId, presentationId)`. Cada llamada válida añade una unidad; una combinación repetida de plato y presentación aumenta su cantidad sin duplicar la línea. Las presentaciones distintas y los platos diferentes quedan separados. La función consulta el catálogo y conserva el estado cuando el plato no está disponible o los identificadores son inválidos. Las actualizaciones son inmutables y el proveedor usa el estado anterior para procesar las adiciones. Compilación y ESLint correctos en la primera tarea. En la segunda, `npm test`: 20 pruebas correctas, incluidas seis nuevas sobre carrito vacío, cinco adiciones consecutivas, presentaciones y platos distintos, conservación del estado anterior y de otras líneas, identificadores inexistentes y platos no disponibles tanto nuevos como ya añadidos. Son pruebas de lógica; todavía no se ha comprobado la interacción de adición ni la conservación de productos al navegar en un navegador.
+- **Commits / evidencia:** `73a2016`: lógica en `src/data/addCartItem.ts`, acción del contexto y proveedor. `4cd7f08`: seis pruebas en `tests/cart-items.test.mjs`. Tercera tarea: actualización de esta bitácora y del README.
+- **Pendientes y siguiente paso:** Día 9, primera tarea: panel lateral para visualizar los elementos del carrito. La adición aún no está conectada a botones de la carta; no hay panel, controles de cantidades ni persistencia tras recargar. Registrar las horas efectivas del día 8.
 
 ### Día 9 — Miércoles 07/10/2026 — Carrito
 
