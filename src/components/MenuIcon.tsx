@@ -1,6 +1,7 @@
-type IconName = 'search' | 'close' | 'chevron' | 'arrow' | 'bowl' | 'filter'
+type IconName = 'search' | 'close' | 'chevron' | 'arrow' | 'bowl' | 'filter' | 'bag'
 
 const paths: Record<IconName, string> = {
+  bag: 'M5 7h14l2 14H3L5 7ZM8 7V6a4 4 0 0 1 8 0v1',
   search: 'M21 21l-4.4-4.4M19 10.5a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0Z',
   close: 'm6 6 12 12M6 18 18 6',
   chevron: 'm6 9 6 6 6-6',

@@ -1,4 +1,6 @@
 import { Link, Route, Routes } from 'react-router'
+import { useState } from 'react'
+import CartDrawer from './components/CartDrawer'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import MenuPage from './pages/MenuPage'
@@ -20,10 +22,11 @@ function PlaceholderPage({ title, description, home = false }: { title: string; 
 }
 
 function App() {
+  const [cartOpen, setCartOpen] = useState(false)
   return (
     <div className="site-shell">
       <a className="skip-link" href={`#${mainContentId}`}>Ir al contenido</a>
-      <Header />
+      <Header onOpenCart={() => setCartOpen(true)} cartOpen={cartOpen} />
       <main id={mainContentId} className="site-main" tabIndex={-1}>
         <Routes>
           <Route path="/" element={<PlaceholderPage title="El Arrecife" home description="Sabores del mar, tradición peruana y algo para cada antojo. Encuentra tu próximo favorito en nuestra carta." />} />
@@ -34,6 +37,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
+      <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />
     </div>
   )
 }

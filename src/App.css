@@ -52,6 +52,8 @@
   gap: 1.5rem;
 }
 
+.header-content > nav { margin-left: auto; }
+
 .wordmark,
 .footer-wordmark {
   color: #fff;
@@ -313,4 +315,22 @@
   .site-primary-link:active {
     transform: none;
   }
+}
+
+@media (max-width: 700px) {
+  .header-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+  }
+  .header-content .wordmark {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 22px;
+  }
+  .header-content .wordmark-description { border: 0; padding: 0; }
+  .header-content > nav { grid-column: 1 / -1; grid-row: 2; margin-left: 0; }
+  .cart-trigger { grid-column: 2; grid-row: 1; padding-inline: 10px; }
 }

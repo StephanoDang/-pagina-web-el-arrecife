@@ -8,15 +8,15 @@
 - **Total:** 64 jornadas × 5 horas = **320 horas**; 30 horas por semana completa.
 - **Feriados:** incluidos en el calendario por indicación del usuario. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 06/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 07/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 8 — martes 06/10/2026, tareas técnicas y documentación completadas; horas efectivas pendientes de registrar.
+- **Día actual:** día 9 — miércoles 07/10/2026, panel lateral del carrito implementado; revisión de interacción y documentación de cierre pendientes.
 - **Avance horario previsto al cierre del día 8:** 40/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 9, primera tarea — crear el panel lateral para visualizar los elementos del carrito. La carta completa, con filtros y búsqueda, ya está disponible en `/carta`; la lógica del carrito todavía no tiene controles visibles.
+- **Siguiente tarea:** día 9, segunda tarea — comprobar apertura, cierre y navegación por teclado del panel. El botón Carrito de la cabecera abre el panel; los botones para agregar productos desde la carta siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -172,9 +172,9 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 9 — Miércoles 07/10/2026 — Carrito
 
-- **Estado:** Pendiente.
+- **Estado:** En curso; primera tarea implementada.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 45/320 h.
-- [ ] Componente lateral (drawer) para visualizar los items del carrito.
+- [x] Componente lateral (drawer) para visualizar los items del carrito.
 - [ ] Comprobar apertura, cierre y navegación por teclado del panel.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
