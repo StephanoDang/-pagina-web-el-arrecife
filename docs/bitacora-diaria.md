@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 9 — miércoles 07/10/2026, panel lateral e interacción comprobados; documentación de cierre pendiente.
-- **Avance horario previsto al cierre del día 8:** 40/320 h. Las horas efectivas siguen pendientes de registrar.
+- **Día actual:** día 9 — miércoles 07/10/2026, tareas técnicas y documentación completadas; horas efectivas pendientes de registrar.
+- **Avance horario previsto al cierre del día 9:** 45/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 9, tercera tarea — documentar los cambios, resultados y el punto para continuar. Los botones para agregar productos desde la carta siguen pendientes.
+- **Siguiente tarea:** día 10, primera tarea — implementar la modificación de cantidades y la eliminación de elementos del carrito. Los botones para agregar productos desde la carta siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -172,15 +172,16 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 9 — Miércoles 07/10/2026 — Carrito
 
-- **Estado:** En curso; primera y segunda tareas completadas.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 45/320 h.
 - [x] Componente lateral (drawer) para visualizar los items del carrito.
 - [x] Comprobar apertura, cierre y navegación por teclado del panel.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
+- **Panel implementado:** `CartDrawer` utiliza un diálogo modal nativo, se abre desde la cabecera y lee los elementos de `useCart`. Incluye estado vacío y listado por plato y presentación, con cantidad y precio unitario; la cabecera muestra el número de unidades cuando hay productos. Se adapta al ancho de pantalla y permite desplazarse por su contenido mientras bloquea el desplazamiento del fondo. No incorpora edición de cantidades, eliminación, subtotales ni envío de pedidos.
 - **Resultado y pruebas:** Segunda tarea comprobada en Chrome local mediante Chrome DevTools CLI: apertura con clic, Enter y Espacio; foco inicial en Cerrar carrito; cierre con botón, Escape y clic en el fondo; restauración del foco al botón de apertura en las pruebas de teclado y botón, y liberación del bloqueo de desplazamiento. Se corrigió el recorrido de Tab y Shift+Tab para que vuelva al primer o último control del panel, evitando que salte a la barra del navegador. El enlace del panel lleva de `/pedidos` a `/carta` y cierra el diálogo. Revisión visual del estado vacío en escritorio y móvil emulado de 375 × 812 px, sin desbordamiento horizontal del panel. Compilación, ESLint y las 20 pruebas existentes correctos. No se probaron productos añadidos desde la interfaz, porque sus controles siguen pendientes; tampoco se validó en un teléfono físico.
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Commits / evidencia:** `a57db1c`: integración del panel, botón de cabecera, icono y estilos; `f1f6379`: corrección del recorrido del foco y comprobación de interacciones. Archivos del panel: `src/components/CartDrawer.tsx` y `src/components/CartDrawer.css`. Capturas de la revisión conservadas temporalmente en el equipo como `arrecife-cart-desktop.png` y `arrecife-cart-mobile.png`; no están versionadas. Tercera tarea: cierre de la bitácora y actualización del README.
+- **Pendientes y siguiente paso:** Día 10, primera tarea: modificar cantidades y eliminar elementos. La conexión de `addItem` con botones de la carta sigue pendiente; verificar después el panel con productos reales, la conservación del carrito al navegar y las interacciones en un teléfono físico. La persistencia al recargar no está implementada. Registrar las horas efectivas del día 9.
 
 ### Día 10 — Jueves 08/10/2026 — Carrito
 
