@@ -57,6 +57,6 @@ src/assets/   Recursos gráficos
 
 Los cambios del proyecto se registran en el historial de Git. A medida que avance el desarrollo, este README se actualizará para distinguir las funciones implementadas de las que sigan pendientes.
 
-La [bitácora diaria](docs/bitacora-diaria.md) organiza 64 jornadas de 5 horas, de lunes a sábado e incluyendo feriados en la planificación, desde el 28 de septiembre hasta el 10 de diciembre de 2026: 320 horas previstas. Conserva los avances comprobados, el registro de horas efectivas y el punto desde el que continuar en WebStorm.
+La [bitácora diaria](docs/bitacora-diaria.md) organiza 64 jornadas de 5 horas, de lunes a sábado, excluyendo el feriado del 8 de octubre y conservando los demás feriados previstos, desde el 28 de septiembre hasta el 11 de diciembre de 2026: 320 horas previstas. Conserva los avances comprobados, el registro de horas efectivas y el punto desde el que continuar en WebStorm.
 
 El [registro anterior de septiembre–octubre](docs/bitacora-septiembre-octubre-2026.md) conserva los avances ya realizados. El [plan hasta el 15 de octubre](docs/plan-hasta-15-octubre-2026.md) queda como referencia histórica.

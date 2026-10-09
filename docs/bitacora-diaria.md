@@ -3,20 +3,20 @@
 ## Plan actualizado
 
 - **Objetivo:** 320 horas previstas para desarrollar y poner en funcionamiento la web.
-- **Periodo:** lunes 28 de septiembre a jueves 10 de diciembre de 2026.
+- **Periodo:** lunes 28 de septiembre a viernes 11 de diciembre de 2026.
 - **Jornada:** 5 horas diarias, de lunes a sábado; domingos excluidos.
 - **Total:** 64 jornadas × 5 horas = **320 horas**; 30 horas por semana completa.
-- **Feriados:** incluidos en el calendario por indicación del usuario. El pago y el reconocimiento de horas se registran conforme se confirmen.
+- **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 07/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 09/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 9 — miércoles 07/10/2026, tareas técnicas y documentación completadas; horas efectivas pendientes de registrar.
+- **Día actual:** día 10 — viernes 09/10/2026, lógica para modificar cantidades y eliminar elementos implementada; pruebas y cierre pendientes. Las horas efectivas siguen pendientes de registrar.
 - **Avance horario previsto al cierre del día 9:** 45/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 10, primera tarea — implementar la modificación de cantidades y la eliminación de elementos del carrito. Los botones para agregar productos desde la carta siguen pendientes.
+- **Siguiente tarea:** día 10, segunda tarea — probar cantidades mínimas, eliminación y carrito vacío. Los botones para agregar productos desde la carta siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -40,17 +40,17 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 | Semana | Días | Periodo | Horas previstas | Acumulado previsto |
 | --- | --- | --- | ---: | ---: |
 | 1 | 1–6 | 28/09/2026 – 03/10/2026 | 30 | 30 |
-| 2 | 7–12 | 05/10/2026 – 10/10/2026 | 30 | 60 |
-| 3 | 13–18 | 12/10/2026 – 17/10/2026 | 30 | 90 |
-| 4 | 19–24 | 19/10/2026 – 24/10/2026 | 30 | 120 |
-| 5 | 25–30 | 26/10/2026 – 31/10/2026 | 30 | 150 |
-| 6 | 31–36 | 02/11/2026 – 07/11/2026 | 30 | 180 |
-| 7 | 37–42 | 09/11/2026 – 14/11/2026 | 30 | 210 |
-| 8 | 43–48 | 16/11/2026 – 21/11/2026 | 30 | 240 |
-| 9 | 49–54 | 23/11/2026 – 28/11/2026 | 30 | 270 |
-| 10 | 55–60 | 30/11/2026 – 05/12/2026 | 30 | 300 |
-| 11 | 61–64 | 07/12/2026 – 10/12/2026 | 20 | 320 |
-| **Total** | **64 jornadas** | **28/09/2026 – 10/12/2026** | **320** | **320** |
+| 2 | 7–11 | 05/10/2026 – 10/10/2026 | 25 | 55 |
+| 3 | 12–17 | 12/10/2026 – 17/10/2026 | 30 | 85 |
+| 4 | 18–23 | 19/10/2026 – 24/10/2026 | 30 | 115 |
+| 5 | 24–29 | 26/10/2026 – 31/10/2026 | 30 | 145 |
+| 6 | 30–35 | 02/11/2026 – 07/11/2026 | 30 | 175 |
+| 7 | 36–41 | 09/11/2026 – 14/11/2026 | 30 | 205 |
+| 8 | 42–47 | 16/11/2026 – 21/11/2026 | 30 | 235 |
+| 9 | 48–53 | 23/11/2026 – 28/11/2026 | 30 | 265 |
+| 10 | 54–59 | 30/11/2026 – 05/12/2026 | 30 | 295 |
+| 11 | 60–64 | 07/12/2026 – 11/12/2026 | 25 | 320 |
+| **Total** | **64 jornadas** | **28/09/2026 – 11/12/2026** | **320** | **320** |
 
 ## Calendario y registro diario
 
@@ -183,11 +183,17 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** `a57db1c`: integración del panel, botón de cabecera, icono y estilos; `f1f6379`: corrección del recorrido del foco y comprobación de interacciones. Archivos del panel: `src/components/CartDrawer.tsx` y `src/components/CartDrawer.css`. Capturas de la revisión conservadas temporalmente en el equipo como `arrecife-cart-desktop.png` y `arrecife-cart-mobile.png`; no están versionadas. Tercera tarea: cierre de la bitácora y actualización del README.
 - **Pendientes y siguiente paso:** Día 10, primera tarea: modificar cantidades y eliminar elementos. La conexión de `addItem` con botones de la carta sigue pendiente; verificar después el panel con productos reales, la conservación del carrito al navegar y las interacciones en un teléfono físico. La persistencia al recargar no está implementada. Registrar las horas efectivas del día 9.
 
-### Día 10 — Jueves 08/10/2026 — Carrito
+### Jueves 08/10/2026 — Feriado sin jornada
 
-- **Estado:** Pendiente.
+- **Estado:** Jornada excluida de la planificación por indicación del usuario.
+- **Horas previstas:** 0 h; no suma al acumulado previsto de 45/320 h.
+- **Reprogramación:** Las tareas del día 10 continúan el viernes 09/10/2026. Los días posteriores se desplazan una jornada, conservando los domingos libres y el orden de las tareas.
+
+### Día 10 — Viernes 09/10/2026 — Carrito
+
+- **Estado:** En curso; primera tarea implementada.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 50/320 h.
-- [ ] Lógica para modificar cantidades y eliminar items.
+- [x] Lógica para modificar cantidades y eliminar items.
 - [ ] Probar cantidades mínimas, eliminación y carrito vacío.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
@@ -195,7 +201,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 11 — Viernes 09/10/2026 — Carrito
+### Día 11 — Sábado 10/10/2026 — Carrito
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 55/320 h.
@@ -207,7 +213,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 12 — Sábado 10/10/2026 — UI
+### Día 12 — Lunes 12/10/2026 — UI
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 60/320 h.
@@ -219,7 +225,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 13 — Lunes 12/10/2026 — Checkout
+### Día 13 — Martes 13/10/2026 — Checkout
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 65/320 h.
@@ -231,7 +237,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 14 — Martes 13/10/2026 — Checkout
+### Día 14 — Miércoles 14/10/2026 — Checkout
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 70/320 h.
@@ -243,7 +249,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 15 — Miércoles 14/10/2026 — Checkout
+### Día 15 — Jueves 15/10/2026 — Checkout
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 75/320 h.
@@ -255,7 +261,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 16 — Jueves 15/10/2026 — Checkout
+### Día 16 — Viernes 16/10/2026 — Checkout
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 80/320 h.
@@ -267,7 +273,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 17 — Viernes 16/10/2026 — Reservas
+### Día 17 — Sábado 17/10/2026 — Reservas
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 85/320 h.
@@ -279,7 +285,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 18 — Sábado 17/10/2026 — Reservas
+### Día 18 — Lunes 19/10/2026 — Reservas
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 90/320 h.
@@ -291,7 +297,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 19 — Lunes 19/10/2026 — Reservas
+### Día 19 — Martes 20/10/2026 — Reservas
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 95/320 h.
@@ -303,7 +309,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 20 — Martes 20/10/2026 — Reservas
+### Día 20 — Miércoles 21/10/2026 — Reservas
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 100/320 h.
@@ -315,7 +321,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 21 — Miércoles 21/10/2026 — Backoffice
+### Día 21 — Jueves 22/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 105/320 h.
@@ -327,7 +333,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 22 — Jueves 22/10/2026 — Backoffice
+### Día 22 — Viernes 23/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 110/320 h.
@@ -339,7 +345,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 23 — Viernes 23/10/2026 — Backoffice
+### Día 23 — Sábado 24/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 115/320 h.
@@ -351,7 +357,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 24 — Sábado 24/10/2026 — Backoffice
+### Día 24 — Lunes 26/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 120/320 h.
@@ -363,7 +369,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 25 — Lunes 26/10/2026 — Backoffice
+### Día 25 — Martes 27/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 125/320 h.
@@ -375,7 +381,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 26 — Martes 27/10/2026 — Backoffice
+### Día 26 — Miércoles 28/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 130/320 h.
@@ -387,7 +393,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 27 — Miércoles 28/10/2026 — Backoffice
+### Día 27 — Jueves 29/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 135/320 h.
@@ -399,7 +405,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 28 — Jueves 29/10/2026 — Backoffice
+### Día 28 — Viernes 30/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 140/320 h.
@@ -411,7 +417,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 29 — Viernes 30/10/2026 — Backoffice
+### Día 29 — Sábado 31/10/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 145/320 h.
@@ -423,7 +429,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 30 — Sábado 31/10/2026 — Backoffice
+### Día 30 — Lunes 02/11/2026 — Backoffice
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 150/320 h.
@@ -435,7 +441,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 31 — Lunes 02/11/2026 — Pedidos
+### Día 31 — Martes 03/11/2026 — Pedidos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 155/320 h.
@@ -447,7 +453,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 32 — Martes 03/11/2026 — Pedidos
+### Día 32 — Miércoles 04/11/2026 — Pedidos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 160/320 h.
@@ -459,7 +465,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 33 — Miércoles 04/11/2026 — Pedidos
+### Día 33 — Jueves 05/11/2026 — Pedidos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 165/320 h.
@@ -471,7 +477,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 34 — Jueves 05/11/2026 — Pedidos
+### Día 34 — Viernes 06/11/2026 — Pedidos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 170/320 h.
@@ -483,7 +489,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 35 — Viernes 06/11/2026 — Pedidos
+### Día 35 — Sábado 07/11/2026 — Pedidos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 175/320 h.
@@ -495,7 +501,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 36 — Sábado 07/11/2026 — Reservas Admin
+### Día 36 — Lunes 09/11/2026 — Reservas Admin
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 180/320 h.
@@ -507,7 +513,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 37 — Lunes 09/11/2026 — Reservas Admin
+### Día 37 — Martes 10/11/2026 — Reservas Admin
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 185/320 h.
@@ -519,7 +525,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 38 — Martes 10/11/2026 — Reservas Admin
+### Día 38 — Miércoles 11/11/2026 — Reservas Admin
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 190/320 h.
@@ -531,7 +537,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 39 — Miércoles 11/11/2026 — Datos compartidos: diseño
+### Día 39 — Jueves 12/11/2026 — Datos compartidos: diseño
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 195/320 h.
@@ -543,7 +549,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 40 — Jueves 12/11/2026 — Datos compartidos: entorno
+### Día 40 — Viernes 13/11/2026 — Datos compartidos: entorno
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 200/320 h.
@@ -555,7 +561,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 41 — Viernes 13/11/2026 — Autenticación administrativa
+### Día 41 — Sábado 14/11/2026 — Autenticación administrativa
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 205/320 h.
@@ -567,7 +573,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 42 — Sábado 14/11/2026 — Permisos de datos
+### Día 42 — Lunes 16/11/2026 — Permisos de datos
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 210/320 h.
@@ -579,7 +585,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 43 — Lunes 16/11/2026 — Carta conectada
+### Día 43 — Martes 17/11/2026 — Carta conectada
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 215/320 h.
@@ -591,7 +597,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 44 — Martes 17/11/2026 — Pedidos conectados
+### Día 44 — Miércoles 18/11/2026 — Pedidos conectados
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 220/320 h.
@@ -603,7 +609,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 45 — Miércoles 18/11/2026 — Reservas conectadas
+### Día 45 — Jueves 19/11/2026 — Reservas conectadas
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 225/320 h.
@@ -615,7 +621,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 46 — Jueves 19/11/2026 — Estados administrativos conectados
+### Día 46 — Viernes 20/11/2026 — Estados administrativos conectados
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 230/320 h.
@@ -627,7 +633,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 47 — Viernes 20/11/2026 — Errores y recuperación
+### Día 47 — Sábado 21/11/2026 — Errores y recuperación
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 235/320 h.
@@ -639,7 +645,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 48 — Sábado 21/11/2026 — Respaldo y operación
+### Día 48 — Lunes 23/11/2026 — Respaldo y operación
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 240/320 h.
@@ -651,7 +657,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 49 — Lunes 23/11/2026 — Integración
+### Día 49 — Martes 24/11/2026 — Integración
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 245/320 h.
@@ -663,7 +669,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 50 — Martes 24/11/2026 — Integración
+### Día 50 — Miércoles 25/11/2026 — Integración
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 250/320 h.
@@ -675,7 +681,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 51 — Miércoles 25/11/2026 — QA
+### Día 51 — Jueves 26/11/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 255/320 h.
@@ -687,7 +693,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 52 — Jueves 26/11/2026 — QA
+### Día 52 — Viernes 27/11/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 260/320 h.
@@ -699,7 +705,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 53 — Viernes 27/11/2026 — QA
+### Día 53 — Sábado 28/11/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 265/320 h.
@@ -711,7 +717,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 54 — Sábado 28/11/2026 — QA
+### Día 54 — Lunes 30/11/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 270/320 h.
@@ -723,7 +729,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 55 — Lunes 30/11/2026 — QA
+### Día 55 — Martes 01/12/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 275/320 h.
@@ -735,7 +741,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 56 — Martes 01/12/2026 — QA
+### Día 56 — Miércoles 02/12/2026 — QA
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 280/320 h.
@@ -747,7 +753,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 57 — Miércoles 02/12/2026 — Refactor
+### Día 57 — Jueves 03/12/2026 — Refactor
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 285/320 h.
@@ -759,7 +765,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 58 — Jueves 03/12/2026 — Refactor
+### Día 58 — Viernes 04/12/2026 — Refactor
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 290/320 h.
@@ -771,7 +777,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 59 — Viernes 04/12/2026 — Documentación
+### Día 59 — Sábado 05/12/2026 — Documentación
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 295/320 h.
@@ -783,7 +789,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 60 — Sábado 05/12/2026 — Documentación
+### Día 60 — Lunes 07/12/2026 — Documentación
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 300/320 h.
@@ -795,7 +801,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 61 — Lunes 07/12/2026 — Documentación
+### Día 61 — Martes 08/12/2026 — Documentación
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 305/320 h.
@@ -807,7 +813,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 62 — Martes 08/12/2026 — Despliegue
+### Día 62 — Miércoles 09/12/2026 — Despliegue
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 310/320 h.
@@ -819,7 +825,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 63 — Miércoles 09/12/2026 — Despliegue
+### Día 63 — Jueves 10/12/2026 — Despliegue
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 315/320 h.
@@ -831,7 +837,7 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 64 — Jueves 10/12/2026 — Cierre
+### Día 64 — Viernes 11/12/2026 — Cierre
 
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 320/320 h.
@@ -849,4 +855,4 @@ El plan empieza con datos de ejemplo, LocalStorage y acceso simulado para constr
 
 La entrega incluye carta pública, carrito, registro de pedidos, reservas, administración, pruebas, documentación y despliegue. Las reglas y contenidos del restaurante se confirmarán durante el desarrollo.
 
-El 10/12/2026 se alcanzan 320 horas planificadas. Al cerrar cada jornada se anotará el tiempo realizado; si cambia la disponibilidad o quedan tareas pendientes, se actualizará la fecha final a partir del saldo real.
+El 11/12/2026 se alcanzan 320 horas planificadas tras excluir la jornada del 08/10/2026. Al cerrar cada jornada se anotará el tiempo realizado; si cambia la disponibilidad o quedan tareas pendientes, se actualizará la fecha final a partir del saldo real.

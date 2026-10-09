@@ -12,4 +12,6 @@ export interface CartState {
 
 export interface CartContextValue extends CartState {
   addItem: (dishId: Dish['id'], presentationId: DishPresentation['id']) => void
+  setQuantity: (dishId: Dish['id'], presentationId: DishPresentation['id'], quantity: number) => void
+  removeItem: (dishId: Dish['id'], presentationId: DishPresentation['id']) => void
 }

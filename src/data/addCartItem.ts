@@ -18,6 +18,7 @@ export function addCartItem(
     item.dishId === dishId && item.presentationId === presentationId)
 
   if (existing) {
+    if (existing.quantity >= Number.MAX_SAFE_INTEGER) return items
     return items.map((item) => item === existing
       ? { ...item, quantity: item.quantity + 1 }
       : item)
