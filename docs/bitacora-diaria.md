@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 10 — viernes 09/10/2026, lógica para modificar cantidades y eliminar elementos implementada; pruebas y cierre pendientes. Las horas efectivas siguen pendientes de registrar.
+- **Día actual:** día 10 — viernes 09/10/2026, lógica de cantidades y eliminación implementada y probada; documentación de cierre pendiente. Las horas efectivas siguen pendientes de registrar.
 - **Avance horario previsto al cierre del día 9:** 45/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 10, segunda tarea — probar cantidades mínimas, eliminación y carrito vacío. Los botones para agregar productos desde la carta siguen pendientes.
+- **Siguiente tarea:** día 10, tercera tarea — documentar los cambios, resultados y el punto para continuar. Los botones para agregar productos desde la carta siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -191,13 +191,13 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 10 — Viernes 09/10/2026 — Carrito
 
-- **Estado:** En curso; primera tarea implementada.
+- **Estado:** En curso; primera y segunda tareas completadas.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 50/320 h.
 - [x] Lógica para modificar cantidades y eliminar items.
-- [ ] Probar cantidades mínimas, eliminación y carrito vacío.
+- [x] Probar cantidades mínimas, eliminación y carrito vacío.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
+- **Resultado y pruebas:** Segunda tarea: `npm test`, 28 pruebas correctas, incluidas ocho nuevas en `tests/cart-updates.test.mjs`. Se comprueba aumentar cantidades y reducirlas a una unidad, conservar otras líneas y el estado anterior, rechazar cero, negativos, fracciones y números no seguros, ignorar líneas inexistentes o cantidades sin cambios, eliminar solo el plato y presentación elegidos, eliminar el último elemento y agregarlo nuevamente, operar sobre un carrito vacío y evitar desbordamiento de la cantidad máxima segura. Son pruebas de lógica; los controles visuales de estas acciones siguen pendientes.
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
