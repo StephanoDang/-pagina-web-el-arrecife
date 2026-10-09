@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 10 — viernes 09/10/2026, lógica de cantidades y eliminación implementada y probada; documentación de cierre pendiente. Las horas efectivas siguen pendientes de registrar.
-- **Avance horario previsto al cierre del día 9:** 45/320 h. Las horas efectivas siguen pendientes de registrar.
+- **Día actual:** día 10 — viernes 09/10/2026, tareas técnicas y documentación completadas; horas efectivas pendientes de registrar.
+- **Avance horario previsto al cierre del día 10:** 50/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 10, tercera tarea — documentar los cambios, resultados y el punto para continuar. Los botones para agregar productos desde la carta siguen pendientes.
+- **Siguiente tarea:** día 11, primera tarea — calcular subtotales y total del carrito; la regla de IGV debe confirmarse con el restaurante antes de aplicar o desglosar impuestos. Los controles de adición, cantidades y eliminación en la interfaz siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -191,15 +191,16 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 10 — Viernes 09/10/2026 — Carrito
 
-- **Estado:** En curso; primera y segunda tareas completadas.
+- **Estado:** Tareas técnicas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 50/320 h.
 - [x] Lógica para modificar cantidades y eliminar items.
 - [x] Probar cantidades mínimas, eliminación y carrito vacío.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
+- **Lógica implementada:** `useCart` expone `setQuantity(dishId, presentationId, quantity)` y `removeItem(dishId, presentationId)`. La modificación requiere un entero seguro mayor o igual a uno y afecta solo a la línea existente seleccionada; no agrega productos ni elimina al recibir cero. La eliminación es una acción separada. Ambas funciones conservan el estado anterior y las otras líneas; las solicitudes sin efecto devuelven el mismo estado. `addItem` evita incrementar una cantidad que ya alcanzó el máximo entero seguro.
 - **Resultado y pruebas:** Segunda tarea: `npm test`, 28 pruebas correctas, incluidas ocho nuevas en `tests/cart-updates.test.mjs`. Se comprueba aumentar cantidades y reducirlas a una unidad, conservar otras líneas y el estado anterior, rechazar cero, negativos, fracciones y números no seguros, ignorar líneas inexistentes o cantidades sin cambios, eliminar solo el plato y presentación elegidos, eliminar el último elemento y agregarlo nuevamente, operar sobre un carrito vacío y evitar desbordamiento de la cantidad máxima segura. Son pruebas de lógica; los controles visuales de estas acciones siguen pendientes.
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Commits / evidencia:** `5546a49`: lógica en `src/data/cartItems.ts`, integración de acciones en `CartProvider`, tipos y protección del límite de cantidad en `addCartItem`. `13c8922`: ocho pruebas nuevas en `tests/cart-updates.test.mjs`. Primera tarea: compilación y ESLint correctos. Tercera tarea: actualización de esta bitácora y del README.
+- **Pendientes y siguiente paso:** Día 11, primera tarea: subtotales y total del carrito. Confirmar con el restaurante si los precios incluyen IGV para evitar sumarlo dos veces. Los botones de adición desde la carta y los controles visuales de cantidades y eliminación siguen pendientes; comprobar después sus interacciones y la conservación del carrito al navegar. La persistencia al recargar sigue pendiente. Registrar las horas efectivas del día 10.
 
 ### Día 11 — Sábado 10/10/2026 — Carrito
 
