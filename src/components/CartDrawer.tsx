@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import { menuDishes } from '../data/menu'
+import { calculateCartTotals } from '../data/cartTotals'
 import { useCart } from '../hooks/useCart'
 import MenuIcon from './MenuIcon'
 import './CartDrawer.css'
@@ -10,6 +11,7 @@ const priceFormat = new Intl.NumberFormat('es-PE', { style: 'currency', currency
 export default function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const { items } = useCart()
+  const { subtotalsInCents, totalInCents } = calculateCartTotals(items)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -75,7 +77,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
             </div>
           ) : (
             <ul className="cart-items">
-              {items.map((item) => {
+              {items.map((item, index) => {
                 const dish = menuDishes.find((candidate) => candidate.id === item.dishId)
                 const presentation = dish?.presentations.find((option) => option.id === item.presentationId)
                 return (
@@ -84,6 +86,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                       <h3>{dish?.name ?? 'Producto no disponible'}</h3>
                       <p>{presentation?.name ?? 'Presentación no disponible'}</p>
                       {presentation && <p className="cart-unit-price">{priceFormat.format(presentation.priceInCents / 100)} por unidad</p>}
+                      <p>Subtotal: {subtotalsInCents[index] === null ? 'No disponible' : priceFormat.format(subtotalsInCents[index] / 100)}</p>
                       {dish && !dish.available && <p className="cart-item-unavailable">No disponible por el momento</p>}
                     </div>
                     <span className="cart-quantity" aria-label={`Cantidad: ${item.quantity}`}>× {item.quantity}</span>
@@ -94,6 +97,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
           )}
         </div>
         <footer className="cart-drawer-footer">
+          <p aria-live="polite">Total: {totalInCents === null ? 'No disponible' : priceFormat.format(totalInCents / 100)}</p>
           <Link className="site-primary-link" to="/carta" onClick={() => dialogRef.current?.close()}>
             {items.length === 0 ? 'Explorar la carta' : 'Seguir viendo la carta'}<MenuIcon name="arrow" />
           </Link>
