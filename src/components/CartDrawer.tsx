@@ -11,7 +11,7 @@ const priceFormat = new Intl.NumberFormat('es-PE', { style: 'currency', currency
 export default function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const { items } = useCart()
-  const { subtotalsInCents, totalInCents } = calculateCartTotals(items)
+  const { subtotalsInCents, baseInCents, igvInCents, totalInCents } = calculateCartTotals(items)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -97,6 +97,8 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
           )}
         </div>
         <footer className="cart-drawer-footer">
+          {baseInCents !== null && <p>Subtotal sin IGV: {priceFormat.format(baseInCents / 100)}</p>}
+          <p>IGV: {igvInCents === null ? 'Pendiente de confirmar' : priceFormat.format(igvInCents / 100)}</p>
           <p aria-live="polite">Total: {totalInCents === null ? 'No disponible' : priceFormat.format(totalInCents / 100)}</p>
           <Link className="site-primary-link" to="/carta" onClick={() => dialogRef.current?.close()}>
             {items.length === 0 ? 'Explorar la carta' : 'Seguir viendo la carta'}<MenuIcon name="arrow" />

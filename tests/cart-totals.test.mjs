@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { calculateCartTotals } from '../src/data/cartTotals.ts'
+import { calculateCartTotals, calculateTax } from '../src/data/cartTotals.ts'
 import { menuDishes } from '../src/data/menu.ts'
 import { updateCartItemQuantity, removeCartItem } from '../src/data/cartItems.ts'
 
 test('el carrito vacío tiene total cero', () => {
-  assert.deepEqual(calculateCartTotals([]), { subtotalsInCents: [], totalInCents: 0 })
+  assert.deepEqual(calculateCartTotals([]), { subtotalsInCents: [], baseInCents: null, igvInCents: null, totalInCents: 0 })
 })
 
 test('suma precios por presentación y recalcula al cambiar cantidades y eliminar', () => {
@@ -17,6 +17,8 @@ test('suma precios por presentación y recalcula al cambiar cantidades y elimina
   ])
   assert.deepEqual(calculateCartTotals(items), {
     subtotalsInCents: [first.priceInCents * 2, second.priceInCents * 3],
+    baseInCents: null,
+    igvInCents: null,
     totalInCents: first.priceInCents * 2 + second.priceInCents * 3,
   })
   const updated = updateCartItemQuantity(items, dish.id, first.id, 4)
@@ -32,6 +34,39 @@ test('no presenta un total parcial si faltan precios o las cantidades son invál
       { dishId: 'cebiche-pescado', presentationId: 'personal', quantity }
     )),
   ]) {
-    assert.deepEqual(calculateCartTotals([item]), { subtotalsInCents: [null], totalInCents: null })
+    assert.deepEqual(calculateCartTotals([item]), { subtotalsInCents: [null], baseInCents: null, igvInCents: null, totalInCents: null })
+  }
+})
+
+test('desglosa IGV incluido y añade IGV adicional con una tasa de prueba', () => {
+  assert.deepEqual(calculateTax(11800, { mode: 'included', rateBasisPoints: 1800 }), {
+    baseInCents: 10000, igvInCents: 1800, totalInCents: 11800,
+  })
+  assert.deepEqual(calculateTax(10000, { mode: 'additional', rateBasisPoints: 1800 }), {
+    baseInCents: 10000, igvInCents: 1800, totalInCents: 11800,
+  })
+})
+
+test('redondea a céntimos y conserva base más IGV igual al total', () => {
+  assert.deepEqual(calculateTax(101, { mode: 'included', rateBasisPoints: 1800 }), {
+    baseInCents: 86, igvInCents: 15, totalInCents: 101,
+  })
+  assert.deepEqual(calculateTax(101, { mode: 'additional', rateBasisPoints: 1800 }), {
+    baseInCents: 101, igvInCents: 18, totalInCents: 119,
+  })
+  assert.deepEqual(calculateTax(0, { mode: 'included', rateBasisPoints: 1800 }), {
+    baseInCents: 0, igvInCents: 0, totalInCents: 0,
+  })
+  assert.throws(() => calculateTax(100, { mode: 'additional', rateBasisPoints: -1 }), RangeError)
+  assert.equal(calculateTax(Number.MAX_SAFE_INTEGER, { mode: 'additional', rateBasisPoints: 1800 }).totalInCents, null)
+})
+
+test('el total del carrito integra la política fiscal configurada', () => {
+  const items = [{ dishId: 'cebiche-pescado', presentationId: 'personal', quantity: 2 }]
+  const published = calculateCartTotals(items).totalInCents
+  for (const mode of ['included', 'additional']) {
+    const policy = { mode, rateBasisPoints: 1800 }
+    const result = calculateCartTotals(items, policy)
+    assert.deepEqual(result, { subtotalsInCents: [published], ...calculateTax(published, policy) })
   }
 })
