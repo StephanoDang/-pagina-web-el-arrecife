@@ -3,19 +3,20 @@ import { menuDishes } from './menu.ts'
 
 export type CartTaxPolicy =
   | { mode: 'pending' }
+  | { mode: 'included'; rateBasisPoints: null }
   | { mode: 'included' | 'additional'; rateBasisPoints: number }
 
-// Se seleccionará la modalidad y tasa cuando el restaurante las confirme.
-export const cartTaxPolicy: CartTaxPolicy = { mode: 'pending' }
+// Precios con IGV incluido confirmados por el usuario; tasa pendiente de confirmar.
+export const cartTaxPolicy: CartTaxPolicy = { mode: 'included', rateBasisPoints: null }
 
 export function calculateTax(amountInCents: number | null, policy: CartTaxPolicy) {
-  if (policy.mode !== 'pending' && (!Number.isSafeInteger(policy.rateBasisPoints) || policy.rateBasisPoints < 0)) {
+  if (policy.mode !== 'pending' && policy.rateBasisPoints !== null && (!Number.isSafeInteger(policy.rateBasisPoints) || policy.rateBasisPoints < 0)) {
     throw new RangeError('La tasa de IGV debe ser un entero no negativo en puntos básicos')
   }
   if (amountInCents === null || !Number.isSafeInteger(amountInCents) || amountInCents < 0) {
     return { baseInCents: null, igvInCents: null, totalInCents: null }
   }
-  if (policy.mode === 'pending') {
+  if (policy.mode === 'pending' || policy.rateBasisPoints === null) {
     return { baseInCents: null, igvInCents: null, totalInCents: amountInCents }
   }
   // BigInt mantiene exactos los cálculos y el redondeo a céntimos.

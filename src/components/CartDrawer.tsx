@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import { menuDishes } from '../data/menu'
-import { calculateCartTotals } from '../data/cartTotals'
+import { calculateCartTotals, cartTaxPolicy } from '../data/cartTotals'
 import { useCart } from '../hooks/useCart'
 import MenuIcon from './MenuIcon'
 import './CartDrawer.css'
@@ -98,7 +98,9 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
         </div>
         <footer className="cart-drawer-footer">
           {baseInCents !== null && <p>Subtotal sin IGV: {priceFormat.format(baseInCents / 100)}</p>}
-          <p>IGV: {igvInCents === null ? 'Pendiente de confirmar' : priceFormat.format(igvInCents / 100)}</p>
+          <p>IGV: {igvInCents === null
+            ? cartTaxPolicy.mode === 'included' ? 'Incluido en los precios' : 'Pendiente de confirmar'
+            : priceFormat.format(igvInCents / 100)}</p>
           <p aria-live="polite">Total: {totalInCents === null ? 'No disponible' : priceFormat.format(totalInCents / 100)}</p>
           <Link className="site-primary-link" to="/carta" onClick={() => dialogRef.current?.close()}>
             {items.length === 0 ? 'Explorar la carta' : 'Seguir viendo la carta'}<MenuIcon name="arrow" />

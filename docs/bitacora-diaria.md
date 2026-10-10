@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 11 — sábado 10/10/2026, primera tarea completada; confirmación fiscal y horas efectivas pendientes.
+- **Día actual:** día 11 — sábado 10/10/2026, primera y segunda tareas completadas; tercera tarea y horas efectivas pendientes.
 - **Avance horario previsto al cierre del día 10:** 50/320 h. Las horas efectivas siguen pendientes de registrar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe.
-- **Siguiente tarea:** día 11, segunda tarea — confirmar si los precios incluyen IGV y configurar la modalidad y tasa confirmadas. El cálculo admite IGV incluido o adicional; mientras se confirma, conserva los precios publicados. Los controles de adición, cantidades y eliminación en la interfaz siguen pendientes.
+- **Siguiente tarea:** día 11, tercera tarea — documentar los cambios, resultados de las pruebas y el punto para continuar. El usuario confirmó que los precios incluyen IGV; el carrito conserva esos precios sin volver a sumarlo. Falta confirmar la tasa para mostrar el desglose numérico. Los controles de adición, cantidades y eliminación en la interfaz siguen pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00.
 - **Datos pendientes:** regla de recargos de bebidas en fechas coincidentes, entrega de logo y fotografías autorizadas, horarios y reglas del restaurante.
@@ -204,10 +204,10 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ### Día 11 — Sábado 10/10/2026 — Carrito
 
-- **Estado:** Primera tarea completada; segunda y tercera tareas pendientes.
+- **Estado:** Primera y segunda tareas completadas; tercera tarea pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 55/320 h.
-- [x] Cálculo en tiempo real de subtotales, IGV y total final. Implementado en céntimos con modalidad y tasa configurables: IGV incluido se desglosa sin sumarlo de nuevo; IGV adicional se suma a la base. Hasta confirmar la regla del restaurante, el total conserva los precios publicados y el IGV se muestra pendiente de confirmar.
-- [ ] Confirmar con el restaurante si los precios incluyen IGV y evitar sumarlo dos veces.
+- [x] Cálculo en tiempo real de subtotales, IGV y total final. Implementado en céntimos con modalidad y tasa configurables: IGV incluido se desglosa sin sumarlo de nuevo; IGV adicional se suma a la base. Configuración activa: IGV incluido; total calculado con los precios publicados. Desglose numérico pendiente de confirmar la tasa.
+- [x] Confirmar con el restaurante si los precios incluyen IGV y evitar sumarlo dos veces. El usuario confirmó «IGV incluido»; configurado en el carrito y mostrado como incluido en los precios, sin recargo adicional.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Subtotales y total derivados del carrito en cada renderizado; un precio faltante impide mostrar un total parcial. IGV incluido y adicional, redondeo a céntimos, carrito vacío y desbordamiento verificados. 34 pruebas aprobadas, compilación y lint correctos. La tasa usada en las pruebas es un dato de prueba, no una regla confirmada del restaurante.

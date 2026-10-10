@@ -1,11 +1,18 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { calculateCartTotals, calculateTax } from '../src/data/cartTotals.ts'
+import { calculateCartTotals, calculateTax, cartTaxPolicy } from '../src/data/cartTotals.ts'
 import { menuDishes } from '../src/data/menu.ts'
 import { updateCartItemQuantity, removeCartItem } from '../src/data/cartItems.ts'
 
 test('el carrito vacío tiene total cero', () => {
   assert.deepEqual(calculateCartTotals([]), { subtotalsInCents: [], baseInCents: null, igvInCents: null, totalInCents: 0 })
+})
+
+test('la configuración confirmada incluye IGV y no vuelve a sumarlo sin conocer la tasa', () => {
+  assert.deepEqual(cartTaxPolicy, { mode: 'included', rateBasisPoints: null })
+  assert.deepEqual(calculateTax(11800, cartTaxPolicy), {
+    baseInCents: null, igvInCents: null, totalInCents: 11800,
+  })
 })
 
 test('suma precios por presentación y recalcula al cambiar cantidades y eliminar', () => {
