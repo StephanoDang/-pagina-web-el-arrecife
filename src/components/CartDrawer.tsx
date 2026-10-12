@@ -10,6 +10,7 @@ const priceFormat = new Intl.NumberFormat('es-PE', { style: 'currency', currency
 
 export default function CartDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const dialogRef = useRef<HTMLDialogElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
   const { items } = useCart()
   const { subtotalsInCents, baseInCents, igvInCents, totalInCents } = calculateCartTotals(items)
 
@@ -22,7 +23,10 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
       return
     }
 
-    if (!dialog.open) dialog.showModal()
+    if (!dialog.open) {
+      dialog.showModal()
+      closeButtonRef.current?.focus({ preventScroll: true })
+    }
     const previousOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     return () => {
@@ -63,12 +67,12 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
             <p className="cart-eyebrow">El Arrecife de Mamafé</p>
             <h2 id="cart-title">Tu carrito</h2>
           </div>
-          <button type="button" className="cart-close" aria-label="Cerrar carrito"
+          <button ref={closeButtonRef} type="button" className="cart-close" aria-label="Cerrar carrito"
             onClick={() => dialogRef.current?.close()}>
             <MenuIcon name="close" />
           </button>
         </header>
-        <div className="cart-drawer-body">
+        <div className="cart-drawer-body" role="region" aria-label="Productos del carrito" tabIndex={0}>
           {items.length === 0 ? (
             <div className="cart-empty">
               <span className="cart-empty-symbol"><MenuIcon name="bag" /></span>
@@ -89,7 +93,10 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                       <p>Subtotal: {subtotalsInCents[index] === null ? 'No disponible' : priceFormat.format(subtotalsInCents[index] / 100)}</p>
                       {dish && !dish.available && <p className="cart-item-unavailable">No disponible por el momento</p>}
                     </div>
-                    <span className="cart-quantity" aria-label={`Cantidad: ${item.quantity}`}>× {item.quantity}</span>
+                    <span className="cart-quantity">
+                      <span aria-hidden="true">× {item.quantity}</span>
+                      <span className="visually-hidden">Cantidad: {item.quantity}</span>
+                    </span>
                   </li>
                 )
               })}
@@ -97,11 +104,15 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
           )}
         </div>
         <footer className="cart-drawer-footer">
-          {baseInCents !== null && <p>Subtotal sin IGV: {priceFormat.format(baseInCents / 100)}</p>}
-          <p>IGV: {igvInCents === null
-            ? cartTaxPolicy.mode === 'included' ? 'Incluido en los precios' : 'Pendiente de confirmar'
-            : priceFormat.format(igvInCents / 100)}</p>
-          <p aria-live="polite">Total: {totalInCents === null ? 'No disponible' : priceFormat.format(totalInCents / 100)}</p>
+          <dl className="cart-summary" aria-label="Resumen del carrito">
+            {baseInCents !== null && <div><dt>Subtotal sin IGV</dt><dd>{priceFormat.format(baseInCents / 100)}</dd></div>}
+            <div><dt>IGV</dt><dd>{igvInCents === null
+              ? cartTaxPolicy.mode === 'included' ? 'Incluido en los precios' : 'Pendiente de confirmar'
+              : priceFormat.format(igvInCents / 100)}</dd></div>
+            <div className="cart-summary-total" aria-live="polite" aria-atomic="true">
+              <dt>Total</dt><dd>{totalInCents === null ? 'No disponible' : priceFormat.format(totalInCents / 100)}</dd>
+            </div>
+          </dl>
           <Link className="site-primary-link" to="/carta" onClick={() => dialogRef.current?.close()}>
             {items.length === 0 ? 'Explorar la carta' : 'Seguir viendo la carta'}<MenuIcon name="arrow" />
           </Link>
