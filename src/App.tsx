@@ -4,6 +4,7 @@ import CartDrawer from './components/CartDrawer'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import MenuPage from './pages/MenuPage'
+import OrderPage from './pages/OrderPage'
 import MenuIcon from './components/MenuIcon'
 import './App.css'
 
@@ -31,7 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<PlaceholderPage title="El Arrecife" home description="Sabores del mar, tradición peruana y algo para cada antojo. Encuentra tu próximo favorito en nuestra carta." />} />
           <Route path="/carta" element={<MenuPage />} />
-          <Route path="/pedidos" element={<PlaceholderPage title="Pedidos" />} />
+          <Route path="/pedidos" element={<OrderPage />} />
           <Route path="/reservas" element={<PlaceholderPage title="Reservas" />} />
           <Route path="*" element={<PlaceholderPage title="Página no encontrada" description="No encontramos esta página. Revisa el enlace o vuelve a explorar nuestra carta." />} />
         </Routes>

@@ -1,0 +1,21 @@
+.order-page { max-width: 680px; padding-block: clamp(32px, 6vw, 64px); }
+.order-eyebrow { margin: 0 0 12px; color: #53655c; font-size: 0.875rem; }
+.order-page h1 { margin: 0; color: var(--site-ink); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 6vw, 3rem); font-weight: 400; }
+.order-intro { margin: 16px 0 32px; color: #53655c; line-height: 1.6; }
+.order-form { display: grid; gap: 24px; }
+.order-field { display: grid; gap: 8px; min-width: 0; }
+.order-field label { color: var(--site-ink); font-weight: 600; }
+.order-field input, .order-field textarea {
+  width: 100%; min-width: 0; min-height: 48px; padding: 12px 14px;
+  border: 1px solid #687b73; border-radius: 8px; background: #fff;
+  color: var(--site-ink); font: inherit; font-size: 1rem;
+}
+.order-field textarea { resize: vertical; line-height: 1.5; }
+.order-field input:focus-visible, .order-field textarea:focus-visible { outline: 3px solid var(--site-ink); outline-offset: 3px; }
+.order-field [aria-invalid='true'] { border-color: #8b352e; }
+.order-hint, .order-error, .order-status { margin: 0; font-size: 0.875rem; line-height: 1.5; overflow-wrap: anywhere; }
+.order-hint { color: #53655c; }
+.order-error { color: #8b352e; }
+.order-status { color: var(--site-ink); }
+.order-status:empty { display: none; }
+.order-submit { width: 100%; font: inherit; cursor: pointer; white-space: normal; touch-action: manipulation; }
