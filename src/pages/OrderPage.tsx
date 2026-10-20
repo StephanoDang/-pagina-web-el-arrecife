@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useForm, useWatch } from 'react-hook-form'
 import './OrderPage.css'
 
 interface CustomerDetails {
@@ -11,18 +11,21 @@ interface CustomerDetails {
 
 export default function OrderPage() {
   const [reviewed, setReviewed] = useState(false)
-  const { register, handleSubmit, formState: { errors } } = useForm<CustomerDetails>({
+  const { register, handleSubmit, control, clearErrors, formState: { errors } } = useForm<CustomerDetails>({
     defaultValues: { deliveryMethod: 'delivery', name: '', phone: '', address: '' },
     mode: 'onSubmit',
     reValidateMode: 'onChange',
     shouldFocusError: true,
   })
+  const deliveryMethod = useWatch({ control, name: 'deliveryMethod' })
+  const isDelivery = deliveryMethod === 'delivery'
+  const clearAddressError = () => clearErrors('address')
 
   return (
     <section className="order-page site-container" aria-labelledby="order-title">
       <p className="order-eyebrow">Tu pedido</p>
       <h1 id="order-title">Datos de contacto</h1>
-      <p className="order-intro">Completa tus datos para preparar tu pedido. Todos los campos son obligatorios.</p>
+      <p className="order-intro">Nombre y teléfono son obligatorios. Para delivery, añade también tu dirección.</p>
       <form className="order-form" noValidate
         onChange={() => setReviewed(false)}
         onSubmit={handleSubmit(() => setReviewed(true), () => setReviewed(false))}>
@@ -38,6 +41,7 @@ export default function OrderPage() {
                   required: 'Elige cómo recibirás tu pedido.',
                   validate: (value) => value === 'delivery' || value === 'pickup'
                     || 'Elige delivery o recojo en tienda.',
+                  onChange: clearAddressError,
                 })} />
               <span>Delivery</span>
             </label>
@@ -45,7 +49,7 @@ export default function OrderPage() {
               <input type="radio" value="pickup"
                 aria-invalid={Boolean(errors.deliveryMethod)}
                 aria-describedby={errors.deliveryMethod ? 'delivery-method-error' : undefined}
-                {...register('deliveryMethod')} />
+                {...register('deliveryMethod', { onChange: clearAddressError })} />
               <span>Recojo en tienda</span>
             </label>
           </div>
@@ -76,18 +80,19 @@ export default function OrderPage() {
           <p className="order-hint" id="customer-phone-hint">Puedes incluir el código de país, espacios, paréntesis y guiones.</p>
           {errors.phone && <p className="order-error" id="customer-phone-error" role="alert">{errors.phone.message}</p>}
         </div>
-        <div className="order-field">
+        <div className="order-field" hidden={!isDelivery}>
           <label htmlFor="customer-address">Dirección</label>
-          <textarea id="customer-address" rows={3} autoComplete="street-address" required maxLength={200}
+          <textarea id="customer-address" rows={3} autoComplete="street-address" required={isDelivery} maxLength={200}
             aria-invalid={Boolean(errors.address)}
             aria-describedby={`customer-address-hint${errors.address ? ' customer-address-error' : ''}`}
             {...register('address', {
+              disabled: !isDelivery,
               setValueAs: (value: string) => value.trim(),
               required: 'Escribe tu dirección.',
               minLength: { value: 5, message: 'Añade una dirección de al menos 5 caracteres.' },
               maxLength: { value: 200, message: 'La dirección debe tener como máximo 200 caracteres.' },
             })} />
-          <p className="order-hint" id="customer-address-hint">Incluye calle, número y distrito.</p>
+          <p className="order-hint" id="customer-address-hint">Dirección de delivery: incluye calle, número y distrito.</p>
           {errors.address && <p className="order-error" id="customer-address-error" role="alert">{errors.address.message}</p>}
         </div>
         <button type="submit" className="site-primary-link order-submit">Revisar mis datos</button>
