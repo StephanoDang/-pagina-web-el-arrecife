@@ -54,4 +54,8 @@ El script debe recibir una página recién cargada, con delivery por defecto. La
 
 Estas pruebas no verifican un teléfono físico, lector de pantalla real, tarifas comerciales ni envío efectivo de pedidos. Tarifas y condiciones de delivery/recojo siguen pendientes de confirmar. No se probaron persistencia ni resumen de orden, que pertenecen al día 20.
 
-La cuarta tarea está terminada. La quinta —consolidar la documentación y cerrar el día 19— sigue pendiente; las horas efectivas también. Lint y build pasaron durante la tercera tarea, sobre el mismo código de producción probado aquí.
+Las cinco tareas del día 19 están terminadas. La quinta consolida este informe, el README y la bitácora con el estado actual, la evidencia y los pendientes. Las horas efectivas siguen pendientes de confirmación. Lint y build pasaron durante la tercera tarea, sobre el mismo código de producción probado aquí; este cierre solo modifica documentación.
+
+La próxima tarea es la primera del día 20, miércoles 21/10: generación del resumen de orden y guardado temporal en LocalStorage. Después se comprobarán recarga y recuperación. Todavía no se implementaron esas funciones ni el envío del pedido; la vista de confirmación desplazada del antiguo día 13 sigue pendiente de reprogramación. Mantener los costos como pendientes hasta recibir reglas y tarifas confirmadas.
+
+Evidencia en Git: `96db784` (selector), `af85494` (dirección condicional), `2513e4c` (avisos) y `eef1d9b` (pruebas y capturas). Mensaje propuesto para el cierre: `docs: close day 19 checkout progress and validation`.
