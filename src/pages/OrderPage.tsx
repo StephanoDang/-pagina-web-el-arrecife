@@ -30,7 +30,7 @@ export default function OrderPage() {
         onChange={() => setReviewed(false)}
         onSubmit={handleSubmit(() => setReviewed(true), () => setReviewed(false))}>
         <fieldset className="order-delivery-method"
-          aria-describedby={errors.deliveryMethod ? 'delivery-method-error' : undefined}>
+          aria-describedby={`delivery-cost-info${errors.deliveryMethod ? ' delivery-method-error' : ''}`}>
           <legend>¿Cómo recibirás tu pedido?</legend>
           <div className="order-delivery-options">
             <label className="order-delivery-option">
@@ -53,6 +53,11 @@ export default function OrderPage() {
               <span>Recojo en tienda</span>
             </label>
           </div>
+          <p id="delivery-cost-info" className="order-delivery-info" role="status" aria-atomic="true">
+            {isDelivery
+              ? 'Costo de delivery: pendiente de confirmar con el restaurante. El importe de entrega aún no está calculado.'
+              : 'Recojo en tienda: retirarás el pedido en el local. Consulta las condiciones de recojo con el restaurante.'}
+          </p>
           {errors.deliveryMethod && <p className="order-error" id="delivery-method-error" role="alert">{errors.deliveryMethod.message}</p>}
         </fieldset>
         <div className="order-field">

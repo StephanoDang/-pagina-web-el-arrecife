@@ -15,6 +15,11 @@
 .order-delivery-option input { flex-shrink: 0; width: 20px; height: 20px; margin: 0; accent-color: var(--site-ink); }
 .order-delivery-option input:focus-visible { outline: 3px solid var(--site-ink); outline-offset: 3px; }
 .order-delivery-method > .order-error { margin-top: 8px; }
+.order-delivery-info {
+  margin: 12px 0 0; padding: 12px 14px; border-radius: 8px;
+  background: #e8ede4; color: var(--site-ink); font-size: 0.875rem;
+  line-height: 1.6; overflow-wrap: anywhere;
+}
 .order-field { display: grid; gap: 8px; min-width: 0; }
 .order-field[hidden] { display: none; }
 .order-field label { color: var(--site-ink); font-weight: 600; }
