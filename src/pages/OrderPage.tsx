@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import './OrderPage.css'
 
 interface CustomerDetails {
+  deliveryMethod: 'delivery' | 'pickup'
   name: string
   phone: string
   address: string
@@ -11,7 +12,7 @@ interface CustomerDetails {
 export default function OrderPage() {
   const [reviewed, setReviewed] = useState(false)
   const { register, handleSubmit, formState: { errors } } = useForm<CustomerDetails>({
-    defaultValues: { name: '', phone: '', address: '' },
+    defaultValues: { deliveryMethod: 'delivery', name: '', phone: '', address: '' },
     mode: 'onSubmit',
     reValidateMode: 'onChange',
     shouldFocusError: true,
@@ -25,6 +26,31 @@ export default function OrderPage() {
       <form className="order-form" noValidate
         onChange={() => setReviewed(false)}
         onSubmit={handleSubmit(() => setReviewed(true), () => setReviewed(false))}>
+        <fieldset className="order-delivery-method"
+          aria-describedby={errors.deliveryMethod ? 'delivery-method-error' : undefined}>
+          <legend>¿Cómo recibirás tu pedido?</legend>
+          <div className="order-delivery-options">
+            <label className="order-delivery-option">
+              <input type="radio" value="delivery"
+                aria-invalid={Boolean(errors.deliveryMethod)}
+                aria-describedby={errors.deliveryMethod ? 'delivery-method-error' : undefined}
+                {...register('deliveryMethod', {
+                  required: 'Elige cómo recibirás tu pedido.',
+                  validate: (value) => value === 'delivery' || value === 'pickup'
+                    || 'Elige delivery o recojo en tienda.',
+                })} />
+              <span>Delivery</span>
+            </label>
+            <label className="order-delivery-option">
+              <input type="radio" value="pickup"
+                aria-invalid={Boolean(errors.deliveryMethod)}
+                aria-describedby={errors.deliveryMethod ? 'delivery-method-error' : undefined}
+                {...register('deliveryMethod')} />
+              <span>Recojo en tienda</span>
+            </label>
+          </div>
+          {errors.deliveryMethod && <p className="order-error" id="delivery-method-error" role="alert">{errors.deliveryMethod.message}</p>}
+        </fieldset>
         <div className="order-field">
           <label htmlFor="customer-name">Nombre</label>
           <input id="customer-name" type="text" autoComplete="name" required maxLength={100}
