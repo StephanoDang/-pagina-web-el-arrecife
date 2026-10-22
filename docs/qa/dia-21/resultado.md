@@ -1,6 +1,6 @@
 # Día 21 — Tarea 2: recarga y recuperación
 
-Fecha: 22/10/2026. Alcance: recuperar y probar la orden local de ejemplo; tarea 3 de cierre pendiente.
+Fecha: 22/10/2026. Alcance: recuperar y probar la orden local de ejemplo; cierre documental de la tarea 3 completado.
 
 La lectura de LocalStorage valida versión, estado de borrador, fecha, moneda, contacto, método de entrega, productos, presentaciones, cantidades y precios frente al catálogo actual. Rechaza datos corruptos, duplicados y totales alterados sin recuperar parcialmente el carrito. La aplicación conserva el valor almacenado ante errores; no envía pedidos ni modifica el catálogo.
 
@@ -28,3 +28,7 @@ python3 docs/qa/dia-21/validar-recuperacion.py
 ```
 
 El script abre un contexto aislado y escribe `resultados.json`. Carga inicialmente un borrador de ejemplo con el generador real porque los controles de adición de productos siguen pendientes. Después prueba el botón/formulario real mediante eventos DOM y recargas reales. No constituye una prueba manual de teclado, lector de pantalla o teléfono físico. La recuperación es local al navegador; no hay envío ni almacenamiento compartido.
+
+## Cierre del día 21
+
+README y bitácora consolidados con las funciones, límites y evidencias anteriores. La revisión de cierre solo modifica documentación y conserva los resultados de las pruebas ya ejecutadas. Siguiente objetivo: día 22, viernes 23/10, formulario de reservas con selección de fecha y hora. Las horas efectivas siguen pendientes de confirmar.

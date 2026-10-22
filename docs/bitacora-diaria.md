@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 21 — jueves 22/10/2026, primera y segunda tareas completadas: resumen, guardado local y recuperación verificada al recargar. Tercera tarea pendiente. Última actividad reportada: miércoles 21/10, coordinación de precios de hosting y presentación de avances al jefe; horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 70/320 h hasta el día 14 y 75/320 h al completar el bloque del martes 20/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19 y miércoles 21: horas pendientes de confirmar.
+- **Día actual:** día 21 — jueves 22/10/2026, las tres tareas completadas: resumen, guardado local, recuperación verificada al recargar y cierre documental. Última actividad reportada: miércoles 21/10, coordinación de precios de hosting y presentación de avances al jefe; horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10 y 80/320 h al cierre técnico del jueves 22/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19 y miércoles 21: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 21, tercera tarea — consolidar la documentación de los cambios, resultados y punto de continuación. La recuperación y sus pruebas de la segunda tarea están completadas. Formulario de reservas y demás objetivos conservan su orden reprogramado.
+- **Siguiente tarea:** día 22, primera tarea — crear el formulario de reservas con selección de fecha y hora (viernes 23/10/2026). El día 21 queda cerrado técnicamente; horas efectivas pendientes de registrar.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, horarios y reglas del restaurante. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -95,7 +95,7 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Horas previstas:** 5 h. **Acumulado previsto:** 5/320 h.
 - [x] Iniciar el proyecto web de El Arrecife.
 - [x] Sustituir el README de Vite por la documentación del proyecto.
-- [ ] Completar el registro de actividades y tiempo del día.
+- [x] Completar el registro de actividades y tiempo del día. *(Casilla marcada por solicitud del usuario el 22/10; las horas efectivas siguen sin detalle confirmado.)*
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Proyecto y documentación inicial registrados.
 - **Commits / evidencia:** `eaca4fe` y `c26e322`; captura de GitHub del usuario.
@@ -359,7 +359,7 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Horas previstas de objetivos:** sin bloque adicional asignado. **Acumulado previsto de objetivos:** 75/320 h.
 - [x] Apoyar en la coordinación de precios para el hosting conversando con el jefe.
 - [x] Mostrar al jefe los avances del proyecto.
-- [ ] Registrar precios revisados, proveedores considerados y acuerdos cuando se confirmen.
+- [x] Registrar precios revisados, proveedores considerados y acuerdos cuando se confirmen. *(Casilla marcada por solicitud del usuario el 22/10; importes, proveedores y acuerdos aún no aportados.)*
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Coordinación y presentación reportadas por el usuario. No se han comunicado importes, proveedor elegido ni contratación del hosting.
 - **Commits / evidencia:** Relato del usuario; sin evidencia documental adicional aportada.
@@ -368,16 +368,17 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 ### Día 21 — Jueves 22/10/2026 — Checkout
 
 - **Reprogramación:** objetivos del antiguo día 16 (Viernes 16/10/2026), conservados en su orden original.
-- **Estado:** Primera y segunda tareas completadas; tercera pendiente.
+- **Estado:** Las tres tareas completadas; cierre horario pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 80/320 h.
 - [x] Generación de resumen de orden y guardado temporal en LocalStorage.
 - [x] Probar recarga y recuperación de una orden de ejemplo.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Primera tarea: `/pedidos` genera un resumen con datos del cliente, método de entrega, dirección solo para delivery, productos, presentaciones, cantidades, precios unitarios, subtotales y total de productos en PEN. Conserva el IGV incluido y el costo de delivery pendiente de confirmar. Al validar el formulario guarda una instantánea JSON versionada en LocalStorage bajo `el-arrecife:order-draft:v1`, con fecha y estado de borrador; no envía el pedido al restaurante. Rechaza carritos vacíos, productos no disponibles y cantidades o importes inválidos. Si falla el almacenamiento, muestra el resumen y el error sin afirmar que se guardó. Editar el formulario o cambiar el carrito oculta el resumen anterior hasta generarlo de nuevo; el último borrador guardado solo se sustituye al guardar correctamente otro. `npm run lint` y `npm run build` correctos; 38 pruebas automatizadas aprobadas, incluidas tres nuevas de generación de resumen, exclusión de dirección en recojo y rechazo de carritos inválidos. Al cerrar la primera tarea quedaron pendientes la recuperación y las pruebas de navegador; se completan en la segunda tarea descrita a continuación.
 - **Segunda tarea y verificación:** Lectura segura y validación del borrador contra el catálogo actual. Se restauran carrito, contacto, método de entrega y resumen al recargar; recojo excluye dirección. Datos corruptos, versiones desconocidas, duplicados, precios alterados y errores de lectura no bloquean la página. Build y lint correctos; 42 pruebas automatizadas aprobadas. Chrome for Testing 148: 12 comprobaciones correctas con datos ficticios, incluidas preparación de ejemplo, recarga de delivery, edición y nuevo guardado, recarga de recojo, fallos de escritura/lectura y JSON corrupto. [Informe y reproducción](qa/dia-21/resultado.md); resultados y script conservados en `docs/qa/dia-21/`. Mensaje sugerido: `feat: restore saved order drafts and verify reload recovery`.
-- **Commits / evidencia:** Cambios locales en `src/data/orderDraft.ts`, `src/pages/OrderPage.tsx`, `src/pages/OrderPage.css` y `tests/order-draft.test.mjs`. Mensaje sugerido: `feat: generate order summary and save a local draft`.
-- **Pendientes y siguiente paso:** Tercera tarea: consolidar la documentación y cerrar la jornada. La primera y segunda tareas están completadas. Los controles de adición al carrito siguen pendientes de su tarea correspondiente; no se incorporaron en este paso. Horas efectivas pendientes de confirmar.
+- **Tercera tarea y cierre:** README, informe de pruebas y bitácora consolidados con el comportamiento del borrador, límites, evidencia y siguiente objetivo. Se conservan los resultados de lint/build, 42 pruebas automatizadas y 12 comprobaciones de navegador de la implementación; este cierre modifica solo documentación.
+- **Commits / evidencia:** `ffcc467` contiene la integración inicial de la página; `1ec21f3` conserva generación, recuperación y pruebas del borrador. Evidencia en `docs/qa/dia-21/`. Mensaje sugerido para el cierre: `docs: close day 21 checkout progress and validation`.
+- **Pendientes y siguiente paso:** Día 22, primera tarea: crear el formulario de reservas con selección de fecha y hora. Las tres tareas del día 21 están completadas. Los controles de adición al carrito siguen pendientes de su tarea correspondiente; no se incorporaron en este paso. Horas efectivas pendientes de confirmar.
 
 ### Día 22 — Viernes 23/10/2026 — Reservas
 
