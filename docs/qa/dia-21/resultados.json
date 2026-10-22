@@ -1,0 +1,50 @@
+[
+  {
+    "caso": "Sin borrador: formulario vacío y sin resumen",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Preparar orden de ejemplo con dos unidades",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Recarga: cliente, dirección, cantidades, total y carrito recuperados",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Editar oculta resumen y reenviar guarda datos actualizados",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Segunda recarga conserva la edición guardada",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Guardar recojo excluye dirección",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Recuperar recojo mantiene dirección oculta y resumen",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Fallo al guardar no muestra confirmación de guardado",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Lectura bloqueada informa error y permite formulario vacío",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Preparar JSON corrupto",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "JSON corrupto no bloquea la página ni recupera carrito parcial",
+    "resultado": "correcto"
+  },
+  {
+    "caso": "Sin borrador después de limpiar: sin errores de recuperación",
+    "resultado": "correcto"
+  }
+]

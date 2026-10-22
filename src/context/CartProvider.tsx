@@ -3,10 +3,13 @@ import type { ReactNode } from 'react'
 import type { CartContextValue, CartState } from '../types/cart'
 import { addCartItem } from '../data/addCartItem'
 import { removeCartItem, updateCartItemQuantity } from '../data/cartItems'
+import { loadOrderDraft } from '../data/orderDraft'
 import { CartContext } from './CartContext'
 
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [cart, setCart] = useState<CartState>(() => ({ items: [] }))
+  const [cart, setCart] = useState<CartState>(() => ({
+    items: loadOrderDraft().draft?.items.map(({ dishId, presentationId, quantity }) => ({ dishId, presentationId, quantity })) ?? [],
+  }))
 
   const addItem = useCallback<CartContextValue['addItem']>((dishId, presentationId) => {
     setCart((previous) => {

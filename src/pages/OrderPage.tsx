@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useForm, useWatch } from 'react-hook-form'
 import { Link } from 'react-router'
 import { useCart } from '../hooks/useCart'
-import { createOrderDraft, ORDER_DRAFT_KEY } from '../data/orderDraft'
+import { createOrderDraft, loadOrderDraft, ORDER_DRAFT_KEY } from '../data/orderDraft'
 import type { CustomerDetails, OrderDraft } from '../data/orderDraft'
 import type { CartItem } from '../types/cart'
 import './OrderPage.css'
@@ -11,8 +11,15 @@ const priceFormat = new Intl.NumberFormat('es-PE', { style: 'currency', currency
 
 export default function OrderPage() {
   const { items } = useCart()
-  const [review, setReview] = useState<{ draft: OrderDraft; source: readonly CartItem[]; saved: boolean } | null>(null)
-  const [summaryError, setSummaryError] = useState('')
+  const [recovery] = useState(() => {
+    const result = loadOrderDraft()
+    const matchesCart = result.draft?.items.length === items.length && result.draft.items.every((line, index) =>
+      line.dishId === items[index].dishId && line.presentationId === items[index].presentationId && line.quantity === items[index].quantity)
+    return { ...result, draft: matchesCart ? result.draft : null }
+  })
+  const [review, setReview] = useState<{ draft: OrderDraft; source: readonly CartItem[]; saved: boolean; recovered?: boolean } | null>(() =>
+    recovery.draft ? { draft: recovery.draft, source: items, saved: true, recovered: true } : null)
+  const [summaryError, setSummaryError] = useState(recovery.error)
   const currentReview = review?.source === items ? review : null
   const clearReview = () => { setReview(null); setSummaryError('') }
   const generateSummary = (customer: CustomerDetails) => {
@@ -33,7 +40,8 @@ export default function OrderPage() {
     }
   }
   const { register, handleSubmit, control, clearErrors, formState: { errors } } = useForm<CustomerDetails>({
-    defaultValues: { deliveryMethod: 'delivery', name: '', phone: '', address: '' },
+    defaultValues: recovery.draft ? { ...recovery.draft.customer, address: recovery.draft.customer.address ?? '' }
+      : { deliveryMethod: 'delivery', name: '', phone: '', address: '' },
     mode: 'onSubmit',
     reValidateMode: 'onChange',
     shouldFocusError: true,
@@ -123,7 +131,9 @@ export default function OrderPage() {
         </div>
         <button type="submit" className="site-primary-link order-submit">Generar resumen y guardar borrador</button>
         <p className="order-status" role="status">
-          {currentReview?.saved ? 'Borrador guardado en este navegador. El pedido todavía no se ha enviado.' : ''}
+          {currentReview?.saved ? currentReview.recovered
+            ? 'Borrador recuperado de este navegador. El pedido todavía no se ha enviado.'
+            : 'Borrador guardado en este navegador. El pedido todavía no se ha enviado.' : ''}
         </p>
         {summaryError && <p className="order-error" role="alert">{summaryError}</p>}
       </form>
