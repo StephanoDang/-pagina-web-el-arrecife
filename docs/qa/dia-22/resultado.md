@@ -40,4 +40,8 @@ npx.cmd --yes --package chrome-devtools-mcp chrome-devtools evaluate_script 'asy
 
 Quedan por comprobar teléfono físico, selectores nativos de iOS/Android y lector de pantalla real. Las pruebas no verifican horarios comerciales, disponibilidad ni bloqueo de fechas pasadas: esas reglas siguen pendientes del día 23. No hay aforo, guardado ni envío de reservas en esta etapa.
 
-Segunda tarea terminada en emulación. La tercera tarea —cierre documental del día 22— sigue pendiente, al igual que las horas efectivas. Lint y build pasaron durante la primera tarea, sobre el mismo código de producción comprobado aquí.
+Las tres tareas del día 22 están completadas: formulario, pruebas móviles en emulación y cierre documental. Se consolidaron README, bitácora e informe con las evidencias y los límites anteriores. Las horas efectivas siguen pendientes de confirmar. Lint y build pasaron durante la primera tarea, sobre el mismo código de producción comprobado aquí; este cierre solo modifica documentación.
+
+El siguiente objetivo es el día 23, sábado 24/10: validación de horarios de atención y bloqueo de fechas pasadas. Se necesitan los horarios confirmados del restaurante para aplicar esa regla. Aforo y guardado de reservas permanecen en sus tareas posteriores. No se adelantaron esas funciones durante el cierre.
+
+Commits de evidencia: `92977e7` implementa el formulario y `f762dc7` registra las pruebas móviles. Mensaje propuesto para el cierre: `docs: close day 22 reservation progress and validation`.
