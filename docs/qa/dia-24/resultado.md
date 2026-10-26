@@ -35,6 +35,12 @@ Repetir `evaluate_script` después de emular el móvil. El [script](validar-limi
 
 Estas pruebas usan el formulario real con eventos sintéticos y recuperación de foco simulada. No equivalen a probar los selectores nativos en teléfono físico ni a esperar el cambio de minuto del temporizador en tiempo real. El horario sigue siendo provisional; no se verifican excepciones de feriados, aforo, guardado ni envío.
 
-La segunda tarea queda completada. Siguiente: tercera tarea del lunes, consolidar documentación y cierre del día. Se conservan los resultados de lint, build y las 48 pruebas automatizadas de la primera tarea; estas comprobaciones de navegador se ejecutan por separado de `npm test`. Horas efectivas pendientes de registrar.
+Las tres tareas del lunes quedan completadas: validación, pruebas de límites y cierre documental. README, bitácora e informe se consolidaron sin cambios en el código de producción. El siguiente objetivo es el día 25, martes 27/10: selección del número de personas y validación de aforo máximo. Antes de restringir personas se deben confirmar el límite por reserva y las reglas de aforo por sede. Se conservan los resultados de lint, build y las 48 pruebas automatizadas de la primera tarea; estas comprobaciones de navegador se ejecutan por separado de `npm test`. Horas efectivas pendientes de registrar.
 
 Mensaje de commit sugerido: `test: verify reservation date and opening-hour boundaries`.
+
+## Cierre documental del día 24
+
+Commits de referencia: `1422266` (fechas y horas pasadas), `f9413cc` (horario provisional) y `eab8d70` (pruebas de límites). El acumulado de objetivos al cierre técnico es 90/320 h del plan; no acredita horas efectivas.
+
+Mensaje sugerido para la tercera tarea: `docs: close day 24 reservation progress and validation`.
