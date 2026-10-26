@@ -3,20 +3,20 @@
 ## Plan actualizado
 
 - **Objetivo:** 320 horas previstas para desarrollar y poner en funcionamiento la web.
-- **Periodo reprogramado de objetivos:** lunes 28 de septiembre a jueves 17 de diciembre de 2026, como previsión de calendario; cierre real sujeto al avance y a las horas efectivas.
+- **Periodo reprogramado de objetivos:** lunes 28 de septiembre a viernes 18 de diciembre de 2026, como previsión de calendario; cierre real sujeto al avance y a las horas efectivas.
 - **Jornada:** 5 horas diarias, de lunes a sábado; domingos excluidos.
-- **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 69 registros de calendario. Dos registros son permisos sin trabajo y tres documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
+- **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 23/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 26/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 22 — viernes 23/10/2026, las tres tareas completadas: formulario de reservas, pruebas móviles en emulación con 17 casos correctos y cierre documental. Confirmación en teléfono físico y horas efectivas pendientes.
-- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10 y 85/320 h al cierre técnico del viernes 23/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19 y miércoles 21: horas pendientes de confirmar.
+- **Día actual:** día 24 — lunes 26/10/2026, primera tarea en curso: bloqueo de fechas y horas pasadas implementado y verificado; horarios de atención pendientes de confirmar. El sábado 24/10 se visitó la empresa para mostrar la web al jefe y hablar sobre los costos de despliegue mediante un enlace directo. Horas efectivas pendientes de confirmar.
+- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10 y 85/320 h al cierre técnico del viernes 23/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 23, primera tarea — validar horarios de atención y bloquear fechas pasadas (sábado 24/10). Confirmar los horarios del restaurante antes de restringir horas. El formulario actual permite revisión local; no guarda, envía ni confirma reservas. Aforo corresponde al día 24 y guardado al día 25. Horas efectivas pendientes de registrar.
+- **Siguiente tarea:** completar la primera tarea del día 24 con los horarios de atención confirmados; después realizar la segunda tarea de pruebas de límites en el formulario. El bloqueo de fechas y horas pasadas ya está implementado. El formulario permite revisión local; no guarda, envía ni confirma reservas. Aforo corresponde al día 25 y guardado al día 26. Horas efectivas pendientes de registrar.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, horarios y reglas del restaurante. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -54,6 +54,12 @@ El resumen de orden y LocalStorage pasa al jueves 22/10 (día 21). Todos los obj
 | Sábado 24/10 | Día 23 | Horarios y fechas pasadas. |
 | Lunes 26/10 | Día 24 | Número de personas y aforo. |
 
+## Reprogramación del 26/10/2026
+
+El sábado 24/10 se asistió a la empresa para mostrar la web al jefe y conversar sobre los costos para desplegarla y acceder mediante un enlace directo, según lo comunicado por el usuario. Importes, proveedor, acuerdos y horas efectivas pendientes de confirmar; no se ha comunicado contratación ni publicación.
+
+Los objetivos técnicos del sábado pasan al lunes 26/10 (día 24); los posteriores se desplazan una jornada de lunes a sábado, omitiendo domingos y conservando su orden y estado pendiente. El calendario pasa a 70 registros y el cierre previsto al viernes 18/12/2026. Se mantienen los 64 bloques y las 320 horas de referencia.
+
 ## Rutina y registro de las 5 horas
 
 Distribución prevista para las jornadas de desarrollo en WebStorm:
@@ -69,23 +75,23 @@ Marcar cada tarea cuando se termine; anotar horas efectivas, pruebas, evidencia 
 
 ## Resumen semanal
 
-Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10 no añaden horas estimadas. Sus horas reales se incorporarán cuando se confirmen.
+Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 y sábado 24/10 no añaden horas estimadas. Sus horas reales se incorporarán cuando se confirmen.
 
 | Semana | Registros | Periodo | Horas previstas de objetivos | Acumulado previsto |
 | --- | --- | --- | ---: | ---: |
 | 1 | 1–6 | 28/09/2026 – 03/10/2026 | 30 | 30 |
 | 2 | 7–11 | 05/10/2026 – 10/10/2026 | 25 | 55 |
 | 3 | 12–17 | 12/10/2026 – 17/10/2026 | 15 | 70 |
-| 4 | 18–23 | 19/10/2026 – 24/10/2026 | 20 | 90 |
-| 5 | 24–29 | 26/10/2026 – 31/10/2026 | 30 | 120 |
-| 6 | 30–35 | 02/11/2026 – 07/11/2026 | 30 | 150 |
-| 7 | 36–41 | 09/11/2026 – 14/11/2026 | 30 | 180 |
-| 8 | 42–47 | 16/11/2026 – 21/11/2026 | 30 | 210 |
-| 9 | 48–53 | 23/11/2026 – 28/11/2026 | 30 | 240 |
-| 10 | 54–59 | 30/11/2026 – 05/12/2026 | 30 | 270 |
-| 11 | 60–65 | 07/12/2026 – 12/12/2026 | 30 | 300 |
-| 12 | 66–69 | 14/12/2026 – 17/12/2026 | 20 | 320 |
-| **Total** | **69 registros; 64 bloques de objetivos** | **28/09/2026 – 17/12/2026** | **320** | **320** |
+| 4 | 18–23 | 19/10/2026 – 24/10/2026 | 15 | 85 |
+| 5 | 24–29 | 26/10/2026 – 31/10/2026 | 30 | 115 |
+| 6 | 30–35 | 02/11/2026 – 07/11/2026 | 30 | 145 |
+| 7 | 36–41 | 09/11/2026 – 14/11/2026 | 30 | 175 |
+| 8 | 42–47 | 16/11/2026 – 21/11/2026 | 30 | 205 |
+| 9 | 48–53 | 23/11/2026 – 28/11/2026 | 30 | 235 |
+| 10 | 54–59 | 30/11/2026 – 05/12/2026 | 30 | 265 |
+| 11 | 60–65 | 07/12/2026 – 12/12/2026 | 30 | 295 |
+| 12 | 66–70 | 14/12/2026 – 18/12/2026 | 25 | 320 |
+| **Total** | **70 registros; 64 bloques de objetivos** | **28/09/2026 – 18/12/2026** | **320** | **320** |
 
 ## Calendario y registro diario
 
@@ -395,22 +401,34 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** `92977e7` implementa el formulario y `f762dc7` registra las pruebas. Script, 17 resultados JSON, informe y dos capturas en `docs/qa/dia-22/`. Mensaje de esta tercera entrega: `docs: close day 22 reservation progress and validation`.
 - **Pendientes y siguiente paso:** Día 23, primera tarea: validación de horarios y bloqueo de fechas pasadas; horarios comerciales pendientes de confirmar. Confirmar en teléfono físico los selectores nativos de fecha/hora. Número de personas/aforo y guardado de reservas permanecen en sus tareas posteriores. Horas efectivas sin registrar.
 
-### Día 23 — Sábado 24/10/2026 — Reservas
+### Día 23 — Sábado 24/10/2026 — Visita a la empresa y costos de despliegue
 
-- **Reprogramación:** objetivos del antiguo día 18 (Lunes 19/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
-- **Horas previstas:** 5 h. **Acumulado previsto:** 90/320 h.
-- [ ] Validación de horarios de atención y bloqueo de fechas pasadas.
-- [ ] Probar límites de horario y fechas anteriores al día actual.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- **Estado:** Actividades realizadas, según lo comunicado por el usuario; cierre horario pendiente.
+- **Horas previstas:** sin bloque técnico asignado; horas de la visita pendientes de confirmar. **Acumulado previsto de objetivos:** 85/320 h.
+- [x] Asistir a la empresa y mostrar la web al jefe.
+- [x] Conversar sobre los costos para desplegar la web y acceder mediante un enlace directo.
+- [ ] Registrar importes, proveedor y acuerdos cuando se confirmen.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Presentación de la web y conversación sobre los costos de despliegue reportadas por el usuario. Importes, contratación y publicación pendientes de confirmar.
+- **Commits / evidencia:** Relato del usuario sobre la visita del sábado 24/10/2026.
+- **Pendientes y siguiente paso:** Retomar horarios y fechas pasadas el lunes 26/10, día 24. Confirmar horarios del restaurante, costos, acuerdos y tiempo efectivo.
 
 ### Día 24 — Lunes 26/10/2026 — Reservas
 
-- **Reprogramación:** objetivos del antiguo día 19 (Martes 20/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 18 (Lunes 19/10/2026), conservados en su orden original.
+- **Estado:** Primera tarea parcialmente implementada; horarios de atención pendientes de confirmar.
+- **Horas previstas:** 5 h. **Acumulado previsto:** 90/320 h.
+- [ ] Validación de horarios de atención y bloqueo de fechas pasadas. *(Bloqueo de fechas y horas pasadas completado; falta confirmar y aplicar los horarios comerciales.)*
+- [ ] Probar límites de horario y fechas anteriores al día actual.
+- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- **Horas efectivas:** pendientes de registrar.
+- **Resultado y pruebas:** Primera tarea: `/reservas` utiliza `America/Lima` para el día y la hora del restaurante, independientemente de la zona del visitante. El campo de fecha incluye `min` de hoy; la validación rechaza fechas anteriores, inexistentes y formatos inválidos. Para hoy se rechazan horas pasadas y el minuto en curso; se conserva la precisión de minutos. Se valida al enviar, al cambiar la fecha se revalida la hora y el reloj se refresca cada minuto y al recuperar el foco, retirando la revisión anterior. Errores accesibles y revisión local conservados. No se aplican horarios de atención sin confirmación. `npm run lint` y `npm run build` correctos; 46 pruebas automatizadas aprobadas, incluidas cuatro nuevas de validación de reservas (zona horaria y medianoche, fechas inválidas/bisiestas, horas y paso del tiempo). Las pruebas de límites en navegador de la segunda tarea siguen pendientes.
+- **Commits / evidencia:** Implementación en `src/data/reservationValidation.ts` y `src/pages/ReservationPage.tsx`; pruebas en `tests/reservation-validation.test.mjs`. Mensaje sugerido: `feat: reject past reservation dates and times in Peru timezone`.
+- **Pendientes y siguiente paso:** Confirmar días y horarios de atención de las sedes para completar la primera tarea; después probar los límites en el formulario como segunda tarea. La tercera tarea y el cierre horario permanecen pendientes.
+
+### Día 25 — Martes 27/10/2026 — Reservas
+
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 19 (Martes 20/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 95/320 h.
 - [ ] Lógica de selección de número de personas y validación de aforo máximo.
@@ -421,9 +439,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 25 — Martes 27/10/2026 — Reservas
+### Día 26 — Miércoles 28/10/2026 — Reservas
 
-- **Reprogramación:** objetivos del antiguo día 20 (Miércoles 21/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 20 (Miércoles 21/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 100/320 h.
 - [ ] Guardado de reserva en LocalStorage y vista de confirmación al usuario.
@@ -434,9 +452,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 26 — Miércoles 28/10/2026 — Backoffice
+### Día 27 — Jueves 29/10/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 21 (Jueves 22/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 21 (Jueves 22/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 105/320 h.
 - [ ] Creación de layout administrativo (Sidebar, Topbar) y protección de rutas.
@@ -447,9 +465,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 27 — Jueves 29/10/2026 — Backoffice
+### Día 28 — Viernes 30/10/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 22 (Viernes 23/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 22 (Viernes 23/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 110/320 h.
 - [ ] Pantalla de Login simulada con credenciales estáticas y AuthContext.
@@ -460,9 +478,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 28 — Viernes 30/10/2026 — Backoffice
+### Día 29 — Sábado 31/10/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 23 (Sábado 24/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 23 (Sábado 24/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 115/320 h.
 - [ ] Panel de inicio (Dashboard) con estadísticas simuladas.
@@ -473,9 +491,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 29 — Sábado 31/10/2026 — Backoffice
+### Día 30 — Lunes 02/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 24 (Lunes 26/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 24 (Lunes 26/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 120/320 h.
 - [ ] Componentes reutilizables para el backoffice (Tablas, Botones, Modales).
@@ -486,9 +504,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 30 — Lunes 02/11/2026 — Backoffice
+### Día 31 — Martes 03/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 25 (Martes 27/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 25 (Martes 27/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 125/320 h.
 - [ ] Pantalla de gestión de platos: Tabla interactiva con datos simulados.
@@ -499,9 +517,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 31 — Martes 03/11/2026 — Backoffice
+### Día 32 — Miércoles 04/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 26 (Miércoles 28/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 26 (Miércoles 28/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 130/320 h.
 - [ ] Formulario modal para creación de nuevos platos con validación.
@@ -512,9 +530,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 32 — Miércoles 04/11/2026 — Backoffice
+### Día 33 — Jueves 05/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 27 (Jueves 29/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 27 (Jueves 29/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 135/320 h.
 - [ ] Lógica para editar platos existentes y reflejar cambios en estado global.
@@ -525,9 +543,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 33 — Jueves 05/11/2026 — Backoffice
+### Día 34 — Viernes 06/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 28 (Viernes 30/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 28 (Viernes 30/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 140/320 h.
 - [ ] Lógica de eliminación lógica de platos (desactivar vs borrar).
@@ -538,9 +556,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 34 — Viernes 06/11/2026 — Backoffice
+### Día 35 — Sábado 07/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 29 (Sábado 31/10/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 29 (Sábado 31/10/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 145/320 h.
 - [ ] Sincronización de gestión administrativa con carta pública (LocalStorage).
@@ -551,9 +569,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 35 — Sábado 07/11/2026 — Backoffice
+### Día 36 — Lunes 09/11/2026 — Backoffice
 
-- **Reprogramación:** objetivos del antiguo día 30 (Lunes 02/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 30 (Lunes 02/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 150/320 h.
 - [ ] Filtros y paginación en la tabla de gestión de platos.
@@ -564,9 +582,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 36 — Lunes 09/11/2026 — Pedidos
+### Día 37 — Martes 10/11/2026 — Pedidos
 
-- **Reprogramación:** objetivos del antiguo día 31 (Martes 03/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 31 (Martes 03/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 155/320 h.
 - [ ] Pantalla de gestión de pedidos: Tabla de órdenes entrantes.
@@ -577,9 +595,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 37 — Martes 10/11/2026 — Pedidos
+### Día 38 — Miércoles 11/11/2026 — Pedidos
 
-- **Reprogramación:** objetivos del antiguo día 32 (Miércoles 04/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 32 (Miércoles 04/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 160/320 h.
 - [ ] Creación de interfaz tipo Kanban para estados (Pendiente, En Preparación).
@@ -590,9 +608,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 38 — Miércoles 11/11/2026 — Pedidos
+### Día 39 — Jueves 12/11/2026 — Pedidos
 
-- **Reprogramación:** objetivos del antiguo día 33 (Jueves 05/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 33 (Jueves 05/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 165/320 h.
 - [ ] Lógica de drag and drop o botones para mover pedidos de estado.
@@ -603,9 +621,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 39 — Jueves 12/11/2026 — Pedidos
+### Día 40 — Viernes 13/11/2026 — Pedidos
 
-- **Reprogramación:** objetivos del antiguo día 34 (Viernes 06/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 34 (Viernes 06/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 170/320 h.
 - [ ] Vista de detalle de pedido administrativo con productos e información del cliente.
@@ -616,9 +634,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 40 — Viernes 13/11/2026 — Pedidos
+### Día 41 — Sábado 14/11/2026 — Pedidos
 
-- **Reprogramación:** objetivos del antiguo día 35 (Sábado 07/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 35 (Sábado 07/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 175/320 h.
 - [ ] Filtros por fecha y estado en el historial de pedidos.
@@ -629,9 +647,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 41 — Sábado 14/11/2026 — Reservas Admin
+### Día 42 — Lunes 16/11/2026 — Reservas Admin
 
-- **Reprogramación:** objetivos del antiguo día 36 (Lunes 09/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 36 (Lunes 09/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 180/320 h.
 - [ ] Pantalla de gestión de reservas para personal administrativo.
@@ -642,9 +660,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 42 — Lunes 16/11/2026 — Reservas Admin
+### Día 43 — Martes 17/11/2026 — Reservas Admin
 
-- **Reprogramación:** objetivos del antiguo día 37 (Martes 10/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 37 (Martes 10/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 185/320 h.
 - [ ] Acciones para confirmar o cancelar reservas con actualización de estado.
@@ -655,9 +673,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 43 — Martes 17/11/2026 — Reservas Admin
+### Día 44 — Miércoles 18/11/2026 — Reservas Admin
 
-- **Reprogramación:** objetivos del antiguo día 38 (Miércoles 11/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 38 (Miércoles 11/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 190/320 h.
 - [ ] Filtro de reservas por día de la semana y estado.
@@ -668,9 +686,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 44 — Miércoles 18/11/2026 — Datos compartidos: diseño
+### Día 45 — Jueves 19/11/2026 — Datos compartidos: diseño
 
-- **Reprogramación:** objetivos del antiguo día 39 (Jueves 12/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 39 (Jueves 12/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 195/320 h.
 - [ ] Definir tablas de platos, pedidos, detalles y reservas y sus relaciones.
@@ -681,9 +699,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 45 — Jueves 19/11/2026 — Datos compartidos: entorno
+### Día 46 — Viernes 20/11/2026 — Datos compartidos: entorno
 
-- **Reprogramación:** objetivos del antiguo día 40 (Viernes 13/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 40 (Viernes 13/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 200/320 h.
 - [ ] Configurar el servicio de datos y las variables de entorno para desarrollo.
@@ -694,9 +712,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 46 — Viernes 20/11/2026 — Autenticación administrativa
+### Día 47 — Sábado 21/11/2026 — Autenticación administrativa
 
-- **Reprogramación:** objetivos del antiguo día 41 (Sábado 14/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 41 (Sábado 14/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 205/320 h.
 - [ ] Sustituir el login simulado por autenticación real del personal.
@@ -707,9 +725,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 47 — Sábado 21/11/2026 — Permisos de datos
+### Día 48 — Lunes 23/11/2026 — Permisos de datos
 
-- **Reprogramación:** objetivos del antiguo día 42 (Lunes 16/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 42 (Lunes 16/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 210/320 h.
 - [ ] Aplicar permisos de lectura y escritura en el servicio o servidor.
@@ -720,9 +738,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 48 — Lunes 23/11/2026 — Carta conectada
+### Día 49 — Martes 24/11/2026 — Carta conectada
 
-- **Reprogramación:** objetivos del antiguo día 43 (Martes 17/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 43 (Martes 17/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 215/320 h.
 - [ ] Conectar carta y gestión de platos con el almacenamiento compartido.
@@ -733,9 +751,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 49 — Martes 24/11/2026 — Pedidos conectados
+### Día 50 — Miércoles 25/11/2026 — Pedidos conectados
 
-- **Reprogramación:** objetivos del antiguo día 44 (Miércoles 18/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 44 (Miércoles 18/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 220/320 h.
 - [ ] Guardar pedidos y sus detalles en el servicio compartido.
@@ -746,9 +764,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 50 — Miércoles 25/11/2026 — Reservas conectadas
+### Día 51 — Jueves 26/11/2026 — Reservas conectadas
 
-- **Reprogramación:** objetivos del antiguo día 45 (Jueves 19/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 45 (Jueves 19/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 225/320 h.
 - [ ] Guardar reservas con validación de fechas, horarios y capacidad en el servidor.
@@ -759,9 +777,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 51 — Jueves 26/11/2026 — Estados administrativos conectados
+### Día 52 — Viernes 27/11/2026 — Estados administrativos conectados
 
-- **Reprogramación:** objetivos del antiguo día 46 (Viernes 20/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 46 (Viernes 20/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 230/320 h.
 - [ ] Persistir cambios de estado de pedidos y reservas con control de permisos.
@@ -772,9 +790,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 52 — Viernes 27/11/2026 — Errores y recuperación
+### Día 53 — Sábado 28/11/2026 — Errores y recuperación
 
-- **Reprogramación:** objetivos del antiguo día 47 (Sábado 21/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 47 (Sábado 21/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 235/320 h.
 - [ ] Agregar estados de carga, error y reintento a las operaciones conectadas.
@@ -785,9 +803,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 53 — Sábado 28/11/2026 — Respaldo y operación
+### Día 54 — Lunes 30/11/2026 — Respaldo y operación
 
-- **Reprogramación:** objetivos del antiguo día 48 (Lunes 23/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 48 (Lunes 23/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 240/320 h.
 - [ ] Documentar respaldo, restauración y configuración del entorno publicado.
@@ -798,9 +816,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 54 — Lunes 30/11/2026 — Integración
+### Día 55 — Martes 01/12/2026 — Integración
 
-- **Reprogramación:** objetivos del antiguo día 49 (Martes 24/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 49 (Martes 24/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 245/320 h.
 - [ ] Pruebas de flujo completo: Cliente hace pedido -> Admin lo recibe y procesa.
@@ -811,9 +829,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 55 — Martes 01/12/2026 — Integración
+### Día 56 — Miércoles 02/12/2026 — Integración
 
-- **Reprogramación:** objetivos del antiguo día 50 (Miércoles 25/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 50 (Miércoles 25/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 250/320 h.
 - [ ] Pruebas de flujo completo: Cliente reserva -> Admin confirma.
@@ -824,9 +842,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 56 — Miércoles 02/12/2026 — QA
+### Día 57 — Jueves 03/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 51 (Jueves 26/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 51 (Jueves 26/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 255/320 h.
 - [ ] Revisión de responsive design en móviles para la carta pública y checkout.
@@ -837,9 +855,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 57 — Jueves 03/12/2026 — QA
+### Día 58 — Viernes 04/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 52 (Viernes 27/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 52 (Viernes 27/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 260/320 h.
 - [ ] Ajustes de UI/UX en dispositivos de pantalla pequeña.
@@ -850,9 +868,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 58 — Viernes 04/12/2026 — QA
+### Día 59 — Sábado 05/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 53 (Sábado 28/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 53 (Sábado 28/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 265/320 h.
 - [ ] Solución de bugs de estado global al recargar la página (Persistencia).
@@ -863,9 +881,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 59 — Sábado 05/12/2026 — QA
+### Día 60 — Lunes 07/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 54 (Lunes 30/11/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 54 (Lunes 30/11/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 270/320 h.
 - [ ] Optimización de carga de imágenes (simuladas) y lazy loading.
@@ -876,9 +894,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 60 — Lunes 07/12/2026 — QA
+### Día 61 — Martes 08/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 55 (Martes 01/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 55 (Martes 01/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 275/320 h.
 - [ ] Auditoría de accesibilidad (Lighthouse) y corrección de contrastes/etiquetas.
@@ -889,9 +907,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 61 — Martes 08/12/2026 — QA
+### Día 62 — Miércoles 09/12/2026 — QA
 
-- **Reprogramación:** objetivos del antiguo día 56 (Miércoles 02/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 56 (Miércoles 02/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 280/320 h.
 - [ ] Pruebas de usabilidad en el Backoffice (formularios y tablas).
@@ -902,9 +920,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 62 — Miércoles 09/12/2026 — Refactor
+### Día 63 — Jueves 10/12/2026 — Refactor
 
-- **Reprogramación:** objetivos del antiguo día 57 (Jueves 03/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 57 (Jueves 03/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 285/320 h.
 - [ ] Refactorización de código: extracción de componentes complejos.
@@ -915,9 +933,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 63 — Jueves 10/12/2026 — Refactor
+### Día 64 — Viernes 11/12/2026 — Refactor
 
-- **Reprogramación:** objetivos del antiguo día 58 (Viernes 04/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 58 (Viernes 04/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 290/320 h.
 - [ ] Limpieza de console.logs y comentarios residuales en el código.
@@ -928,9 +946,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 64 — Viernes 11/12/2026 — Documentación
+### Día 65 — Sábado 12/12/2026 — Documentación
 
-- **Reprogramación:** objetivos del antiguo día 59 (Sábado 05/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 59 (Sábado 05/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 295/320 h.
 - [ ] Redacción de README.md técnico detallando arquitectura y tecnologías.
@@ -941,9 +959,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 65 — Sábado 12/12/2026 — Documentación
+### Día 66 — Lunes 14/12/2026 — Documentación
 
-- **Reprogramación:** objetivos del antiguo día 60 (Lunes 07/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 60 (Lunes 07/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 300/320 h.
 - [ ] Generación de diagramas de componentes y flujo de datos para el informe.
@@ -954,9 +972,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 66 — Lunes 14/12/2026 — Documentación
+### Día 67 — Martes 15/12/2026 — Documentación
 
-- **Reprogramación:** objetivos del antiguo día 61 (Martes 08/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 61 (Martes 08/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 305/320 h.
 - [ ] Toma de capturas de pantalla de la plataforma en funcionamiento (Mobile/Desktop).
@@ -967,9 +985,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 67 — Martes 15/12/2026 — Despliegue
+### Día 68 — Miércoles 16/12/2026 — Despliegue
 
-- **Reprogramación:** objetivos del antiguo día 62 (Miércoles 09/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 62 (Miércoles 09/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 310/320 h.
 - [ ] Configuración de entorno de producción simulado (Vercel/Netlify).
@@ -980,9 +998,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 68 — Miércoles 16/12/2026 — Despliegue
+### Día 69 — Jueves 17/12/2026 — Despliegue
 
-- **Reprogramación:** objetivos del antiguo día 63 (Jueves 10/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 63 (Jueves 10/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 315/320 h.
 - [ ] Despliegue de la versión 1.0 y pruebas en ambiente en vivo.
@@ -993,9 +1011,9 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10 y miércoles 21/10
 - **Commits / evidencia:** —
 - **Pendientes y siguiente paso:** —
 
-### Día 69 — Jueves 17/12/2026 — Cierre
+### Día 70 — Viernes 18/12/2026 — Cierre
 
-- **Reprogramación:** objetivos del antiguo día 64 (Viernes 11/12/2026), conservados en su orden original.
+- **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 64 (Viernes 11/12/2026), conservados en su orden original.
 - **Estado:** Pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 320/320 h.
 - [ ] Revisión final de métricas de horas y consolidación del repositorio.
@@ -1012,4 +1030,4 @@ El plan empieza con datos de ejemplo, LocalStorage y acceso simulado para constr
 
 La entrega incluye carta pública, carrito, registro de pedidos, reservas, administración, pruebas, documentación y despliegue. Las reglas y contenidos del restaurante se confirmarán durante el desarrollo.
 
-Tras la reprogramación del 22/10, los 64 bloques de objetivos conservan 320 horas de referencia y terminan provisionalmente el 17/12/2026. Se excluyen el feriado del 08/10 y los permisos del 15 y 16/10; las actividades del 17, 19 y 21/10 se conservan como registros complementarios sin asignarles horas no confirmadas. El cierre horario se calculará con las horas efectivas, incluidas esas actividades cuando se confirmen. La fecha prevista no acredita por sí misma haber trabajado 320 horas.
+Tras la reprogramación del 26/10, los 64 bloques de objetivos conservan 320 horas de referencia y terminan provisionalmente el 18/12/2026. Se excluyen el feriado del 08/10 y los permisos del 15 y 16/10; las actividades del 17, 19, 21 y 24/10 se conservan como registros complementarios sin asignarles horas no confirmadas. El cierre horario se calculará con las horas efectivas, incluidas esas actividades cuando se confirmen. La fecha prevista no acredita por sí misma haber trabajado 320 horas.
