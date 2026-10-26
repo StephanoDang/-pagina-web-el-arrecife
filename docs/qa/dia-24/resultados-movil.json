@@ -1,0 +1,203 @@
+{
+  "casos": 48,
+  "resultados": [
+    {
+      "caso": "Límites nativos: hoy en Perú y 10:00–17:59",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Horario identificado como provisional",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Campos vacíos",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Campos vacíos: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Fecha de ayer rechazada",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Fecha de ayer rechazada: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto anterior a apertura",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto anterior a apertura: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura del lunes aceptada",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura del lunes aceptada: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Último minuto antes del cierre",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Último minuto antes del cierre: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cierre rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cierre rechazado: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto posterior al cierre",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto posterior al cierre: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-27",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-27: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-28",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-28: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-29",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-29: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-30",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-30: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-31",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-10-31: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-11-01",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura aceptada 2026-11-01: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hora pasada hoy",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hora pasada hoy: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto actual rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto actual rechazado: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto futuro aceptado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Minuto futuro aceptado: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hora anterior válida mañana",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hora anterior válida mañana: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cambiar mañana por hoy retira revisión y revalida hora pasada",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hoy después del cierre",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Hoy después del cierre: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Mañana después del cierre de hoy",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Mañana después del cierre de hoy: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Día de Perú antes de medianoche aunque UTC sea mañana",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Medianoche actualiza min y retira revisión al recuperar foco",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Día anterior tras medianoche",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Día anterior tras medianoche: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura del nuevo día",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Apertura del nuevo día: revisión local correcta",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Sin desbordamiento horizontal",
+      "resultado": "correcto"
+    }
+  ],
+  "relojSimulado": true,
+  "viewport": [
+    320,
+    568
+  ],
+  "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36"
+}
