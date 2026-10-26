@@ -1,3 +1,11 @@
+// Horario provisional autorizado por el usuario: todos los días, incluido lunes.
+// Los feriados pueden variar; no hay excepciones confirmadas todavía.
+export const reservationHours = {
+  opens: '10:00',
+  closes: '18:00',
+  lastStart: '17:59', // Precisión de minutos; no iniciar una visita al cierre.
+} as const
+
 // Las dos sedes están en Perú. No depender de la zona horaria del visitante.
 export function getRestaurantClock(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {
@@ -22,6 +30,9 @@ export function validateReservationDate(date: string, now = new Date()): true | 
 
 export function validateReservationTime(time: string, date: string, now = new Date()): true | string {
   if (!/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) return 'Elige una hora válida.'
+  if (time < reservationHours.opens || time >= reservationHours.closes) {
+    return 'Elige una hora desde las 10:00 y antes de las 18:00 (hora de Perú).'
+  }
   const clock = getRestaurantClock(now)
   // El minuto en curso ya empezó; la revisión debe corresponder a una hora futura.
   if (date === clock.date && time <= clock.time) return 'Elige una hora futura, según la hora de Perú.'

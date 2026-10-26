@@ -23,7 +23,7 @@ test('rechaza horas pasadas y el minuto actual; acepta minutos futuros y otros d
     assert.equal(typeof validateReservationTime(time, '2026-10-26', now), 'string', time)
   }
   assert.equal(validateReservationTime('14:31', '2026-10-26', now), true)
-  assert.equal(validateReservationTime('00:00', '2026-10-27', now), true)
+  assert.equal(validateReservationTime('10:00', '2026-10-27', now), true)
   for (const time of ['', '24:00', '12:60', '9:00', '12:30:00']) {
     assert.equal(typeof validateReservationTime(time, '2026-10-27', now), 'string', time)
   }
@@ -33,4 +33,21 @@ test('revalida con el reloj actualizado al pasar el tiempo y cambiar de día', (
   assert.equal(validateReservationTime('14:31', '2026-10-26', now), true)
   assert.equal(typeof validateReservationTime('14:31', '2026-10-26', new Date('2026-10-26T19:31:00Z')), 'string')
   assert.equal(typeof validateReservationDate('2026-10-26', new Date('2026-10-27T05:00:00Z')), 'string')
+})
+
+test('aplica el horario provisional todos los días, incluido el lunes', () => {
+  const beforeOpening = new Date('2026-10-26T14:00:00Z') // Lunes, 09:00 en Perú.
+  for (const date of ['2026-10-26', '2026-10-27', '2026-10-28', '2026-10-29', '2026-10-30', '2026-10-31', '2026-11-01']) {
+    assert.equal(validateReservationTime('10:00', date, beforeOpening), true, date)
+    assert.equal(validateReservationTime('17:59', date, beforeOpening), true, date)
+    for (const time of ['00:00', '09:59', '18:00', '18:01', '23:59']) {
+      assert.equal(typeof validateReservationTime(time, date, beforeOpening), 'string', `${date} ${time}`)
+    }
+  }
+})
+
+test('tras el cierre no acepta visitas para hoy, pero permite el siguiente día', () => {
+  const afterClosing = new Date('2026-10-26T23:00:00Z')
+  assert.equal(typeof validateReservationTime('17:59', '2026-10-26', afterClosing), 'string')
+  assert.equal(validateReservationTime('10:00', '2026-10-27', afterClosing), true)
 })

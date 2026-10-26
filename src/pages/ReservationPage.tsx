@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { getRestaurantClock, validateReservationDate, validateReservationTime } from '../data/reservationValidation'
+import { getRestaurantClock, reservationHours, validateReservationDate, validateReservationTime } from '../data/reservationValidation'
 import './ReservationPage.css'
 
 interface ReservationDetails {
@@ -38,7 +38,9 @@ export default function ReservationPage() {
       <h1 id="reservation-title">Planifica tu visita</h1>
       <p className="reservation-intro">Elige una fecha y una hora. Ambos campos son obligatorios.</p>
       <p className="reservation-notice" id="reservation-availability">
-        Fechas y horas según la hora de Perú. Horarios de atención y disponibilidad por confirmar con el restaurante.
+        Horario provisional: lunes a domingo, de 10:00 a 18:00 (hora de Perú).
+        Elige una hora anterior al cierre. Los horarios pueden variar en feriados.
+        Disponibilidad por confirmar con el restaurante.
       </p>
       <form className="reservation-form" noValidate aria-describedby="reservation-availability"
         onChange={() => setReviewed(false)}
@@ -59,6 +61,7 @@ export default function ReservationPage() {
           <div className="reservation-field">
             <label htmlFor="reservation-time">Hora de la visita</label>
             <input id="reservation-time" type="time" step={60} required
+              min={reservationHours.opens} max={reservationHours.lastStart}
               aria-invalid={Boolean(errors.time)}
               aria-describedby={errors.time ? 'reservation-time-error' : undefined}
               {...register('time', {
