@@ -82,16 +82,14 @@ export default function ReservationPage() {
                 validate: (value) => validateReservationPeople(value),
               })} />
             <p className="reservation-help" id="reservation-people-help">
-              {reservationPartyPolicy.maxPerReservation === null
-                ? 'El máximo por reserva y el aforo están pendientes de confirmar con el restaurante.'
-                : `Máximo ${reservationPartyPolicy.maxPerReservation} personas por reserva. Disponibilidad por confirmar.`}
+              Indica cuántas personas asistirán a la visita.
             </p>
             {errors.people && <p className="reservation-error" id="reservation-people-error" role="alert">{errors.people.message}</p>}
           </div>
         </div>
         <button type="submit" className="site-primary-link reservation-submit">Revisar datos de la visita</button>
         <p className="reservation-status" role="status">
-          {reviewed ? `Datos revisados para ${Number(getValues('people'))} ${Number(getValues('people')) === 1 ? 'persona' : 'personas'}. La reserva todavía no se ha enviado ni confirmado. El aforo y la disponibilidad deben confirmarse con el restaurante.` : ''}
+          {reviewed ? `Datos revisados para ${Number(getValues('people'))} ${Number(getValues('people')) === 1 ? 'persona' : 'personas'}. La reserva todavía no se ha enviado ni confirmado.` : ''}
         </p>
       </form>
     </section>

@@ -28,7 +28,8 @@ async () => {
     }
   }
   check(people.type === 'number' && people.required && people.min === '1' && people.step === '1', 'Campo numérico obligatorio y entero positivo')
-  check(!people.hasAttribute('max') && document.getElementById('reservation-people-help').textContent.includes('pendientes de confirmar'), 'Sin máximo inventado y aviso de aforo pendiente')
+  check(people.max === '10', 'Máximo nativo de diez personas')
+  check(!form.textContent.includes('120') && !form.textContent.includes('pendientes de confirmar') && !form.textContent.includes('aforo'), 'Aforo y pendientes internos ausentes del formulario')
   await submit('Cantidad vacía', '', true)
   await submit('Cero rechazado', '0', true)
   await submit('Negativo rechazado', '-1', true)
@@ -37,6 +38,9 @@ async () => {
   await submit('Entero inseguro rechazado', '9007199254740992', true)
   await submit('Una persona aceptada', '1', false)
   await submit('Grupo de cuatro aceptado', '4', false)
+  await submit('Máximo de diez aceptado', '10', false)
+  await submit('Once personas rechazadas', '11', true)
+  await submit('Aforo no permite saltar máximo por reserva', '120', true)
   fill(people, '5')
   await settle()
   check(!status(), 'Editar personas retira la revisión anterior')
@@ -54,5 +58,5 @@ async () => {
   check(Boolean(document.getElementById('reservation-time-error')) && !status(), 'Regresión: cierre rechazado con personas válidas')
   await submit('Revisión final válida', '4', false)
   check(document.documentElement.scrollWidth <= innerWidth, 'Sin desbordamiento horizontal')
-  return { casos: results.length, resultados: results, fechaPrueba: new Date().toISOString(), viewport: [innerWidth, innerHeight], navegador: navigator.userAgent, maximoComercialConfirmado: false }
+  return { casos: results.length, resultados: results, fechaPrueba: new Date().toISOString(), viewport: [innerWidth, innerHeight], navegador: navigator.userAgent, maximoProvisionalAutorizado: 10 }
 }

@@ -6,9 +6,11 @@ export const reservationHours = {
   lastStart: '17:59', // Precisión de minutos; no iniciar una visita al cierre.
 } as const
 
-// Pendiente de confirmar con el restaurante; no equivale al aforo disponible.
-export const reservationPartyPolicy: { maxPerReservation: number | null } = {
-  maxPerReservation: null,
+// Valores provisionales autorizados el 27/10; confirmar alcance por sede.
+// El aforo de referencia no equivale a plazas disponibles en tiempo real.
+export const reservationPartyPolicy: { maxPerReservation: number | null; capacity: number } = {
+  maxPerReservation: 10,
+  capacity: 120,
 }
 
 export function validateReservationPeople(

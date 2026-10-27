@@ -2,10 +2,14 @@ import assert from 'node:assert/strict'
 import test from 'node:test'
 import { reservationPartyPolicy, validateReservationPeople } from '../src/data/reservationValidation.ts'
 
-test('el máximo comercial queda pendiente sin inventar aforo', () => {
-  assert.equal(reservationPartyPolicy.maxPerReservation, null)
+test('aplica el límite autorizado de diez personas y registra el aforo de referencia', () => {
+  assert.equal(reservationPartyPolicy.maxPerReservation, 10)
+  assert.equal(reservationPartyPolicy.capacity, 120)
   assert.equal(validateReservationPeople('1'), true)
-  assert.equal(validateReservationPeople('25'), true)
+  assert.equal(validateReservationPeople('10'), true)
+  for (const count of ['11', '120', '121']) {
+    assert.equal(validateReservationPeople(count), 'El máximo por reserva es de 10 personas.')
+  }
 })
 
 test('rechaza cantidades vacías, cero, negativas, decimales, exponentes y enteros inseguros', () => {

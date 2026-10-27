@@ -1,0 +1,144 @@
+{
+  "casos": 33,
+  "resultados": [
+    {
+      "caso": "Campo numérico obligatorio y entero positivo",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Máximo nativo de diez personas",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Aforo y pendientes internos ausentes del formulario",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cantidad vacía",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cantidad vacía: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cero rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Cero rechazado: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Negativo rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Negativo rechazado: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Decimal rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Decimal rechazado: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Exponente rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Exponente rechazado: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Entero inseguro rechazado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Entero inseguro rechazado: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Una persona aceptada",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Una persona aceptada: cantidad revisada localmente",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Grupo de cuatro aceptado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Grupo de cuatro aceptado: cantidad revisada localmente",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Máximo de diez aceptado",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Máximo de diez aceptado: cantidad revisada localmente",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Once personas rechazadas",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Once personas rechazadas: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Aforo no permite saltar máximo por reserva",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Aforo no permite saltar máximo por reserva: foco, error asociado y sin revisión",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Editar personas retira la revisión anterior",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Corregir a cinco permite revisar",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Corregir a cinco permite revisar: cantidad revisada localmente",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Regresión: fecha pasada rechazada con personas válidas",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Regresión: cierre rechazado con personas válidas",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Revisión final válida",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Revisión final válida: cantidad revisada localmente",
+      "resultado": "correcto"
+    },
+    {
+      "caso": "Sin desbordamiento horizontal",
+      "resultado": "correcto"
+    }
+  ],
+  "fechaPrueba": "2026-10-27T17:21:14.029Z",
+  "viewport": [
+    1440,
+    900
+  ],
+  "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "maximoProvisionalAutorizado": 10
+}
