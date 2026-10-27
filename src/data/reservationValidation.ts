@@ -6,6 +6,29 @@ export const reservationHours = {
   lastStart: '17:59', // Precisión de minutos; no iniciar una visita al cierre.
 } as const
 
+// Pendiente de confirmar con el restaurante; no equivale al aforo disponible.
+export const reservationPartyPolicy: { maxPerReservation: number | null } = {
+  maxPerReservation: null,
+}
+
+export function validateReservationPeople(
+  value: string,
+  maxPerReservation: number | null = reservationPartyPolicy.maxPerReservation,
+): true | string {
+  if (!/^\d+$/.test(value) || !Number.isSafeInteger(Number(value)) || Number(value) < 1) {
+    return 'Indica un número entero de personas, como mínimo 1.'
+  }
+  if (maxPerReservation !== null) {
+    if (!Number.isSafeInteger(maxPerReservation) || maxPerReservation < 1) {
+      return 'No podemos revisar el límite de personas. Consulta con el restaurante.'
+    }
+    if (Number(value) > maxPerReservation) {
+      return `El máximo por reserva es de ${maxPerReservation} personas.`
+    }
+  }
+  return true
+}
+
 // Las dos sedes están en Perú. No depender de la zona horaria del visitante.
 export function getRestaurantClock(now = new Date()) {
   const parts = new Intl.DateTimeFormat('en-CA', {

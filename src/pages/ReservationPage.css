@@ -16,6 +16,7 @@
 .reservation-field input[aria-invalid='true'] { border-color: #8b352e; }
 .reservation-error, .reservation-status { margin: 0; font-size: 0.875rem; line-height: 1.5; overflow-wrap: anywhere; }
 .reservation-error { color: #8b352e; }
+.reservation-help { margin: 0; color: #53655c; font-size: 0.875rem; line-height: 1.5; }
 .reservation-status { color: var(--site-ink); }
 .reservation-status:empty { display: none; }
 .reservation-submit { width: 100%; font: inherit; cursor: pointer; white-space: normal; touch-action: manipulation; }

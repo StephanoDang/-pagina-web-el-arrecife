@@ -8,18 +8,18 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 26/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 27/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 24 — lunes 26/10/2026, las tres tareas completadas: cierre documental, 48 comprobaciones de límites correctas en escritorio y 48 en móvil emulado, además de validación del horario provisional de 10:00 a 18:00 todos los días, incluido lunes, y bloqueo de fechas y horas pasadas. El sábado 24/10 se visitó la empresa para mostrar la web al jefe y hablar sobre los costos de despliegue mediante un enlace directo. Horas efectivas pendientes de confirmar.
-- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Día actual:** día 25 — martes 27/10/2026: selección y validación de personas implementadas; máximo configurable preparado. 52 pruebas automatizadas y 26 comprobaciones de navegador correctas por pantalla (escritorio y móvil emulado). Aplicar y verificar límites reales pendiente de recibir reglas del restaurante. Documentación del avance completada; horas efectivas pendientes.
+- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 25, primera tarea (martes 27/10): selección del número de personas y validación del aforo máximo. Confirmar el límite de personas y las reglas de aforo por sede antes de aplicar restricciones. El bloqueo de fechas y horas pasadas ya está implementado. El formulario permite revisión local; no guarda, envía ni confirma reservas. Aforo corresponde al día 25 y guardado al día 26. Horas efectivas pendientes de registrar.
+- **Siguiente tarea:** completar las dos primeras tareas del día 25 con el máximo por reserva y las reglas de aforo por sede, o un límite provisional autorizado. La selección de personas, sus pruebas técnicas y la documentación ya están realizadas. El formulario permite revisión local; no guarda, envía ni confirma reservas. Guardado previsto para el día 26. Horas efectivas pendientes.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
-- **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva de horarios, excepciones de feriados y reglas del restaurante. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
+- **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, máximo de personas por reserva, aforo y reglas por sede, confirmación definitiva de horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
 - **Referencia histórica:** [bitácora anterior](bitacora-septiembre-octubre-2026.md); sus avances están integrados aquí y no se suman dos veces.
 
 ## Reprogramación del 20/10/2026
@@ -430,15 +430,15 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 25 — Martes 27/10/2026 — Reservas
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 19 (Martes 20/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Selección de personas y validación configurable implementadas y probadas; límites reales pendientes de confirmar. Documentación completada.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 95/320 h.
-- [ ] Lógica de selección de número de personas y validación de aforo máximo.
-- [ ] Verificar límites de personas con reglas confirmadas por el restaurante.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [ ] Lógica de selección de número de personas y validación de aforo máximo. *(Selección, enteros positivos y máximo configurable implementados; aplicación de reglas reales pendiente.)*
+- [ ] Verificar límites de personas con reglas confirmadas por el restaurante. *(Pruebas técnicas completadas; no se han aportado reglas reales.)*
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Campo obligatorio de personas con mínimo 1, paso entero, errores accesibles y foco en el primer campo inválido. Rechaza cantidades vacías, cero, negativos, decimales, exponentes y enteros inseguros. La revisión muestra personas y se retira al editar. `reservationPartyPolicy.maxPerReservation` permite aplicar un máximo confirmado; permanece en `null` sin inventar aforo. El máximo ficticio de las pruebas no se aplica al formulario. Lint y build correctos; 52 pruebas automatizadas aprobadas. En HeadlessChrome 156: 26 comprobaciones correctas en escritorio y las mismas 26 a 320 × 568, incluidas regresiones de fechas pasadas y cierre. Sin desbordamiento ni errores de consola observados. [Informe y evidencia](qa/dia-25/resultado.md). README, informe y bitácora actualizados; el formulario no guarda, envía ni confirma reservas ni calcula plazas disponibles.
+- **Commits / evidencia:** `src/pages/ReservationPage.tsx`, `src/data/reservationValidation.ts` y `tests/reservation-people.test.mjs`; script, JSON e imagen en `docs/qa/dia-25/`. Mensaje sugerido: `feat: add reservation party size and configurable limit validation`.
+- **Pendientes y siguiente paso:** Recibir y aplicar el máximo por reserva y las reglas de aforo de Maestro y Retablo, o un límite provisional autorizado; verificar los límites reales antes de completar las dos primeras casillas. La tercera tarea está completada. Guardado corresponde al día 26; horas efectivas pendientes.
 
 ### Día 26 — Miércoles 28/10/2026 — Reservas
 
