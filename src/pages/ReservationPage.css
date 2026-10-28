@@ -19,4 +19,10 @@
 .reservation-help { margin: 0; color: #53655c; font-size: 0.875rem; line-height: 1.5; }
 .reservation-status { color: var(--site-ink); }
 .reservation-status:empty { display: none; }
+.reservation-summary { display: grid; gap: 12px; margin-top: 36px; padding: 20px; border: 1px solid #687b73; border-radius: 8px; background: #fff; color: var(--site-ink); }
+.reservation-summary h2, .reservation-summary p { margin: 0; }
+.reservation-summary-details { display: grid; gap: 12px; margin: 0; }
+.reservation-summary-details div { display: grid; grid-template-columns: minmax(100px, .7fr) minmax(0, 1.3fr); gap: 12px; }
+.reservation-summary-details dt { font-weight: 600; }
+.reservation-summary-details dd { margin: 0; overflow-wrap: anywhere; }
 .reservation-submit { width: 100%; font: inherit; cursor: pointer; white-space: normal; touch-action: manipulation; }

@@ -1,16 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { createReservationDraft, loadReservationDraft, saveReservationDraft } from '../data/reservationDraft'
 import { getRestaurantClock, reservationHours, reservationPartyPolicy, validateReservationDate, validateReservationTime, validateReservationPeople } from '../data/reservationValidation'
 import './ReservationPage.css'
 
-interface ReservationDetails {
-  date: string
-  time: string
-  people: string
-}
+import type { ReservationDetails, ReservationDraft } from '../data/reservationDraft'
 
 export default function ReservationPage() {
-  const [reviewed, setReviewed] = useState(false)
+  const [storedReservation] = useState(() => loadReservationDraft())
+  const [savedDraft, setSavedDraft] = useState<ReservationDraft | null>(storedReservation.draft)
+  const [saveError, setSaveError] = useState(storedReservation.error)
   const [clock, setClock] = useState(() => getRestaurantClock())
   const { register, handleSubmit, getValues, trigger, formState: { errors } } = useForm<ReservationDetails>({
     defaultValues: { date: '', time: '', people: '' },
@@ -22,7 +21,6 @@ export default function ReservationPage() {
   useEffect(() => {
     const refresh = () => {
       setClock(getRestaurantClock())
-      setReviewed(false)
       if (getValues('date')) void trigger(['date', 'time'])
     }
     const interval = window.setInterval(refresh, 60_000)
@@ -44,8 +42,23 @@ export default function ReservationPage() {
         Disponibilidad por confirmar con el restaurante.
       </p>
       <form className="reservation-form" noValidate aria-describedby="reservation-availability"
-        onChange={() => setReviewed(false)}
-        onSubmit={handleSubmit(() => setReviewed(true), () => setReviewed(false))}>
+        onChange={() => { setSavedDraft(null); setSaveError('') }}
+        onSubmit={handleSubmit((details) => {
+          try {
+            const draft = createReservationDraft(details)
+            const result = saveReservationDraft(draft)
+            if (result.saved) {
+              setSavedDraft(draft)
+              setSaveError('')
+            } else {
+              setSavedDraft(null)
+              setSaveError(result.error)
+            }
+          } catch (error) {
+            setSavedDraft(null)
+            setSaveError(error instanceof Error ? error.message : 'No se pudo guardar la reserva.')
+          }
+        }, () => { setSavedDraft(null); setSaveError('') })}>
         <div className="reservation-fields">
           <div className="reservation-field">
             <label htmlFor="reservation-date">Fecha de la visita</label>
@@ -87,11 +100,24 @@ export default function ReservationPage() {
             {errors.people && <p className="reservation-error" id="reservation-people-error" role="alert">{errors.people.message}</p>}
           </div>
         </div>
-        <button type="submit" className="site-primary-link reservation-submit">Revisar datos de la visita</button>
-        <p className="reservation-status" role="status">
-          {reviewed ? `Datos revisados para ${Number(getValues('people'))} ${Number(getValues('people')) === 1 ? 'persona' : 'personas'}. La reserva todavía no se ha enviado ni confirmado.` : ''}
+        <button type="submit" className="site-primary-link reservation-submit">Guardar reserva en este dispositivo</button>
+        <p className="reservation-status" role="status" aria-atomic="true">
+          {savedDraft ? 'Reserva guardada en este dispositivo. Todavía no se ha enviado al restaurante ni está confirmada.' : ''}
         </p>
+        {saveError && <p className="reservation-error" role="alert">{saveError}</p>}
       </form>
+      {savedDraft && (
+        <section className="reservation-summary" aria-labelledby="reservation-summary-title">
+          <h2 id="reservation-summary-title">Resumen de la reserva</h2>
+          <p>Este registro está guardado solo en este navegador. El restaurante no lo ha recibido ni confirmado.</p>
+          <dl className="reservation-summary-details">
+            <div><dt>Identificador</dt><dd>{savedDraft.id}</dd></div>
+            <div><dt>Fecha</dt><dd>{new Intl.DateTimeFormat('es-PE', { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${savedDraft.date}T00:00:00Z`))}</dd></div>
+            <div><dt>Hora</dt><dd>{savedDraft.time} (hora de Perú)</dd></div>
+            <div><dt>Personas</dt><dd>{savedDraft.people}</dd></div>
+          </dl>
+        </section>
+      )}
     </section>
   )
 }

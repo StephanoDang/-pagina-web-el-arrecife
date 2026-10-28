@@ -1,0 +1,15 @@
+{
+  "casos": 6,
+  "resultados": [
+    { "caso": "Sin confirmación antes de guardar", "resultado": "correcto" },
+    { "caso": "Guarda borrador versionado con ID", "resultado": "correcto" },
+    { "caso": "Persiste fecha, hora y cantidad correctas", "resultado": "correcto" },
+    { "caso": "Resumen claro, local y sin datos internos del aforo", "resultado": "correcto" },
+    { "caso": "No muestra error de guardado", "resultado": "correcto" },
+    { "caso": "Sin desbordamiento horizontal", "resultado": "correcto" }
+  ],
+  "fechaPrueba": "2026-10-28T16:39:47.632Z",
+  "viewport": [320, 568],
+  "navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+  "id": "res-08cdcd3a-c8bc-4c35-b45a-a732e081a07f"
+}
