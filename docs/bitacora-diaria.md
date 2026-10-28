@@ -13,7 +13,7 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 26 — miércoles 28/10/2026, las tres tareas completadas: borrador local, UUID y resumen probados y documentación cerrada. Pasaron 59 pruebas automatizadas, lint, build y las comprobaciones en escritorio/móvil. Horas efectivas pendientes de confirmar.
+- **Día actual:** día 26 — miércoles 28/10/2026, las tres tareas planificadas y dos tareas extra de documentación completadas: borrador local, UUID y resumen probados; enlace de evidencia móvil corregido y referencias locales revisadas. Pasaron 59 pruebas automatizadas, lint, build y las comprobaciones en escritorio/móvil. Horas efectivas pendientes de confirmar.
 - **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10 y 100/320 h como bloque planificado del miércoles 28/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
 - **Siguiente tarea:** día 27 — jueves 29/10/2026, primera tarea de Backoffice: crear el layout administrativo con navegación lateral y barra superior, y proteger sus rutas.
@@ -445,13 +445,17 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 26 — Miércoles 28/10/2026 — Reservas
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 20 (Miércoles 21/10/2026), conservados en su orden original.
-- **Estado:** Las tres tareas completadas; revisión local sin envío al restaurante.
+- **Estado:** Las tres tareas planificadas y las dos tareas extra completadas; revisión local sin envío al restaurante.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 100/320 h.
 - [x] Guardado de reserva en LocalStorage y vista de confirmación al usuario. *(Confirmación local que aclara que aún no se envió al restaurante.)*
 - [x] Comprobar identificador y resumen de la reserva de prueba. *(UUID, campos guardados, edición, nuevo ID, recuperación tras recargar y error de escritura verificados en navegador.)*
 - [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Nuevo reservationDraft.ts crea borradores versionados con UUID, fecha, hora y número de personas; persiste en el almacenamiento local de este navegador. La página muestra el resumen y lo recupera al recargar. Editar datos retira el resumen; un guardado nuevo reemplaza el borrador previo con otro UUID. Errores de lectura, escritura y datos corruptos se anuncian sin afirmar éxito. Se validan forma, campos, horario, máximo de 10 personas e identificador; las reservas históricas válidas se pueden recuperar después de su fecha. Lint y build correctos; 59 pruebas automatizadas aprobadas, incluidas siete nuevas de borradores. HeadlessChrome 156: 14 comprobaciones en escritorio (1440 × 900) y seis de guardado en móvil (320 × 568); el mismo UUID y resumen se recuperaron tras recargar. También se verificaron edición, nuevo UUID, rechazo de 11 personas y fallo simulado de almacenamiento. Sin desbordamiento ni errores de consola. [Informe y evidencia](qa/dia-26/resultado.md). El guardado es local al navegador; no sincroniza ni envía reservas al restaurante.
+- **Tareas extra del miércoles:**
+- [x] Corregir el enlace roto a `guardado-movil.json` del informe QA y añadir el archivo con los resultados comprobados.
+- [x] Revisar que existan las evidencias locales enlazadas desde el informe del día 26.
+- **Registro horario de las tareas extra:** no se añaden horas efectivas al plan sin confirmación del usuario.
 - **Commits / evidencia:** src/data/reservationDraft.ts, src/pages/ReservationPage.tsx, src/pages/ReservationPage.css y tests/reservation-draft.test.mjs; scripts y resultados JSON en docs/qa/dia-26/. Mensaje sugerido: feat: save reservation drafts locally and show confirmation summary.
 - **Pendientes y siguiente paso:** Día 27 — jueves 29/10, primera tarea de Backoffice: implementar layout administrativo con navegación lateral y barra superior, y protección de rutas. El borrador del día 26 permanece local a este navegador, sin sincronización, envío ni confirmación del restaurante. Horas efectivas pendientes.
 ### Día 27 — Jueves 29/10/2026 — Backoffice

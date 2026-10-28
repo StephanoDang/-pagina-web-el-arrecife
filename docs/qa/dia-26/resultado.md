@@ -26,3 +26,7 @@ Esta vista confirma que el borrador se guardó localmente; no confirma una reser
 Las tres tareas del miércoles quedan completadas: guardado y vista resumen, prueba del identificador/resumen y cierre documental. La siguiente fecha planificada es el jueves 29/10 (día 27), primera tarea de Backoffice: layout administrativo con navegación lateral/barra superior y protección de rutas. Horas efectivas pendientes de registrar.
 
 Mensaje sugerido: `feat: save reservation drafts locally and show confirmation summary`.
+
+## Tareas extra documentales
+
+Después del cierre del día se corrigió una referencia faltante a `guardado-movil.json` añadiendo el JSON con las seis comprobaciones móviles realizadas. También se revisó que los archivos de evidencia enlazados desde este informe existan en la carpeta. Estas correcciones documentales no suman horas al registro efectivo.
