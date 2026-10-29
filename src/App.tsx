@@ -7,6 +7,10 @@ import MenuPage from './pages/MenuPage'
 import OrderPage from './pages/OrderPage'
 import ReservationPage from './pages/ReservationPage'
 import MenuIcon from './components/MenuIcon'
+import AdminLayout from './pages/admin/AdminLayout'
+import AdminSection from './pages/admin/AdminSection'
+import AdminLoginPage from './pages/admin/AdminLoginPage'
+import RequireAdmin from './pages/admin/RequireAdmin'
 import './App.css'
 
 const mainContentId = 'contenido'
@@ -24,6 +28,24 @@ function PlaceholderPage({ title, description, home = false }: { title: string; 
 }
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/admin/login" element={<AdminLoginPage />} />
+      <Route element={<RequireAdmin />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminSection section="inicio" />} />
+          <Route path="pedidos" element={<AdminSection section="pedidos" />} />
+          <Route path="reservas" element={<AdminSection section="reservas" />} />
+          <Route path="carta" element={<AdminSection section="carta" />} />
+          <Route path="*" element={<AdminSection section="no-encontrado" />} />
+        </Route>
+      </Route>
+      <Route path="*" element={<PublicSite />} />
+    </Routes>
+  )
+}
+
+function PublicSite() {
   const [cartOpen, setCartOpen] = useState(false)
   return (
     <div className="site-shell">

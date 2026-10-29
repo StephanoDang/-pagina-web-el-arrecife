@@ -8,15 +8,15 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 28/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 29/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 26 — miércoles 28/10/2026, las tres tareas planificadas y dos tareas extra de documentación completadas: borrador local, UUID y resumen probados; enlace de evidencia móvil corregido y referencias locales revisadas. Pasaron 59 pruebas automatizadas, lint, build y las comprobaciones en escritorio/móvil. Horas efectivas pendientes de confirmar.
-- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10 y 100/320 h como bloque planificado del miércoles 28/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Día actual:** día 27 — jueves 29/10/2026, layout administrativo, navegación y protección de rutas implementados. Build y lint correctos; 59 pruebas existentes aprobadas. Las rutas y el guard se comprobaron con el enrutador y tres casos de sesión. La inspección visual en Chrome queda pendiente porque el ejecutable no está disponible en este entorno. Horas efectivas pendientes de confirmar.
+- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10, 100/320 h al completar el bloque del miércoles 28/10 y 105/320 h como bloque planificado del jueves 29/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 27 — jueves 29/10/2026, primera tarea de Backoffice: crear el layout administrativo con navegación lateral y barra superior, y proteger sus rutas.
+- **Siguiente tarea:** día 28 — viernes 30/10/2026, implementar el login simulado con credenciales estáticas y AuthContext. La comprobación visual del día 27 en un navegador queda pendiente.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -461,15 +461,15 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 27 — Jueves 29/10/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 21 (Jueves 22/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Layout, rutas protegidas y documentación completados; revisión visual en navegador pendiente.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 105/320 h.
-- [ ] Creación de layout administrativo (Sidebar, Topbar) y protección de rutas.
-- [ ] Verificar rutas y navegación del layout administrativo.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Crear el layout administrativo con navegación lateral y barra superior, y proteger las rutas.
+- [x] Verificar las rutas y la navegación configurada para el layout administrativo. *(Router: `/admin`, `/admin/pedidos`, `/admin/reservas`, `/admin/carta` y `/admin/login` resuelven; las cuatro rutas internas pasan por `RequireAdmin`. Tres casos de sesión comprobados: ausente, activa y almacenamiento bloqueado.)*
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se añadió un panel independiente del encabezado y pie públicos, con sidebar que pasa a navegación horizontal en móvil, topbar contextual, accesos a Resumen/Pedidos/Reservas/Carta, estados activos, foco visible y enlace para saltar al contenido. Las rutas administrativas redirigen a `/admin/login` si no hay sesión de demostración; se reserva `el-arrecife:admin-session:v1` para el login simulado del día 28. `npm run build` y `npm run lint` correctos; `npm test`: 59 pruebas aprobadas. Se comprobó la resolución de rutas con `matchRoutes` sobre la configuración real de `App` y el guard en tres casos. El ejecutable de Chrome no está instalado en este entorno, por lo que no se revisaron visualmente ni con clics las vistas en navegador. La marca de sesión del cliente es solo para el prototipo y no constituye seguridad de producción.
+- **Commits / evidencia:** `src/pages/admin/AdminLayout.tsx`, `AdminLayout.css`, `AdminSection.tsx`, `AdminLoginPage.tsx`, `RequireAdmin.tsx`, `adminSession.ts` e integración de rutas en `src/App.tsx`. Mensaje sugerido: `feat: add protected backoffice layout and navigation`.
+- **Pendientes y siguiente paso:** Día 28 — login simulado con credenciales estáticas y AuthContext; enlazarlo con la clave de sesión reservada. Hacer revisión visual y de clics de las rutas administrativas cuando haya un ejecutable de Chrome disponible. Horas efectivas pendientes de registrar.
 
 ### Día 28 — Viernes 30/10/2026 — Backoffice
 
