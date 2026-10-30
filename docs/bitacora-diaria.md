@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 27 — jueves 29/10/2026, layout administrativo, navegación y protección de rutas implementados. Build y lint correctos; 59 pruebas existentes aprobadas. Las rutas y el guard se comprobaron con el enrutador y tres casos de sesión. La inspección visual en Chrome queda pendiente porque el ejecutable no está disponible en este entorno. Horas efectivas pendientes de confirmar.
+- **Día actual:** día 28 — viernes 30/10/2026, login simulado y AuthContext implementados. Build y lint correctos; 62 pruebas aprobadas, incluidas credenciales y ciclo de sesión. La interacción visual del formulario y las redirecciones queda pendiente porque no hay navegador conectado a este entorno. Horas efectivas pendientes de confirmar.
 - **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10, 100/320 h al completar el bloque del miércoles 28/10 y 105/320 h como bloque planificado del jueves 29/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 28 — viernes 30/10/2026, implementar el login simulado con credenciales estáticas y AuthContext. La comprobación visual del día 27 en un navegador queda pendiente.
+- **Siguiente tarea:** completar en un navegador las comprobaciones visuales pendientes de los días 27 y 28 (rutas administrativas, login y cierre de sesión); después, día 29 — sábado 31/10/2026, continuar con la siguiente tarea de Backoffice.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -474,15 +474,15 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 28 — Viernes 30/10/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 22 (Viernes 23/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** En curso.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 110/320 h.
-- [ ] Pantalla de Login simulada con credenciales estáticas y AuthContext.
+- [x] Pantalla de Login simulada con credenciales estáticas y AuthContext.
 - [ ] Probar inicio y cierre de sesión del prototipo sin tratarlo como seguridad real.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se añadió AuthContext y credenciales estáticas de demostración (`admin` / `arrecife2026`), con sesión en `sessionStorage`, error para credenciales incorrectas, redirección al área solicitada y cierre de sesión desde el panel. `npm run lint` y `npm run build` correctos; `npm test`: 62 pruebas aprobadas, incluidas validación de credenciales, inicio, persistencia, cierre y almacenamiento bloqueado. La verificación del flujo visual no se pudo ejecutar porque el navegador no está conectado a este entorno.
+- **Commits / evidencia:** `src/context/AuthContext.ts`, `src/context/AuthProvider.tsx`, `src/pages/admin/AdminLoginPage.tsx`, `RequireAdmin.tsx`, `AdminLayout.tsx`, `AdminLayout.css`, `adminSession.ts`; pruebas en `tests/admin-session.test.mjs`.
+- **Pendientes y siguiente paso:** realizar el recorrido visual del formulario, acceso, cierre de sesión y redirección al intentar volver al panel; después continuar con el día 29. Horas efectivas pendientes de registrar.
 
 ### Día 29 — Sábado 31/10/2026 — Backoffice
 

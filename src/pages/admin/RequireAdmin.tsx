@@ -1,10 +1,11 @@
 import { Navigate, Outlet, useLocation } from 'react-router'
-import { hasAdminSession } from './adminSession'
+import { useAuth } from '../../context/AuthContext'
 
 export default function RequireAdmin() {
   const location = useLocation()
+  const { isAuthenticated } = useAuth()
 
-  if (!hasAdminSession()) {
+  if (!isAuthenticated) {
     return <Navigate to="/admin/login" replace state={{ from: location.pathname }} />
   }
 

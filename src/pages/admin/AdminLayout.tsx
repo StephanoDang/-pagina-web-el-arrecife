@@ -1,4 +1,5 @@
-import { Link, NavLink, Outlet, useLocation } from 'react-router'
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router'
+import { useAuth } from '../../context/AuthContext'
 import './AdminLayout.css'
 
 const sections = [
@@ -17,7 +18,14 @@ const sectionNames: Record<string, string> = {
 
 export default function AdminLayout() {
   const location = useLocation()
+  const navigate = useNavigate()
+  const { signOut } = useAuth()
   const currentSection = sectionNames[location.pathname] ?? 'Administración'
+
+  function handleSignOut() {
+    signOut()
+    navigate('/admin/login', { replace: true })
+  }
 
   return (
     <div className="admin-shell">
@@ -55,7 +63,10 @@ export default function AdminLayout() {
             <p className="admin-breadcrumb">El Arrecife <span aria-hidden="true">/</span> Administración</p>
             <h1>{currentSection}</h1>
           </div>
-          <span className="admin-topbar-badge">Vista previa</span>
+          <div className="admin-topbar-actions">
+            <span className="admin-topbar-badge">Vista previa</span>
+            <button className="admin-logout-button" type="button" onClick={handleSignOut}>Cerrar sesión</button>
+          </div>
         </header>
         <main className="admin-main" id="admin-main" tabIndex={-1}>
           <Outlet />
