@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 28 — viernes 30/10/2026, login simulado y AuthContext implementados. Build y lint correctos; 62 pruebas aprobadas, incluidas credenciales y ciclo de sesión. La interacción visual del formulario y las redirecciones queda pendiente porque no hay navegador conectado a este entorno. Horas efectivas pendientes de confirmar.
+- **Día actual:** día 30 — lunes 02/11/2026, componentes base reutilizables de botón, tabla y modal creados para el backoffice. Lint y build correctos. Horas efectivas pendientes de registrar.
 - **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10, 100/320 h al completar el bloque del miércoles 28/10 y 105/320 h como bloque planificado del jueves 29/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 29 — sábado 31/10/2026, continuar con la siguiente tarea de Backoffice. La revisión visual de login, cierre de sesión y rutas administrativas del día 28 fue confirmada por el usuario.
+- **Siguiente tarea:** completar el segundo punto del día 30: revisar estados vacíos y navegación por teclado en los componentes del backoffice.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -482,33 +482,33 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** Se añadió AuthContext y credenciales estáticas de demostración (`admin` / `arrecife2026`), con sesión en `sessionStorage`, error para credenciales incorrectas, redirección al área solicitada y cierre de sesión desde el panel. `npm run lint` y `npm run build` correctos; `npm test`: 62 pruebas aprobadas, incluidas validación de credenciales, inicio, persistencia, cierre y almacenamiento bloqueado. El usuario confirmó que el flujo visual funciona correctamente.
 - **Commits / evidencia:** `src/context/AuthContext.ts`, `src/context/AuthProvider.tsx`, `src/pages/admin/AdminLoginPage.tsx`, `RequireAdmin.tsx`, `AdminLayout.tsx`, `AdminLayout.css`, `adminSession.ts`; pruebas en `tests/admin-session.test.mjs`.
-- **Pendientes y siguiente paso:** continuar con la tarea del día 29. Horas efectivas pendientes de registrar.
+- **Pendientes y siguiente paso:** el sábado 31/10 el usuario trabajó presencialmente en el local; las tareas concretas y horas efectivas están pendientes de confirmar. La siguiente tarea técnica queda para el lunes 02/11 (día 30). Horas efectivas del día 28 pendientes de registrar.
 
-### Día 29 — Sábado 31/10/2026 — Backoffice
+### Día 29 — Sábado 31/10/2026 — Trabajo presencial en el local
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 23 (Sábado 24/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado según confirmación del usuario.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 115/320 h.
-- [ ] Panel de inicio (Dashboard) con estadísticas simuladas.
-- [ ] Contrastar los indicadores con los datos de prueba.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Panel de inicio (Dashboard) con estadísticas simuladas.
+- [x] Contrastar los indicadores con los datos de prueba.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
+- **Resultado y pruebas:** El usuario confirmó que completó las tareas del sábado: dashboard con estadísticas simuladas, contraste de indicadores con datos de prueba y documentación. Acudió al local para trabajar presencialmente. No se comunicaron indicadores específicos ni horas efectivas.
 - **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Pendientes y siguiente paso:** Registrar las horas efectivas cuando se conozcan. Continuación del trabajo técnico en el día 30.
 
 ### Día 30 — Lunes 02/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 24 (Lunes 26/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** En curso.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 120/320 h.
-- [ ] Componentes reutilizables para el backoffice (Tablas, Botones, Modales).
+- [x] Componentes reutilizables para el backoffice (Tablas, Botones, Modales).
 - [ ] Probar estados vacíos y navegación por teclado de los componentes.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se añadieron `AdminButton` con variantes primary/secondary/danger, `AdminTable` tipada y `AdminModal` controlado con `<dialog>`, título accesible, cierre por Escape y clic fuera, y pie opcional. `npm run lint` y `npm run build` correctos. La prueba de estados vacíos y navegación por teclado queda pendiente como segundo punto del día.
+- **Commits / evidencia:** `src/pages/admin/components/AdminButton.tsx`, `AdminTable.tsx`, `AdminModal.tsx` y `AdminComponents.css`.
+- **Pendientes y siguiente paso:** Probar y completar los estados vacíos y la navegación por teclado de botones, tabla y modal. Horas efectivas pendientes de registrar.
 
 ### Día 31 — Martes 03/11/2026 — Backoffice
 
