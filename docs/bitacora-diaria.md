@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 30 — lunes 02/11/2026, componentes base reutilizables de botón, tabla y modal creados para el backoffice. Lint y build correctos. Horas efectivas pendientes de registrar.
+- **Día actual:** día 32 — miércoles 04/11/2026, formulario modal para crear platos implementado y validado. Lint y build correctos; 71 pruebas aprobadas. Horas efectivas pendientes de registrar.
 - **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10, 100/320 h al completar el bloque del miércoles 28/10 y 105/320 h como bloque planificado del jueves 29/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** completar el segundo punto del día 30: revisar estados vacíos y navegación por teclado en los componentes del backoffice.
+- **Siguiente tarea:** día 33 — jueves 05/11/2026, edición de platos existentes conservando el identificador.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -500,41 +500,41 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 30 — Lunes 02/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 24 (Lunes 26/10/2026), conservados en su orden original.
-- **Estado:** En curso.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 120/320 h.
 - [x] Componentes reutilizables para el backoffice (Tablas, Botones, Modales).
-- [ ] Probar estados vacíos y navegación por teclado de los componentes.
+- [x] Probar estados vacíos y navegación por teclado de los componentes.
 - [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** Se añadieron `AdminButton` con variantes primary/secondary/danger, `AdminTable` tipada y `AdminModal` controlado con `<dialog>`, título accesible, cierre por Escape y clic fuera, y pie opcional. `npm run lint` y `npm run build` correctos. La prueba de estados vacíos y navegación por teclado queda pendiente como segundo punto del día.
-- **Commits / evidencia:** `src/pages/admin/components/AdminButton.tsx`, `AdminTable.tsx`, `AdminModal.tsx` y `AdminComponents.css`.
-- **Pendientes y siguiente paso:** Probar y completar los estados vacíos y la navegación por teclado de botones, tabla y modal. Horas efectivas pendientes de registrar.
+- **Resultado y pruebas:** Se añadieron `AdminButton` con variantes primary/secondary/danger, `AdminTable` tipada con estado vacío y región enfocada para desplazamiento, y `AdminModal` controlado con `<dialog>`, cierre por Escape y clic fuera. `npm run lint` y `npm run build` correctos; `npm test`: 67 pruebas aprobadas. Las nuevas pruebas comprueban el estado vacío, el punto de tabulación de la tabla, el botón nativo, el nombre del diálogo, el ciclo de apertura y la solicitud de cierre por Escape. No se simuló manualmente el recorrido de teclas en el navegador.
+- **Commits / evidencia:** `src/pages/admin/components/AdminButton.tsx`, `AdminTable.tsx`, `AdminModal.tsx`, `adminModalState.ts`, `AdminComponents.css` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** continuar con la gestión de platos del día 31. Horas efectivas pendientes de registrar.
 
 ### Día 31 — Martes 03/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 25 (Martes 27/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado según confirmación del usuario.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 125/320 h.
-- [ ] Pantalla de gestión de platos: Tabla interactiva con datos simulados.
-- [ ] Verificar columnas, precios y platos desactivados.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Pantalla de gestión de platos: Tabla interactiva con datos simulados.
+- [x] Verificar columnas, precios y platos desactivados.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
+- **Resultado y pruebas:** El usuario confirmó que completó las tareas del martes: tabla interactiva con datos simulados, revisión de columnas/precios/platos desactivados y documentación. También informó que trabajó presencialmente en la empresa. Horas efectivas pendientes de registrar.
 - **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Pendientes y siguiente paso:** iniciar el día 32: formulario modal para crear platos con validación.
 
 ### Día 32 — Miércoles 04/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 26 (Miércoles 28/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 130/320 h.
-- [ ] Formulario modal para creación de nuevos platos con validación.
-- [ ] Probar campos requeridos y precios inválidos.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Formulario modal para creación de nuevos platos con validación.
+- [x] Probar campos requeridos y precios inválidos.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se integró en `/admin/carta` un formulario modal con nombre, categoría, precio y descripción opcional. La validación exige nombre, categoría existente y precio positivo de hasta dos decimales; admite coma decimal y convierte el importe a céntimos. El alta se muestra solo en el estado local de demostración y no cambia la carta pública ni persiste. `npm run lint` y `npm run build` correctos; `npm test`: 72 pruebas aprobadas, incluidas cuatro nuevas para campos requeridos y precios inválidos y una de integración del formulario en Carta.
+- **Commits / evidencia:** `src/pages/admin/AdminDishManagementPage.tsx`, `.css`, `adminDishForm.ts`, integración en `AdminSection.tsx` y `tests/admin-dish-form.test.mjs`.
+- **Pendientes y siguiente paso:** día 33 — editar platos existentes conservando su identificador. Horas efectivas pendientes de registrar.
 
 ### Día 33 — Jueves 05/11/2026 — Backoffice
 

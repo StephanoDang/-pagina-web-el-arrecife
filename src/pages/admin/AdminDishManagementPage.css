@@ -1,0 +1,26 @@
+.admin-dishes-page { display: grid; gap: 20px; }
+.admin-dishes-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.admin-dishes-heading h2 { margin: 0; color: #193b3f; font: 400 clamp(28px, 3vw, 38px)/1.15 Georgia, 'Times New Roman', serif; }
+.admin-dishes-heading p:not(.admin-eyebrow) { max-width: 60ch; margin: 10px 0 0; color: #64726d; font-size: 14px; line-height: 1.6; }
+.admin-dishes-heading .admin-eyebrow { margin-bottom: 10px; }
+.admin-dishes-notice { margin: 0; padding: 12px 14px; border: 1px solid #e7dfc5; border-radius: 9px; color: #6e5b2f; background: #fbf8ee; font-size: 12px; line-height: 1.5; }
+.admin-dishes-announcement { margin: 0; color: #32613e; font-size: 13px; }
+.admin-dish-status { display: inline-flex; padding: 5px 9px; border-radius: 999px; color: #386348; background: #edf5ed; font-size: 11px; font-weight: 600; }
+.admin-dish-status.is-unavailable { color: #815143; background: #f8efeb; }
+.admin-dish-form { display: grid; gap: 16px; }
+.admin-dish-field { display: grid; gap: 7px; }
+.admin-dish-field label { color: #344b48; font-size: 13px; font-weight: 600; }
+.admin-dish-field label span[aria-hidden="true"] { color: #a3342f; }
+.admin-dish-field label span:not([aria-hidden]) { color: #74817b; font-size: 11px; font-weight: 400; }
+.admin-dish-field input, .admin-dish-field select, .admin-dish-field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #cbd5ce; border-radius: 8px; color: #233331; background: #fff; font: inherit; font-size: 14px; }
+.admin-dish-field textarea { min-height: 88px; resize: vertical; }
+.admin-dish-field :is(input, select, textarea):focus-visible { outline: 3px solid #93b6a7; outline-offset: 2px; }
+.admin-dish-field [aria-invalid="true"] { border-color: #a3342f; }
+.admin-dish-field-error, .admin-dish-field-hint { margin: 0; font-size: 12px; line-height: 1.45; }
+.admin-dish-field-error { color: #a3342f; }
+.admin-dish-field-hint { color: #697875; }
+
+@media (max-width: 600px) {
+  .admin-dishes-heading { align-items: stretch; flex-direction: column; }
+  .admin-dishes-heading > .admin-button { align-self: flex-start; }
+}
