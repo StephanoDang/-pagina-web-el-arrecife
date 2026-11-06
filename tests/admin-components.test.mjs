@@ -83,12 +83,16 @@ test('Escape cierra el diálogo cancelando la acción nativa', () => {
   assert.equal(closeRequested, true)
 })
 
-test('Carta integra el alta modal, los campos requeridos y la tabla vacía', () => {
+test('Carta integra la gestión de ejemplo, edición y acciones de disponibilidad', () => {
   const html = renderToStaticMarkup(React.createElement(AdminDishManagementPage))
   assert.match(html, /Gestión de platos/)
   assert.match(html, /Nuevo plato/)
-  assert.match(html, /Aún no agregaste platos/)
+  assert.match(html, /Platos de demostración/)
+  assert.match(html, /Editar/)
+  assert.match(html, /Desactivar/)
   assert.match(html, /Nombre del plato/)
   assert.match(html, /Selecciona una categoría/)
-  assert.match(html, /Precio \(S\/\)/)
+  assert.match(html, /Precio de la primera presentación/)
+  assert.match(html, /Confirmar desactivación/)
+  assert.match(html, /Cancelar/)
 })

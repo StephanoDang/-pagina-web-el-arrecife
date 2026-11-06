@@ -8,15 +8,15 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 29/10/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 06/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 32 — miércoles 04/11/2026, formulario modal para crear platos implementado y validado. Lint y build correctos; 71 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 70/320 h hasta el día 14, 75/320 h al completar el bloque del martes 20/10, 80/320 h al cierre técnico del jueves 22/10, 85/320 h al cierre técnico del viernes 23/10 y 90/320 h al cierre técnico del lunes 26/10, 95/320 h al cierre técnico del martes 27/10, 100/320 h al completar el bloque del miércoles 28/10 y 105/320 h como bloque planificado del jueves 29/10. Son valores del plan, no horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Día actual:** día 34 — viernes 06/11/2026, edición de platos y desactivación lógica implementadas. Lint y build correctos; 74 pruebas aprobadas. Horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 140/320 h hasta el día 34, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 33 — jueves 05/11/2026, edición de platos existentes conservando el identificador.
+- **Siguiente tarea:** día 35 — sábado 07/11/2026, sincronizar la gestión administrativa con la carta pública mediante LocalStorage.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -539,28 +539,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 33 — Jueves 05/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 27 (Jueves 29/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 135/320 h.
-- [ ] Lógica para editar platos existentes y reflejar cambios en estado global.
-- [ ] Comprobar que la edición conserva el identificador del plato.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Lógica para editar platos existentes y reflejar cambios en estado global.
+- [x] Comprobar que la edición conserva el identificador del plato.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se añadió edición de los platos de ejemplo en la tabla. El formulario reutiliza las validaciones de alta, conserva el ID del plato y los IDs y valores de sus presentaciones adicionales; solo actualiza los datos editados y el precio de la primera presentación. La lógica de actualización y la integración de la vista quedaron cubiertas por pruebas. `npm run lint`, `npm run build` y `npm test` correctos (74 pruebas aprobadas junto con el día 34). No se hizo una comprobación manual en navegador.
+- **Commits / evidencia:** `src/pages/admin/AdminDishManagementPage.tsx`, `src/pages/admin/adminDishState.ts`, `src/pages/admin/AdminDishManagementPage.css`, `tests/admin-dish-state.test.mjs` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** día 34 — desactivación lógica de platos y recuperación mediante reactivación. Horas efectivas pendientes de registrar.
 
 ### Día 34 — Viernes 06/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 28 (Viernes 30/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 140/320 h.
-- [ ] Lógica de eliminación lógica de platos (desactivar vs borrar).
-- [ ] Probar cancelación de la acción y recuperación de platos desactivados.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Lógica de eliminación lógica de platos (desactivar vs borrar).
+- [x] Probar cancelación de la acción y recuperación de platos desactivados.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La acción Desactivar solicita confirmación; Cancelar cierra el diálogo sin cambiar el plato y confirmar cambia su disponibilidad a desactivado, conservando el registro y su ID. La tabla ofrece Reactivar para recuperar el plato. Se probaron las transiciones de disponibilidad y la conservación del registro/identificador; la vista renderiza las acciones y el diálogo de confirmación. `npm run lint`, `npm run build` y `npm test` correctos (74 pruebas aprobadas). No se hizo una comprobación manual en navegador.
+- **Commits / evidencia:** `src/pages/admin/AdminDishManagementPage.tsx`, `src/pages/admin/adminDishState.ts`, `src/pages/admin/AdminDishManagementPage.css`, `tests/admin-dish-state.test.mjs` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** día 35 — sincronizar la gestión administrativa con la carta pública mediante LocalStorage. Horas efectivas pendientes de registrar.
 
 ### Día 35 — Sábado 07/11/2026 — Backoffice
 

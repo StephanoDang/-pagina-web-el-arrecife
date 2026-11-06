@@ -5,6 +5,8 @@
 .admin-dishes-heading .admin-eyebrow { margin-bottom: 10px; }
 .admin-dishes-notice { margin: 0; padding: 12px 14px; border: 1px solid #e7dfc5; border-radius: 9px; color: #6e5b2f; background: #fbf8ee; font-size: 12px; line-height: 1.5; }
 .admin-dishes-announcement { margin: 0; color: #32613e; font-size: 13px; }
+.admin-dish-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-dish-confirmation { margin: 0; color: #344b48; font-size: 14px; line-height: 1.6; }
 .admin-dish-status { display: inline-flex; padding: 5px 9px; border-radius: 999px; color: #386348; background: #edf5ed; font-size: 11px; font-weight: 600; }
 .admin-dish-status.is-unavailable { color: #815143; background: #f8efeb; }
 .admin-dish-form { display: grid; gap: 16px; }
