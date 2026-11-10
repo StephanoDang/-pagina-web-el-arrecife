@@ -1,0 +1,23 @@
+.admin-orders-page { display: grid; gap: 20px; }
+.admin-orders-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.admin-orders-heading h2 { margin: 0; color: #193b3f; font: 400 clamp(28px, 3vw, 38px)/1.15 Georgia, 'Times New Roman', serif; }
+.admin-orders-heading > div > p:last-child { max-width: 62ch; margin: 10px 0 0; color: #64726d; font-size: 14px; line-height: 1.6; }
+.admin-orders-heading .admin-eyebrow { margin-bottom: 10px; }
+.admin-orders-count { flex: 0 0 auto; margin: 0; padding: 9px 12px; border: 1px solid #dbe5dc; border-radius: 999px; color: #386348; background: #edf5ed; font-size: 12px; font-weight: 600; }
+.admin-orders-notice { margin: 0; padding: 12px 14px; border: 1px solid #e7dfc5; border-radius: 9px; color: #6e5b2f; background: #fbf8ee; font-size: 12px; line-height: 1.5; }
+.admin-orders-view-switch { display: flex; flex-wrap: wrap; gap: 8px; }
+.admin-orders-page [hidden] { display: none !important; }
+.admin-orders-board { display: grid; grid-template-columns: repeat(3, minmax(230px, 1fr)); gap: 16px; overflow-x: auto; padding-bottom: 4px; }
+.admin-orders-lane { min-height: 240px; padding: 14px; border: 1px solid #e4e9e3; border-radius: 12px; background: #f7f8f4; }
+.admin-orders-lane-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 2px 2px 12px; border-bottom: 1px solid #dfe6df; }
+.admin-orders-lane-heading h3 { margin: 0; color: #27464a; font-size: 14px; }
+.admin-orders-lane-heading > span { display: grid; min-width: 26px; min-height: 26px; place-items: center; border-radius: 50%; color: #385248; background: #e5ece3; font-size: 11px; font-weight: 700; }
+.admin-orders-lane-empty { display: grid; min-height: 150px; place-items: center; margin: 0; color: #75817a; font-size: 12px; text-align: center; }
+.admin-orders-lane-list { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
+.admin-orders-card { display: grid; gap: 7px; padding: 13px; border: 1px solid #e4e9e3; border-radius: 9px; color: #344b48; background: #fff; box-shadow: 0 3px 10px #193b3f08; font-size: 13px; }
+.admin-orders-card strong { color: #193b3f; }
+.admin-orders-card small { color: #68756f; line-height: 1.5; }
+
+@media (max-width: 600px) {
+  .admin-orders-heading { align-items: flex-start; flex-direction: column; }
+}

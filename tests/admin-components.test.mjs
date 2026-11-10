@@ -13,11 +13,12 @@ const vite = await createServer({
   appType: 'custom',
 })
 
-const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }] = await Promise.all([
+const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }, { default: AdminOrderManagementPage }] = await Promise.all([
   vite.ssrLoadModule('/src/pages/admin/components/AdminTable.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminButton.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminModal.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminDishManagementPage.tsx'),
+  vite.ssrLoadModule('/src/pages/admin/AdminOrderManagementPage.tsx'),
 ])
 
 after(async () => vite.close())
@@ -95,4 +96,20 @@ test('Carta integra la gestión de ejemplo, edición y acciones de disponibilida
   assert.match(html, /Precio de la primera presentación/)
   assert.match(html, /Confirmar desactivación/)
   assert.match(html, /Cancelar/)
+})
+
+test('Pedidos presenta la tabla entrante y el estado vacío sin confundir borradores con órdenes', () => {
+  const html = renderToStaticMarkup(React.createElement(AdminOrderManagementPage))
+  assert.match(html, /Órdenes entrantes/)
+  assert.match(html, /Código/)
+  assert.match(html, /Recibido/)
+  assert.match(html, /Pedidos recibidos/)
+  assert.match(html, /0 órdenes recibidas/)
+  assert.match(html, /Aún no hay órdenes recibidas/)
+  assert.match(html, /todavía son borradores/)
+  assert.match(html, /aria-label="Vista de pedidos"/)
+  assert.match(html, /Pendiente/)
+  assert.match(html, /En preparación/)
+  assert.match(html, /Entregado/)
+  assert.match(html, /No hay pedidos en este estado/)
 })

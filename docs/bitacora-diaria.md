@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Último avance verificado en el repo:** día 36 — lunes 09/11/2026, sincronización de la carta con LocalStorage y filtros/paginación del backoffice completados. Lint y build correctos; 78 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 150/320 h hasta el día 36, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en el repo:** día 38 — miércoles 11/11/2026, tablero Kanban de pedidos implementado con columnas por estado y vistas de tabla/tablero. Lint y build correctos; 82 pruebas aprobadas. Horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 160/320 h hasta el día 38, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 37 — pantalla de gestión de pedidos: tabla de órdenes entrantes, prevista para el martes 10/11/2026.
+- **Siguiente tarea:** día 39 — controles para cambiar pedidos de estado y validación de transiciones, prevista para el jueves 12/11/2026.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -591,28 +591,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 37 — Martes 10/11/2026 — Pedidos
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 31 (Martes 03/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 155/320 h.
-- [ ] Pantalla de gestión de pedidos: Tabla de órdenes entrantes.
-- [ ] Verificar listado vacío, orden de fechas e identificadores.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Pantalla de gestión de pedidos: tabla de órdenes entrantes.
+- [x] Verificar listado vacío, orden de fechas e identificadores.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** `/admin/pedidos` muestra una tabla accesible con código, fecha de recepción, cliente, tipo de entrega y total, además del contador y estado vacío. Se comprobó que las filas se ordenan por fecha descendente, que los identificadores se conservan y que los empates tienen un orden determinista. La interfaz indica que los borradores públicos aún no son órdenes recibidas; por eso el listado real permanece vacío hasta conectar la recepción de pedidos. `npm run lint`, `npm run build` y `npm test` correctos (81 pruebas aprobadas).
+- **Commits / evidencia:** `src/pages/admin/AdminSection.tsx`, `src/pages/admin/AdminOrderManagementPage.tsx`, `src/pages/admin/AdminOrderManagementPage.css`, `src/pages/admin/adminOrders.ts`, `tests/admin-orders.test.mjs` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** día 38 — interfaz Kanban para estados de pedidos. La conexión con una fuente real de órdenes sigue pendiente; horas efectivas por registrar.
 
 ### Día 38 — Miércoles 11/11/2026 — Pedidos
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 32 (Miércoles 04/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 160/320 h.
-- [ ] Creación de interfaz tipo Kanban para estados (Pendiente, En Preparación).
-- [ ] Comprobar columnas Pendiente, En preparación y Entregado.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Creación de interfaz tipo Kanban para estados (Pendiente, En Preparación).
+- [x] Comprobar columnas Pendiente, En preparación y Entregado.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** `/admin/pedidos` conserva la tabla del día anterior y ofrece un selector accesible entre tabla y tablero Kanban. El tablero tiene columnas Pendiente, En preparación y Entregado, contadores y estados vacíos; las tarjetas muestran identificador, cliente, fecha e importe cuando haya órdenes. Se comprobó la agrupación de pedidos en las tres columnas y se mantuvieron las transiciones para el día 39. La lista sigue vacía hasta que exista una fuente de órdenes recibidas. `npm run lint`, `npm run build` y `npm test` correctos (82 pruebas aprobadas). Se corrigió el falso positivo TODO de WebStorm cambiando “método de entrega” por “forma de entrega”.
+- **Commits / evidencia:** `src/pages/admin/AdminOrderManagementPage.tsx`, `src/pages/admin/AdminOrderManagementPage.css`, `src/pages/admin/adminOrders.ts`, `tests/admin-orders.test.mjs` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** día 39 — implementar controles para mover pedidos entre estados y probar transiciones válidas y duplicadas. Horas efectivas pendientes de registrar.
 
 ### Día 39 — Jueves 12/11/2026 — Pedidos
 
