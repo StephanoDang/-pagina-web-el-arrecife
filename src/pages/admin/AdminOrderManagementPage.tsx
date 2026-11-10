@@ -11,7 +11,7 @@ const dateFormat = new Intl.DateTimeFormat('es-PE', {
 })
 
 export default function AdminOrderManagementPage() {
-  const [view, setView] = useState<'table' | 'board'>('table')
+  const [view, setView] = useState<'table' | 'board'>('board')
   const orders = useMemo(() => sortAdminOrders(receivedOrders), [])
   const ordersByStatus = useMemo(() => groupAdminOrdersByStatus(orders), [orders])
   const columns = useMemo<AdminTableColumn<AdminOrder>[]>(() => [
