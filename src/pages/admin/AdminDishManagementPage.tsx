@@ -1,15 +1,18 @@
 import { useMemo, useState, type FormEvent } from 'react'
 import type { Dish } from '../../types/menu'
-import { menuCategories, menuDishes } from '../../data/menu'
+import { menuCategories } from '../../data/menu'
+import { setMenuDishes, useMenuDishes } from '../../data/menuStore'
 import AdminButton from './components/AdminButton'
 import AdminModal from './components/AdminModal'
 import AdminTable, { type AdminTableColumn } from './components/AdminTable'
 import { parseAdminDishPrice, validateAdminDishForm, type AdminDishFormErrors, type AdminDishFormValues } from './adminDishForm'
 import { setAdminDishAvailability, updateAdminDish } from './adminDishState'
+import { filterAdminDishes, getPageCount, paginateItems, type AdminDishFilters } from './adminDishFilters'
 import './AdminDishManagementPage.css'
 
 const initialForm: AdminDishFormValues = { name: '', categoryId: '', price: '', description: '' }
 const priceFormat = new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' })
+const pageSize = 20
 
 function formatPrice(priceInCents: number) {
   return priceFormat.format(priceInCents / 100)
@@ -21,8 +24,13 @@ export default function AdminDishManagementPage() {
   const [editingDishId, setEditingDishId] = useState<string | null>(null)
   const [dishPendingDeactivation, setDishPendingDeactivation] = useState<Dish | null>(null)
   const [errors, setErrors] = useState<AdminDishFormErrors>({})
-  const [dishes, setDishes] = useState<Dish[]>(menuDishes)
+  const dishes = useMenuDishes()
+  const [filters, setFilters] = useState<AdminDishFilters>({ query: '', categoryId: 'all', availability: 'all' })
+  const [page, setPage] = useState(1)
   const [announcement, setAnnouncement] = useState('')
+  const filteredDishes = useMemo(() => filterAdminDishes(dishes, filters), [dishes, filters])
+  const pageCount = getPageCount(filteredDishes.length, pageSize)
+  const visibleDishes = paginateItems(filteredDishes, Math.min(page, pageCount), pageSize)
 
   const columns = useMemo<AdminTableColumn<Dish>[]>(() => [
     { key: 'name', header: 'Plato', render: (dish) => <strong>{dish.name}</strong> },
@@ -66,6 +74,11 @@ export default function AdminDishManagementPage() {
     setErrors((current) => ({ ...current, [field]: undefined }))
   }
 
+  function updateFilter(field: keyof AdminDishFilters, value: string) {
+    setFilters((current) => ({ ...current, [field]: value }))
+    setPage(1)
+  }
+
   function startEditing(dish: Dish) {
     setForm({
       name: dish.name,
@@ -79,14 +92,14 @@ export default function AdminDishManagementPage() {
   }
 
   function restoreDish(dish: Dish) {
-    setDishes((current) => setAdminDishAvailability(current, dish.id, true))
+    setMenuDishes((current) => setAdminDishAvailability(current, dish.id, true))
     setAnnouncement(`${dish.name} se reactivó en esta vista de demostración.`)
   }
 
   function confirmDeactivation() {
     if (!dishPendingDeactivation) return
     const dish = dishPendingDeactivation
-    setDishes((current) => setAdminDishAvailability(current, dish.id, false))
+    setMenuDishes((current) => setAdminDishAvailability(current, dish.id, false))
     setDishPendingDeactivation(null)
     setAnnouncement(`${dish.name} se desactivó en esta vista de demostración.`)
   }
@@ -101,7 +114,7 @@ export default function AdminDishManagementPage() {
     if (priceInCents === null) return
 
     if (editingDishId) {
-      setDishes((current) => updateAdminDish(current, editingDishId, form, priceInCents))
+      setMenuDishes((current) => updateAdminDish(current, editingDishId, form, priceInCents))
       setAnnouncement(`${form.name.trim()} se actualizó. Se conservó el identificador del plato.`)
     } else {
       const newDish: Dish = {
@@ -112,7 +125,7 @@ export default function AdminDishManagementPage() {
         available: true,
         presentations: [{ id: 'unica', name: 'Única', priceInCents }],
       }
-      setDishes((current) => [...current, newDish])
+      setMenuDishes((current) => [...current, newDish])
       setAnnouncement(`${newDish.name} se añadió a esta vista de demostración.`)
     }
     setForm(initialForm)
@@ -123,23 +136,51 @@ export default function AdminDishManagementPage() {
     <section className="admin-dishes-page" aria-labelledby="admin-dishes-title">
       <header className="admin-dishes-heading">
         <div>
-          <p className="admin-eyebrow">CONTENIDO · DEMOSTRACIÓN</p>
+          <p className="admin-eyebrow">CONTENIDO · CARTA</p>
           <h2 id="admin-dishes-title">Gestión de platos</h2>
-          <p>Edita, desactiva y reactiva platos de ejemplo. Los cambios solo duran mientras esta vista está abierta.</p>
+          <p>Administra los platos de la carta. Los cambios se conservan en LocalStorage de este navegador.</p>
         </div>
         <AdminButton onClick={() => { setForm(initialForm); setEditingDishId(null); setIsModalOpen(true) }}>Nuevo plato</AdminButton>
       </header>
 
-      <p className="admin-dishes-notice">Datos de demostración: los cambios no modifican la carta pública ni se guardan.</p>
+      <p className="admin-dishes-notice">Los cambios de esta demostración se guardan solo en este navegador y se reflejan en la carta pública al abrirla aquí.</p>
       {announcement && <p className="admin-dishes-announcement" role="status">{announcement}</p>}
+
+      <div className="admin-dish-filters" aria-label="Filtros de platos">
+        <div className="admin-dish-filter">
+          <label htmlFor="admin-dish-search">Buscar platos</label>
+          <input id="admin-dish-search" type="search" value={filters.query} onChange={(event) => updateFilter('query', event.target.value)} placeholder="Nombre o descripción" />
+        </div>
+        <div className="admin-dish-filter">
+          <label htmlFor="admin-dish-category-filter">Categoría</label>
+          <select id="admin-dish-category-filter" value={filters.categoryId} onChange={(event) => updateFilter('categoryId', event.target.value)}>
+            <option value="all">Todas las categorías</option>
+            {menuCategories.map((category) => <option key={category.id} value={category.id}>{category.name}</option>)}
+          </select>
+        </div>
+        <div className="admin-dish-filter">
+          <label htmlFor="admin-dish-availability-filter">Disponibilidad</label>
+          <select id="admin-dish-availability-filter" value={filters.availability} onChange={(event) => updateFilter('availability', event.target.value)}>
+            <option value="all">Todas</option><option value="available">Disponibles</option><option value="unavailable">Desactivados</option>
+          </select>
+        </div>
+      </div>
 
       <AdminTable
         caption="Platos de demostración"
         columns={columns}
-        emptyMessage="No hay platos para mostrar. Usa «Nuevo plato» para comenzar."
         getRowKey={(dish) => dish.id}
-        rows={dishes}
+        rows={visibleDishes}
+        emptyMessage="No hay platos que coincidan con estos filtros. Prueba con otra búsqueda o categoría."
       />
+      <nav className="admin-dish-pagination" aria-label="Paginación de platos">
+        <span role="status">{filteredDishes.length === 0 ? '0 resultados' : `${(Math.min(page, pageCount) - 1) * pageSize + 1}–${Math.min(page, pageCount) * pageSize} de ${filteredDishes.length}`}</span>
+        <div>
+          <AdminButton onClick={() => setPage((current) => Math.max(1, current - 1))} variant="secondary" disabled={page <= 1}>Anterior</AdminButton>
+          <span aria-current="page">Página {Math.min(page, pageCount)} de {pageCount}</span>
+          <AdminButton onClick={() => setPage((current) => Math.min(pageCount, current + 1))} variant="secondary" disabled={page >= pageCount}>Siguiente</AdminButton>
+        </div>
+      </nav>
 
       <AdminModal footer={(
         <>

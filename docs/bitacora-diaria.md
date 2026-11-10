@@ -8,15 +8,15 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 06/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 10/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Día actual:** día 34 — viernes 06/11/2026, edición de platos y desactivación lógica implementadas. Lint y build correctos; 74 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 140/320 h hasta el día 34, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en el repo:** día 36 — lunes 09/11/2026, sincronización de la carta con LocalStorage y filtros/paginación del backoffice completados. Lint y build correctos; 78 pruebas aprobadas. Horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 150/320 h hasta el día 36, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 35 — sábado 07/11/2026, sincronizar la gestión administrativa con la carta pública mediante LocalStorage.
+- **Siguiente tarea:** día 37 — pantalla de gestión de pedidos: tabla de órdenes entrantes, prevista para el martes 10/11/2026.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -565,28 +565,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 35 — Sábado 07/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 29 (Sábado 31/10/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 145/320 h.
-- [ ] Sincronización de gestión administrativa con carta pública (LocalStorage).
-- [ ] Comprobar que los cambios se reflejan en la carta del mismo navegador.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Sincronización de gestión administrativa con carta pública (LocalStorage).
+- [x] Comprobar que los cambios se reflejan en la carta del mismo navegador.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La gestión de platos usa un estado compartido persistido en LocalStorage. Altas, ediciones, disponibilidad y reactivación se conservan al navegar entre administración y carta en el mismo navegador; los platos desactivados no se muestran en la carta pública. La lectura recupera el catálogo inicial si el dato guardado es inválido. `npm run lint`, `npm run build` y `npm test` correctos (78 pruebas aprobadas).
+- **Commits / evidencia:** `src/data/menuStore.ts`, `src/data/menu.ts`, `src/pages/MenuPage.tsx`, `src/pages/admin/AdminDishManagementPage.tsx`, `tests/menu-store.test.mjs`.
+- **Pendientes y siguiente paso:** continuar con filtros y paginación en el día 36. Horas efectivas pendientes de registrar.
 
 ### Día 36 — Lunes 09/11/2026 — Backoffice
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 30 (Lunes 02/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 150/320 h.
-- [ ] Filtros y paginación en la tabla de gestión de platos.
-- [ ] Probar filtros combinados y páginas sin resultados.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Filtros y paginación en la tabla de gestión de platos.
+- [x] Probar filtros combinados y páginas sin resultados.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La tabla administrativa incorpora búsqueda por nombre o descripción, filtro por categoría y disponibilidad, combinables entre sí, con paginación de 20 filas y estado vacío claro. Al cambiar filtros se vuelve a la primera página y los controles anterior/siguiente respetan los límites. `npm run lint`, `npm run build` y `npm test` correctos; las 78 pruebas incluyen búsqueda combinada, cero resultados y paginación.
+- **Commits / evidencia:** `src/pages/admin/AdminDishManagementPage.tsx`, `src/pages/admin/AdminDishManagementPage.css`, `src/pages/admin/adminDishFilters.ts`, `tests/admin-dish-filters.test.mjs`.
+- **Pendientes y siguiente paso:** día 37 — tabla de órdenes entrantes. Horas efectivas pendientes de registrar.
 
 ### Día 37 — Martes 10/11/2026 — Pedidos
 

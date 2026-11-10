@@ -455,8 +455,8 @@ export const menuDishes: Dish[] = [
 validateMenu(menuCategories, menuDishes)
 
 // En piqueos para dos se muestran únicamente las presentaciones Extra del PDF.
-export function getDishesForCategory(categoryId: string): Dish[] {
-  return menuDishes
+export function getDishesForCategory(categoryId: string, dishes: Dish[] = menuDishes): Dish[] {
+  return dishes
     .filter((item) => item.categoryId === categoryId || item.additionalCategoryIds?.includes(categoryId))
     .map((item): Dish => {
       if (categoryId === 'piqueos-dos' && ['cebiche-pescado', 'cebiche-mixto', 'negra-diabla'].includes(item.id)) {

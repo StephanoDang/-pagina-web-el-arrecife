@@ -3,11 +3,14 @@ import { useSearchParams } from 'react-router'
 import MenuCategories from '../components/MenuCategories'
 import DishCard from '../components/DishCard'
 import MenuIcon from '../components/MenuIcon'
-import { beverageSurchargeNotice, getDishesForCategory, menuCategories, menuDishes } from '../data/menu'
+import { beverageSurchargeNotice, getDishesForCategory, menuCategories } from '../data/menu'
+import { useMenuDishes } from '../data/menuStore'
 import { filterMenu } from '../data/filterMenu'
 import './MenuPage.css'
 
 export default function MenuPage() {
+  const menuDishes = useMenuDishes()
+  const availableDishes = useMemo(() => menuDishes.filter((dish) => dish.available), [menuDishes])
   const [searchParams, setSearchParams] = useSearchParams()
   const urlQuery = searchParams.get('buscar') ?? ''
   const [searchDraft, setSearchDraft] = useState(urlQuery)
@@ -22,8 +25,8 @@ export default function MenuPage() {
   const pageRef = useRef<HTMLDivElement>(null)
   const toolbarRef = useRef<HTMLDivElement>(null)
   const { sections, categories, totalMatches, resultCount } = useMemo(
-    () => filterMenu(menuCategories, getDishesForCategory, query, selectedCategory),
-    [query, selectedCategory],
+    () => filterMenu(menuCategories, (categoryId) => getDishesForCategory(categoryId, availableDishes), query, selectedCategory),
+    [availableDishes, query, selectedCategory],
   )
   const hasFilters = Boolean(query.trim()) || selectedCategory !== 'all'
 
