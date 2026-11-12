@@ -36,3 +36,15 @@ export function groupAdminOrdersByStatus(orders: readonly AdminOrder[]): Record<
     delivered: orders.filter((order) => order.status === 'delivered'),
   }
 }
+
+/** Advances an order by exactly one step; invalid, duplicate, backward, or skipped transitions are no-ops. */
+export function transitionAdminOrderStatus(
+  orders: AdminOrder[], orderId: string, nextStatus: AdminOrderStatus,
+): AdminOrder[] {
+  const currentOrder = orders.find((order) => order.id === orderId)
+  if (!currentOrder) return orders
+  const currentIndex = adminOrderStatuses.indexOf(currentOrder.status)
+  const nextIndex = adminOrderStatuses.indexOf(nextStatus)
+  if (nextIndex !== currentIndex + 1) return orders
+  return orders.map((order) => order.id === orderId ? { ...order, status: nextStatus } : order)
+}

@@ -116,3 +116,15 @@ test('Pedidos presenta la tabla entrante y el estado vacío sin confundir borrad
   assert.match(html, /Entregado/)
   assert.match(html, /No hay pedidos en este estado/)
 })
+
+test('el tablero muestra acciones para avanzar y omite acciones para pedidos entregados', () => {
+  const initialOrders = [
+    { id: 'PED-101', receivedAt: '2026-11-12T15:00:00.000Z', customerName: 'Ana', deliveryMethod: 'pickup', totalInCents: 2500, status: 'pending' },
+    { id: 'PED-102', receivedAt: '2026-11-12T15:05:00.000Z', customerName: 'Luis', deliveryMethod: 'delivery', totalInCents: 3500, status: 'preparing' },
+    { id: 'PED-103', receivedAt: '2026-11-12T15:10:00.000Z', customerName: 'Sol', deliveryMethod: 'pickup', totalInCents: 4500, status: 'delivered' },
+  ]
+  const html = renderToStaticMarkup(React.createElement(AdminOrderManagementPage, { initialOrders }))
+  assert.match(html, /Iniciar preparación PED-101/)
+  assert.match(html, /Marcar entregado PED-102/)
+  assert.doesNotMatch(html, /Marcar entregado PED-103/)
+})

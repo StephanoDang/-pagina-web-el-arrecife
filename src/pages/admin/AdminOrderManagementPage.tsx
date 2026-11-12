@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import AdminButton from './components/AdminButton'
 import AdminTable, { type AdminTableColumn } from './components/AdminTable'
-import { adminOrderStatuses, adminOrderStatusLabels, formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, type AdminOrder } from './adminOrders'
+import { adminOrderStatuses, adminOrderStatusLabels, formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, transitionAdminOrderStatus, type AdminOrder, type AdminOrderStatus } from './adminOrders'
 import './AdminOrderManagementPage.css'
 
 const receivedOrders: AdminOrder[] = []
@@ -10,9 +10,9 @@ const dateFormat = new Intl.DateTimeFormat('es-PE', {
   dateStyle: 'medium', timeStyle: 'short', timeZone: 'America/Lima',
 })
 
-export default function AdminOrderManagementPage() {
+export default function AdminOrderManagementPage({ initialOrders = receivedOrders }: { initialOrders?: AdminOrder[] } = {}) {
   const [view, setView] = useState<'table' | 'board'>('board')
-  const orders = useMemo(() => sortAdminOrders(receivedOrders), [])
+  const [orders, setOrders] = useState(() => sortAdminOrders(initialOrders))
   const ordersByStatus = useMemo(() => groupAdminOrdersByStatus(orders), [orders])
   const columns = useMemo<AdminTableColumn<AdminOrder>[]>(() => [
     { key: 'id', header: 'Código', render: (order) => <strong>{formatAdminOrderId(order.id)}</strong> },
@@ -21,6 +21,13 @@ export default function AdminOrderManagementPage() {
     { key: 'delivery', header: 'Entrega', render: (order) => order.deliveryMethod === 'delivery' ? 'Delivery' : 'Recojo en tienda' },
     { key: 'total', header: 'Total', render: (order) => currencyFormat.format(order.totalInCents / 100) },
   ], [])
+
+  function advanceOrder(order: AdminOrder) {
+    const currentIndex = adminOrderStatuses.indexOf(order.status)
+    const nextStatus = adminOrderStatuses[currentIndex + 1] as AdminOrderStatus | undefined
+    if (!nextStatus) return
+    setOrders((current) => transitionAdminOrderStatus(current, order.id, nextStatus))
+  }
 
   return (
     <section className="admin-orders-page" aria-labelledby="admin-orders-title">
@@ -33,7 +40,7 @@ export default function AdminOrderManagementPage() {
         <p className="admin-orders-count" role="status">{orders.length} {orders.length === 1 ? 'orden recibida' : 'órdenes recibidas'}</p>
       </header>
 
-      <p className="admin-orders-notice">Los resúmenes creados en la página pública todavía son borradores y no aparecen como órdenes recibidas.</p>
+      <p className="admin-orders-notice">Los resúmenes creados en la página pública todavía son borradores y no aparecen como órdenes recibidas. Los cambios de estado son temporales en esta demostración.</p>
 
       <div className="admin-orders-view-switch" role="group" aria-label="Vista de pedidos">
         <AdminButton aria-pressed={view === 'table'} onClick={() => setView('table')} variant={view === 'table' ? 'primary' : 'secondary'}>Tabla</AdminButton>
@@ -67,6 +74,15 @@ export default function AdminOrderManagementPage() {
                       <strong>{formatAdminOrderId(order.id)}</strong>
                       <span>{order.customerName}</span>
                       <small>{dateFormat.format(new Date(order.receivedAt))} · {currencyFormat.format(order.totalInCents / 100)}</small>
+                      {order.status !== 'delivered' && (
+                        <AdminButton
+                          aria-label={`${order.status === 'pending' ? 'Iniciar preparación' : 'Marcar entregado'} ${formatAdminOrderId(order.id)}`}
+                          onClick={() => advanceOrder(order)}
+                          variant="secondary"
+                        >
+                          {order.status === 'pending' ? 'Iniciar preparación' : 'Marcar entregado'}
+                        </AdminButton>
+                      )}
                     </li>
                   ))}
                 </ul>
