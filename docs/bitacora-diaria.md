@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Último avance verificado en el repo:** día 39 — jueves 12/11/2026, controles para avanzar el estado de pedidos implementados. Lint y build correctos; 84 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 165/320 h hasta el día 39, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en el repo:** día 41 — sábado 14/11/2026, detalle de pedidos y filtros por fecha/estado implementados. Lint y build correctos; 87 pruebas aprobadas. Horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 175/320 h hasta el día 41, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 40 — vista de detalle administrativo del pedido con productos e información del cliente, prevista para el viernes 13/11/2026.
+- **Siguiente tarea:** día 42 — pantalla de gestión administrativa de reservas, prevista para el lunes 16/11/2026.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -630,28 +630,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 40 — Viernes 13/11/2026 — Pedidos
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 34 (Viernes 06/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 170/320 h.
-- [ ] Vista de detalle de pedido administrativo con productos e información del cliente.
-- [ ] Verificar cantidades, importes y datos de entrega del pedido.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Vista de detalle de pedido administrativo con productos e información del cliente.
+- [x] Verificar cantidades, importes y datos de entrega del pedido.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se puede abrir el detalle desde la tabla o una tarjeta Kanban. La vista muestra cliente, teléfono, forma de entrega, dirección solo para delivery, productos, presentaciones, cantidades, precios unitarios, subtotales y total. Se validan cantidades y precios antes de calcular el subtotal. `npm run lint`, `npm run build` y `npm test` correctos (87 pruebas aprobadas), con revisión de datos de contacto, dirección, cantidades e importes usando una orden de prueba. No se agregaron datos de clientes al listado.
+- **Commits / evidencia:** `src/pages/admin/AdminOrderDetail.tsx`, `src/pages/admin/AdminOrderManagementPage.tsx`, `src/pages/admin/adminOrders.ts`, `tests/admin-components.test.mjs` y `tests/admin-orders.test.mjs`.
+- **Pendientes y siguiente paso:** continuar con filtros por fecha y estado en el día 41. La recepción y persistencia real de pedidos siguen pendientes; horas efectivas por registrar.
 
 ### Día 41 — Sábado 14/11/2026 — Pedidos
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 35 (Sábado 07/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 175/320 h.
-- [ ] Filtros por fecha y estado en el historial de pedidos.
-- [ ] Probar límites de fechas y combinación de estados.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Filtros por fecha y estado en el historial de pedidos.
+- [x] Probar límites de fechas y combinación de estados.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La vista de tabla permite filtrar por fecha inicial y final, con límites inclusivos según el día calendario de Lima, y combinar el intervalo con uno de los tres estados. Los controles limitan fechas incompatibles y el listado indica cuando no hay coincidencias. Pruebas cubren ambos extremos del intervalo, cruce de medianoche UTC/Lima, intervalo invertido y combinación de estado; `npm run lint`, `npm run build` y `npm test` correctos (87 pruebas aprobadas).
+- **Commits / evidencia:** `src/pages/admin/AdminOrderManagementPage.tsx`, `src/pages/admin/AdminOrderManagementPage.css`, `src/pages/admin/adminOrders.ts` y `tests/admin-orders.test.mjs`.
+- **Pendientes y siguiente paso:** día 42 — pantalla de gestión administrativa de reservas. Los pedidos aún dependen de una fuente real para aparecer en el historial; horas efectivas pendientes de registrar.
 
 ### Día 42 — Lunes 16/11/2026 — Reservas Admin
 

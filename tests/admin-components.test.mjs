@@ -13,12 +13,13 @@ const vite = await createServer({
   appType: 'custom',
 })
 
-const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }, { default: AdminOrderManagementPage }] = await Promise.all([
+const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }, { default: AdminOrderManagementPage }, { default: AdminOrderDetail }] = await Promise.all([
   vite.ssrLoadModule('/src/pages/admin/components/AdminTable.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminButton.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminModal.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminDishManagementPage.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminOrderManagementPage.tsx'),
+  vite.ssrLoadModule('/src/pages/admin/AdminOrderDetail.tsx'),
 ])
 
 after(async () => vite.close())
@@ -127,4 +128,22 @@ test('el tablero muestra acciones para avanzar y omite acciones para pedidos ent
   assert.match(html, /Iniciar preparación PED-101/)
   assert.match(html, /Marcar entregado PED-102/)
   assert.doesNotMatch(html, /Marcar entregado PED-103/)
+})
+
+test('el detalle del pedido presenta cliente, cantidades, importes y dirección delivery', () => {
+  const order = {
+    id: 'PED-301', receivedAt: '2026-11-13T15:00:00.000Z', customerName: 'Ana Pérez', customerPhone: '+51999999999',
+    deliveryMethod: 'delivery', deliveryAddress: 'Av. El Mar 120, Lima', totalInCents: 9600, status: 'preparing',
+    items: [{ id: 'jalea', name: 'Jalea Arrecife', presentation: 'Personal', quantity: 2, unitPriceInCents: 4800 }],
+  }
+  const html = renderToStaticMarkup(React.createElement(AdminOrderDetail, { order, onClose() {} }))
+  assert.match(html, /Detalle PED-301/)
+  assert.match(html, /Ana Pérez/)
+  assert.match(html, /\+51999999999/)
+  assert.match(html, /Av\. El Mar 120, Lima/)
+  assert.match(html, /Jalea Arrecife/)
+  assert.match(html, /Personal/)
+  assert.match(html, />2</)
+  assert.match(html, /Productos del pedido/)
+  assert.match(html, /Total del pedido/)
 })

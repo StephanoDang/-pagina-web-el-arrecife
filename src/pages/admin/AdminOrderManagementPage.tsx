@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
 import AdminButton from './components/AdminButton'
 import AdminTable, { type AdminTableColumn } from './components/AdminTable'
-import { adminOrderStatuses, adminOrderStatusLabels, formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, transitionAdminOrderStatus, type AdminOrder, type AdminOrderStatus } from './adminOrders'
+import AdminOrderDetail from './AdminOrderDetail'
+import { adminOrderStatuses, adminOrderStatusLabels, filterAdminOrders, formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, transitionAdminOrderStatus, type AdminOrder, type AdminOrderFilters, type AdminOrderStatus } from './adminOrders'
 import './AdminOrderManagementPage.css'
 
 const receivedOrders: AdminOrder[] = []
@@ -13,13 +14,17 @@ const dateFormat = new Intl.DateTimeFormat('es-PE', {
 export default function AdminOrderManagementPage({ initialOrders = receivedOrders }: { initialOrders?: AdminOrder[] } = {}) {
   const [view, setView] = useState<'table' | 'board'>('board')
   const [orders, setOrders] = useState(() => sortAdminOrders(initialOrders))
+  const [selectedOrder, setSelectedOrder] = useState<AdminOrder | null>(null)
+  const [filters, setFilters] = useState<AdminOrderFilters>({ fromDate: '', toDate: '', status: 'all' })
   const ordersByStatus = useMemo(() => groupAdminOrdersByStatus(orders), [orders])
+  const filteredOrders = useMemo(() => filterAdminOrders(orders, filters), [orders, filters])
   const columns = useMemo<AdminTableColumn<AdminOrder>[]>(() => [
     { key: 'id', header: 'Código', render: (order) => <strong>{formatAdminOrderId(order.id)}</strong> },
     { key: 'receivedAt', header: 'Recibido', render: (order) => dateFormat.format(new Date(order.receivedAt)) },
     { key: 'customer', header: 'Cliente', render: (order) => order.customerName },
     { key: 'delivery', header: 'Entrega', render: (order) => order.deliveryMethod === 'delivery' ? 'Delivery' : 'Recojo en tienda' },
     { key: 'total', header: 'Total', render: (order) => currencyFormat.format(order.totalInCents / 100) },
+    { key: 'detail', header: 'Detalle', render: (order) => <AdminButton onClick={() => setSelectedOrder(order)} variant="secondary">Ver detalle</AdminButton> },
   ], [])
 
   function advanceOrder(order: AdminOrder) {
@@ -48,12 +53,32 @@ export default function AdminOrderManagementPage({ initialOrders = receivedOrder
       </div>
 
       <div hidden={view !== 'table'}>
+        <div className="admin-order-filter-row" aria-label="Filtros del historial de pedidos">
+          <div>
+            <label htmlFor="admin-order-from-date">Desde</label>
+            <input id="admin-order-from-date" type="date" value={filters.fromDate} max={filters.toDate || undefined} onChange={(event) => setFilters((current) => ({ ...current, fromDate: event.target.value }))} />
+          </div>
+          <div>
+            <label htmlFor="admin-order-to-date">Hasta</label>
+            <input id="admin-order-to-date" type="date" value={filters.toDate} min={filters.fromDate || undefined} onChange={(event) => setFilters((current) => ({ ...current, toDate: event.target.value }))} />
+          </div>
+          <div>
+            <label htmlFor="admin-order-status-filter">Estado</label>
+            <select id="admin-order-status-filter" value={filters.status} onChange={(event) => setFilters((current) => ({ ...current, status: event.target.value as AdminOrderFilters['status'] }))}>
+              <option value="all">Todos los estados</option>
+              {adminOrderStatuses.map((status) => <option key={status} value={status}>{adminOrderStatusLabels[status]}</option>)}
+            </select>
+          </div>
+          <p role="status">{filteredOrders.length} {filteredOrders.length === 1 ? 'pedido' : 'pedidos'}</p>
+        </div>
         <AdminTable
           caption="Pedidos recibidos"
           columns={columns}
-          emptyMessage="Aún no hay órdenes recibidas. Cuando se conecte la recepción de pedidos, aparecerán aquí."
+          emptyMessage={orders.length === 0
+            ? 'Aún no hay órdenes recibidas. Cuando se conecte la recepción de pedidos, aparecerán aquí.'
+            : 'No hay pedidos que coincidan con estos filtros.'}
           getRowKey={(order) => order.id}
-          rows={orders}
+          rows={filteredOrders}
         />
       </div>
       <div className="admin-orders-board" hidden={view !== 'board'} aria-label="Pedidos por estado">
@@ -83,6 +108,7 @@ export default function AdminOrderManagementPage({ initialOrders = receivedOrder
                           {order.status === 'pending' ? 'Iniciar preparación' : 'Marcar entregado'}
                         </AdminButton>
                       )}
+                      <AdminButton onClick={() => setSelectedOrder(order)} variant="secondary">Ver detalle</AdminButton>
                     </li>
                   ))}
                 </ul>
@@ -91,6 +117,7 @@ export default function AdminOrderManagementPage({ initialOrders = receivedOrder
           )
         })}
       </div>
+      <AdminOrderDetail order={selectedOrder} onClose={() => setSelectedOrder(null)} />
     </section>
   )
 }

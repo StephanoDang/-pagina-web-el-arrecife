@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, transitionAdminOrderStatus } from '../src/pages/admin/adminOrders.ts'
+import { calculateAdminOrderItemSubtotal, filterAdminOrders, formatAdminOrderId, groupAdminOrdersByStatus, sortAdminOrders, transitionAdminOrderStatus } from '../src/pages/admin/adminOrders.ts'
 
 const orders = [
   { id: 'PED-102', receivedAt: '2026-11-10T16:30:00.000Z', customerName: 'Ana', deliveryMethod: 'pickup', totalInCents: 2500, status: 'pending' },
@@ -44,4 +44,25 @@ test('permite avanzar solo al siguiente estado y no aplica transiciones repetida
   const delivered = transitionAdminOrderStatus(preparing, 'PED-102', 'delivered')
   assert.equal(delivered[0].status, 'delivered')
   assert.equal(transitionAdminOrderStatus(delivered, 'PED-102', 'delivered'), delivered)
+})
+
+test('filtra el historial por fechas inclusivas en hora de Lima y combina el estado', () => {
+  const history = [
+    { ...orders[0], id: 'PED-201', receivedAt: '2026-11-10T04:30:00.000Z', status: 'pending' },
+    { ...orders[1], id: 'PED-202', receivedAt: '2026-11-10T05:00:00.000Z', status: 'preparing' },
+    { ...orders[2], id: 'PED-203', receivedAt: '2026-11-11T04:59:59.000Z', status: 'preparing' },
+    { ...orders[2], id: 'PED-204', receivedAt: '2026-11-11T05:00:00.000Z', status: 'delivered' },
+  ]
+  const filtered = filterAdminOrders(history, { fromDate: '2026-11-10', toDate: '2026-11-10', status: 'preparing' })
+  assert.deepEqual(filtered.map((order) => order.id), ['PED-202', 'PED-203'])
+  assert.deepEqual(filterAdminOrders(history, { fromDate: '2026-11-11', toDate: '2026-11-10', status: 'all' }), [])
+  assert.deepEqual(filterAdminOrders(history, { fromDate: '', toDate: '', status: 'delivered' }).map((order) => order.id), ['PED-204'])
+})
+
+test('calcula subtotales de líneas y rechaza cantidades o importes inválidos', () => {
+  const line = { id: 'line-1', name: 'Jalea', presentation: 'Familiar', quantity: 2, unitPriceInCents: 4800 }
+  assert.equal(calculateAdminOrderItemSubtotal(line), 9600)
+  assert.equal(calculateAdminOrderItemSubtotal({ ...line, quantity: 0 }), null)
+  assert.equal(calculateAdminOrderItemSubtotal({ ...line, unitPriceInCents: -1 }), null)
+  assert.equal(calculateAdminOrderItemSubtotal({ ...line, quantity: Number.MAX_SAFE_INTEGER }), null)
 })
