@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 import AdminDishManagementPage from './AdminDishManagementPage'
 import AdminOrderManagementPage from './AdminOrderManagementPage'
+import AdminReservationManagementPage from './AdminReservationManagementPage'
 
 const sectionContent = {
   inicio: {
@@ -35,6 +36,7 @@ type AdminSectionKey = keyof typeof sectionContent
 export default function AdminSection({ section }: { section: AdminSectionKey }) {
   if (section === 'carta') return <AdminDishManagementPage />
   if (section === 'pedidos') return <AdminOrderManagementPage />
+  if (section === 'reservas') return <AdminReservationManagementPage />
 
   const content = sectionContent[section]
 

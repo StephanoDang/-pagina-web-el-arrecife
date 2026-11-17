@@ -13,10 +13,10 @@
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Último avance verificado en el repo:** día 41 — sábado 14/11/2026, detalle de pedidos y filtros por fecha/estado implementados. Lint y build correctos; 87 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 175/320 h hasta el día 41, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en el repo:** día 43 — martes 17/11/2026, acciones para confirmar o cancelar reservas y actualización de estado en la pantalla administrativa. Lint y build correctos; 91 pruebas aprobadas. Horas efectivas pendientes de registrar.
+- **Avance previsto de objetivos:** 185/320 h hasta el día 43, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 42 — pantalla de gestión administrativa de reservas, prevista para el lunes 16/11/2026.
+- **Siguiente tarea:** día 44 — filtros de reservas por día de la semana y estado, previstos para el miércoles 18/11/2026.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -656,28 +656,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 42 — Lunes 16/11/2026 — Reservas Admin
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 36 (Lunes 09/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 180/320 h.
-- [ ] Pantalla de gestión de reservas para personal administrativo.
-- [ ] Verificar listado vacío, fechas y número de personas.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Pantalla de gestión de reservas para personal administrativo.
+- [x] Verificar listado vacío, fechas y número de personas.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** `/admin/reservas` muestra una tabla accesible con código, fecha y hora de visita, cliente, cantidad de personas y estado; el listado vacío indica que los borradores públicos aún no se envían al restaurante. Se verificó el estado vacío y una fila con fecha, hora, cliente y seis personas, además del orden cronológico estable y el formato de fecha sin cambio de día por zona horaria. `npm run lint`, `npm run build` y `npm test` correctos (90 pruebas aprobadas).
+- **Commits / evidencia:** `src/pages/admin/AdminSection.tsx`, `src/pages/admin/AdminReservationManagementPage.tsx`, `src/pages/admin/AdminReservationManagementPage.css`, `src/pages/admin/adminReservations.ts`, `tests/admin-reservations.test.mjs` y `tests/admin-components.test.mjs`.
+- **Pendientes y siguiente paso:** día 43 — agregar acciones para confirmar o cancelar reservas recibidas. La conexión con una fuente real de reservas sigue pendiente; horas efectivas por registrar.
 
 ### Día 43 — Martes 17/11/2026 — Reservas Admin
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 37 (Martes 10/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 185/320 h.
-- [ ] Acciones para confirmar o cancelar reservas con actualización de estado.
-- [ ] Probar confirmación y cancelación sin duplicar acciones.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Acciones para confirmar o cancelar reservas con actualización de estado.
+- [x] Probar confirmación y cancelación sin duplicar acciones.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La tabla administrativa permite confirmar o cancelar reservas pendientes; las reservas con estado final ya no muestran acciones. La transición ignora acciones repetidas y no altera reservas desconocidas. `npm test`: 91 pruebas aprobadas; `npm run lint` y `npm run build` correctos.
+- **Commits / evidencia:** `src/pages/admin/AdminReservationManagementPage.tsx`, `src/pages/admin/AdminReservationManagementPage.css`, `src/pages/admin/adminReservations.ts`, `tests/admin-reservations.test.mjs`.
+- **Pendientes y siguiente paso:** La lista sigue siendo de demostración porque el sitio todavía no recibe reservas reales. Día 44: filtros de reservas por día de la semana y estado. Horas efectivas pendientes de registrar.
 
 ### Día 44 — Miércoles 18/11/2026 — Reservas Admin
 

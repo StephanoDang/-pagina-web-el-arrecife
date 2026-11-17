@@ -13,13 +13,14 @@ const vite = await createServer({
   appType: 'custom',
 })
 
-const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }, { default: AdminOrderManagementPage }, { default: AdminOrderDetail }] = await Promise.all([
+const [{ default: AdminTable }, { default: AdminButton }, { default: AdminModal }, { default: AdminDishManagementPage }, { default: AdminOrderManagementPage }, { default: AdminOrderDetail }, { default: AdminReservationManagementPage }] = await Promise.all([
   vite.ssrLoadModule('/src/pages/admin/components/AdminTable.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminButton.tsx'),
   vite.ssrLoadModule('/src/pages/admin/components/AdminModal.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminDishManagementPage.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminOrderManagementPage.tsx'),
   vite.ssrLoadModule('/src/pages/admin/AdminOrderDetail.tsx'),
+  vite.ssrLoadModule('/src/pages/admin/AdminReservationManagementPage.tsx'),
 ])
 
 after(async () => vite.close())
@@ -146,4 +147,22 @@ test('el detalle del pedido presenta cliente, cantidades, importes y dirección 
   assert.match(html, />2</)
   assert.match(html, /Productos del pedido/)
   assert.match(html, /Total del pedido/)
+})
+
+test('Reservas presenta estado vacío y puede mostrar fecha, hora y cantidad de personas', () => {
+  const emptyHtml = renderToStaticMarkup(React.createElement(AdminReservationManagementPage))
+  assert.match(emptyHtml, /Reservas entrantes/)
+  assert.match(emptyHtml, /0 reservas recibidas/)
+  assert.match(emptyHtml, /Aún no hay reservas recibidas/)
+
+  const initialReservations = [{
+    id: 'RES-201', date: '2026-11-20', time: '18:30', customerName: 'Ana Pérez', people: 6, status: 'confirmed',
+  }]
+  const populatedHtml = renderToStaticMarkup(React.createElement(AdminReservationManagementPage, { initialReservations }))
+  assert.match(populatedHtml, /RES-201/)
+  assert.match(populatedHtml, /20 de noviembre de 2026/)
+  assert.match(populatedHtml, /18:30/)
+  assert.match(populatedHtml, /Ana Pérez/)
+  assert.match(populatedHtml, />6</)
+  assert.match(populatedHtml, /Confirmada/)
 })
