@@ -1,0 +1,12 @@
+.admin-reservations-page { display: grid; gap: 20px; }
+.admin-reservations-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.admin-reservations-heading h2 { margin: 0; color: #193b3f; font: 400 clamp(28px, 3vw, 38px)/1.15 Georgia, 'Times New Roman', serif; }
+.admin-reservations-heading > div > p:last-child { max-width: 60ch; margin: 10px 0 0; color: #64726d; font-size: 14px; line-height: 1.6; }
+.admin-reservations-heading .admin-eyebrow { margin-bottom: 10px; }
+.admin-reservations-count { flex: 0 0 auto; margin: 0; padding: 9px 12px; border: 1px solid #dbe5dc; border-radius: 999px; color: #386348; background: #edf5ed; font-size: 12px; font-weight: 600; }
+.admin-reservations-notice { margin: 0; padding: 12px 14px; border: 1px solid #e7dfc5; border-radius: 9px; color: #6e5b2f; background: #fbf8ee; font-size: 12px; line-height: 1.5; }
+.admin-reservation-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 600px) {
+  .admin-reservations-heading { align-items: flex-start; flex-direction: column; }
+}
