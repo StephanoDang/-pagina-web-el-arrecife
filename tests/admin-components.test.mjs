@@ -152,7 +152,7 @@ test('el detalle del pedido presenta cliente, cantidades, importes y dirección 
 test('Reservas presenta estado vacío y puede mostrar fecha, hora y cantidad de personas', () => {
   const emptyHtml = renderToStaticMarkup(React.createElement(AdminReservationManagementPage))
   assert.match(emptyHtml, /Reservas entrantes/)
-  assert.match(emptyHtml, /0 reservas recibidas/)
+  assert.match(emptyHtml, /0 reservas mostradas/)
   assert.match(emptyHtml, /Aún no hay reservas recibidas/)
 
   const initialReservations = [{

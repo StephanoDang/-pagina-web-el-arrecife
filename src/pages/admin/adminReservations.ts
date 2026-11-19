@@ -9,6 +9,28 @@ export interface AdminReservation {
   status: AdminReservationStatus
 }
 
+export type AdminReservationWeekday = 'all' | '0' | '1' | '2' | '3' | '4' | '5' | '6'
+
+export interface AdminReservationFilters {
+  weekday: AdminReservationWeekday
+  status: AdminReservationStatus | 'all'
+}
+
+/** Filters by the visit's local calendar date, stored as YYYY-MM-DD. */
+export function filterAdminReservations(
+  reservations: readonly AdminReservation[],
+  filters: AdminReservationFilters,
+): AdminReservation[] {
+  return reservations.filter((reservation) => {
+    if (filters.status !== 'all' && reservation.status !== filters.status) return false
+    if (filters.weekday === 'all') return true
+
+    const date = new Date(`${reservation.date}T00:00:00.000Z`)
+    if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== reservation.date) return false
+    return String(date.getUTCDay()) === filters.weekday
+  })
+}
+
 /** Changes only pending reservations; repeated or terminal actions are ignored. */
 export function updateAdminReservationStatus(
   reservations: readonly AdminReservation[],
