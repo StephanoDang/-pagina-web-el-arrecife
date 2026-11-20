@@ -8,15 +8,15 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 10/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 20/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Último avance verificado en el repo:** día 43 — martes 17/11/2026, acciones para confirmar o cancelar reservas y actualización de estado en la pantalla administrativa. Lint y build correctos; 91 pruebas aprobadas. Horas efectivas pendientes de registrar.
-- **Avance previsto de objetivos:** 185/320 h hasta el día 43, según los bloques planificados; no representa horas efectivas. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en Git:** día 43 — martes 17/11/2026, acciones para confirmar o cancelar reservas y actualización de estado en la pantalla administrativa. 91 pruebas aprobadas; lint y build correctos según el registro anterior. Horas efectivas pendientes de registrar. El usuario confirma que completó el diseño de datos compartidos del jueves 19/11 (día 45).
+- **Avance con evidencia en Git:** 185/320 h hasta el día 43, según los bloques planificados; no representa horas efectivas. El día 44 sigue pendiente porque sus cambios no se registraron en un commit. El día 45 se marca completado según confirmación del usuario. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea:** día 44 — filtros de reservas por día de la semana y estado, previstos para el miércoles 18/11/2026.
+- **Siguiente tarea pendiente:** día 44 — filtros de reservas por día de la semana y estado, previsto para el miércoles 18/11/2026. El día 45 (jueves 19/11) queda registrado como completado según confirmación del usuario; después sigue el día 46.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
 - **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
@@ -682,41 +682,41 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 44 — Miércoles 18/11/2026 — Reservas Admin
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 38 (Miércoles 11/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Pendiente de commit; no se conserva como avance del repositorio.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 190/320 h.
 - [ ] Filtro de reservas por día de la semana y estado.
 - [ ] Verificar filtros combinados y reservas sin coincidencias.
 - [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Se retiraron del árbol de trabajo los cambios del miércoles porque no están en Git.
+- **Commits / evidencia:** sin commit.
+- **Pendientes y siguiente paso:** Rehacer o volver a aplicar el filtro y registrar el commit para cerrar este día. El día 45 del jueves figura completado según confirmación del usuario.
 
 ### Día 45 — Jueves 19/11/2026 — Datos compartidos: diseño
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 39 (Jueves 12/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** Completado según confirmación del usuario.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 195/320 h.
-- [ ] Definir tablas de platos, pedidos, detalles y reservas y sus relaciones.
-- [ ] Documentar reglas de acceso, validaciones y tecnología de almacenamiento elegida.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Definir tablas de platos, pedidos, detalles y reservas y sus relaciones.
+- [x] Documentar reglas de acceso, validaciones y tecnología de almacenamiento elegida.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** El usuario confirma que completó el avance del jueves. No hay un artefacto nuevo de diseño de datos visible en el estado actual del repo para enlazar como evidencia.
+- **Commits / evidencia:** avance comunicado por el usuario; horas efectivas pendientes de registrar.
+- **Pendientes y siguiente paso:** Día 46: configurar el servicio de datos y las variables de entorno para desarrollo.
 
 ### Día 46 — Viernes 20/11/2026 — Datos compartidos: entorno
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 40 (Viernes 13/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** En progreso; configuración local de Supabase preparada, conexión y migración reales pendientes.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 200/320 h.
-- [ ] Configurar el servicio de datos y las variables de entorno para desarrollo.
-- [ ] Probar conexión, migraciones y datos de ejemplo sin guardar secretos en Git.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Preparar la configuración del servicio y las variables de entorno para desarrollo.
+- [ ] Probar conexión real, migraciones y datos de ejemplo sin guardar secretos en Git.
+- [x] Documentar la configuración, comprobaciones locales y el siguiente paso.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** Como el proveedor del día 45 no está especificado en los archivos, se tomó Supabase como base provisional. Se añadió lectura y validación de `VITE_SUPABASE_URL` y `VITE_SUPABASE_ANON_KEY`, además de una comprobación REST de solo lectura. Las pruebas locales con respuesta simulada y TypeScript pasaron; ESLint pasó. No se configuró una URL ni una clave reales, así que no se aplicaron migraciones ni datos de ejemplo.
+- **Commits / evidencia:** `.env.example`, `.gitignore`, `src/config/supabase.ts`, `tests/supabase-config.test.mjs`, [guía de configuración](supabase.md).
+- **Pendientes y siguiente paso:** Copiar `.env.example` a `.env.local`, introducir las credenciales públicas del proyecto elegido y completar la migración y el seed del esquema del día 45. No usar una clave `service_role` en el cliente.
 
 ### Día 47 — Sábado 21/11/2026 — Autenticación administrativa
 
