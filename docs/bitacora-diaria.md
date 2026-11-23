@@ -8,18 +8,18 @@
 - **Objetivos planificados:** se conservan los 64 bloques originales de 5 h (**320 horas de referencia**), ahora distribuidos en 70 registros de calendario. Dos registros son permisos sin trabajo y cuatro documentan actividades complementarias sin horas confirmadas; estas últimas no se suman retrospectivamente como bloques de 5 h.
 - **Feriados:** el jueves 08/10/2026 se excluye por indicación del usuario y no suma horas previstas. Los demás feriados conservan la planificación anterior hasta que se indique otro cambio. El pago y el reconocimiento de horas se registran conforme se confirmen.
 - **Entorno de trabajo:** WebStorm, Vite, React y TypeScript.
-- **Última actualización:** 20/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
+- **Última actualización:** 23/11/2026. Este calendario sustituye las fechas del archivo `BitacoraActualizada.cvs.rtf` y las alternativas anteriores.
 
 ## Dónde quedé
 
 - **Días anteriores:** días 1, 2 y 3 (28–30/09); avances del 28 y 29 corroborados por la captura de GitHub y trabajo en empresa del 30 comunicado por el usuario.
-- **Último avance verificado en Git:** día 43 — martes 17/11/2026, acciones para confirmar o cancelar reservas y actualización de estado en la pantalla administrativa. 91 pruebas aprobadas; lint y build correctos según el registro anterior. Horas efectivas pendientes de registrar. El usuario confirma que completó el diseño de datos compartidos del jueves 19/11 (día 45).
-- **Avance con evidencia en Git:** 185/320 h hasta el día 43, según los bloques planificados; no representa horas efectivas. El día 44 sigue pendiente porque sus cambios no se registraron en un commit. El día 45 se marca completado según confirmación del usuario. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto. Sábado 17, lunes 19, miércoles 21 y sábado 24: horas pendientes de confirmar.
+- **Último avance verificado en Git:** commit `3e44b88`, integración de autenticación administrativa. El commit `9ed2169` incluye los filtros administrativos de reservas del día 44. En la sesión del 23/11: 94 pruebas aprobadas; lint y build correctos. Horas efectivas pendientes de registrar.
+- **Avance planificado:** día 47 = 205/320 h de referencia; el día 48 suma 5 h planificadas, no horas reales confirmadas. El jueves 19/11 (día 45) queda completado según confirmación del usuario. El día 44 está implementado y registrado en Git; se corrige el estado antiguo que lo dejaba pendiente de commit. Jueves 15 y viernes 16: 0 h de trabajo en el proyecto.
 - **Hecho:** inicio del proyecto, README, configuración, limpieza de plantilla, React Router, Header/Footer y carta completa: 173 productos, 270 presentaciones y 35 categorías. Días 3 y 5 dedicados a trabajo en la empresa y coordinación con el jefe. Día 13: visita a la empresa para recopilar fotos, según lo comunicado por el usuario. Día 14: formulario mínimo de datos del cliente en `/pedidos` con validaciones. Sábado 17: correcciones menores de documentación comprobadas en dos commits. Lunes 19: visita a la empresa para mostrar la página y revisar correcciones, según el usuario. Miércoles 21: apoyo en la coordinación de precios de hosting, conversación con el jefe y presentación de avances, según lo comunicado por el usuario.
-- **Siguiente tarea pendiente:** día 44 — filtros de reservas por día de la semana y estado, previsto para el miércoles 18/11/2026. El día 45 (jueves 19/11) queda registrado como completado según confirmación del usuario; después sigue el día 46.
+- **Pendientes consolidados:** ver [pendientes por hacer](pendientes-por-hacer.md), preparado como traspaso técnico y con dependencias que requieren confirmación del usuario/restaurante. El día 49 sigue según el calendario.
 - **Datos recibidos:** menú de febrero de 2026 con precios, categorías y direcciones de dos sedes; fuente conservada en [menú recibido](menu_arrecife_mamafe.md).
 - **Datos confirmados:** propietario, según lo comunicado por el usuario el 01/10/2026: precios vigentes e iguales en ambas sedes, todos los platos disponibles y Jalea Arrecife a S/ 48.00. El 10/10/2026 el usuario confirmó que los precios incluyen IGV.
-- **Datos pendientes:** tasa de IGV para el desglose numérico, regla de recargos de bebidas en fechas coincidentes, entrega de logo, archivos de las fotografías y autorización de publicación, confirmación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas de ocupación, horarios y excepciones de feriados. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00, según la imagen y la indicación del usuario. La visita del 13/10 para recopilar fotos fue comunicada por el usuario; los archivos y permisos no se han confirmado en esta sesión.
+- **Datos pendientes:** tasa de IGV para un desglose numérico, regla de recargos de bebidas en fechas coincidentes, logo/fotografías y permisos de publicación, costo y condiciones de delivery, validación definitiva del máximo por reserva y aforo, alcance por sede, duración de visitas/franjas, horarios y excepciones de feriados, y definición del proveedor/costo de hosting. Se aplica provisionalmente de lunes a domingo, de 10:00 a 18:00. Ver lista priorizada en [pendientes por hacer](pendientes-por-hacer.md).
 - **Reglas provisionales y recordatorio para Codex (27/10):** el usuario autorizó hasta 10 personas por reserva, aforo de referencia de 120 personas y rechazo de reservas que superen el máximo. Aplicar el máximo de 10; conservar 120 como referencia interna, sin afirmar plazas disponibles. Cuando el usuario pregunte qué información falta confirmar, recordar la validación definitiva de estos valores con la empresa, si 120 corresponde a cada sede o al conjunto y las reglas para ocupación simultánea. El carácter provisional, el aforo y esta lista de pendientes no deben mostrarse en el formulario público; sí puede mostrarse el error necesario al superar 10 personas.
 - **Referencia histórica:** [bitácora anterior](bitacora-septiembre-octubre-2026.md); sus avances están integrados aquí y no se suman dos veces.
 
@@ -677,20 +677,20 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 - **Horas efectivas:** pendientes de registrar.
 - **Resultado y pruebas:** La tabla administrativa permite confirmar o cancelar reservas pendientes; las reservas con estado final ya no muestran acciones. La transición ignora acciones repetidas y no altera reservas desconocidas. `npm test`: 91 pruebas aprobadas; `npm run lint` y `npm run build` correctos.
 - **Commits / evidencia:** `src/pages/admin/AdminReservationManagementPage.tsx`, `src/pages/admin/AdminReservationManagementPage.css`, `src/pages/admin/adminReservations.ts`, `tests/admin-reservations.test.mjs`.
-- **Pendientes y siguiente paso:** La lista sigue siendo de demostración porque el sitio todavía no recibe reservas reales. Día 44: filtros de reservas por día de la semana y estado. Horas efectivas pendientes de registrar.
+- **Pendientes y siguiente paso:** La lista sigue siendo de demostración porque el sitio todavía no recibe reservas reales. Los filtros del día 44 quedaron implementados en el commit `9ed2169`. Horas efectivas pendientes de registrar.
 
 ### Día 44 — Miércoles 18/11/2026 — Reservas Admin
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 38 (Miércoles 11/11/2026), conservados en su orden original.
-- **Estado:** Pendiente de commit; no se conserva como avance del repositorio.
+- **Estado:** Completado en Git; estado anterior corregido al revisar el historial de commits.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 190/320 h.
-- [ ] Filtro de reservas por día de la semana y estado.
-- [ ] Verificar filtros combinados y reservas sin coincidencias.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Filtro de reservas por día de la semana y estado.
+- [x] Verificar filtros combinados y reservas sin coincidencias.
+- [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** Se retiraron del árbol de trabajo los cambios del miércoles porque no están en Git.
-- **Commits / evidencia:** sin commit.
-- **Pendientes y siguiente paso:** Rehacer o volver a aplicar el filtro y registrar el commit para cerrar este día. El día 45 del jueves figura completado según confirmación del usuario.
+- **Resultado y pruebas:** El código contiene los filtros por día y estado, combinación de criterios y estado sin coincidencias; las pruebas correspondientes están en `tests/admin-reservations.test.mjs`.
+- **Commits / evidencia:** `9ed2169 feat: add admin reservation filters and shared data design`.
+- **Pendientes y siguiente paso:** Día 45 completado según confirmación del usuario; continuar con la configuración real del servicio de datos.
 
 ### Día 45 — Jueves 19/11/2026 — Datos compartidos: diseño
 
