@@ -65,7 +65,7 @@ npm run dev      # Inicia el servidor de desarrollo
 npm run build    # Comprueba TypeScript y genera la versión de producción
 npm run preview  # Previsualiza la versión compilada
 npm run lint     # Ejecuta ESLint
-npm test         # Comprueba carta, filtros, carrito y borradores de orden
+npm test         # Comprueba carta, carrito, borradores, administración y migraciones/RLS de Supabase (PGlite)
 ```
 
 ## Estructura principal

@@ -43,9 +43,18 @@ Lista consolidada de asuntos que siguen abiertos en la bitácora al **23/11/2026
 
 ### Día 48 — Permisos de datos (23/11)
 
-- [ ] Aplicar RLS y verificar como usuario anónimo que no se pueden editar platos ni leer pedidos, líneas de pedido o reservas.
-- [ ] Verificar que una cuenta administradora sí puede leer/gestionar los datos permitidos.
-- [ ] Implementar una operación de servidor/función para crear pedidos atómicamente, revalidar disponibilidad, precios, cantidades y totales, y evitar envíos duplicados. No habilitar las inserciones públicas actuales de pedidos para producción hasta completar esta validación.
+- [ ] Aplicar RLS y verificar como usuario anónimo que no se pueden editar platos ni leer pedidos, líneas de pedido o reservas. *(23/11: verificado localmente sobre PGlite en `tests/supabase-rls.test.mjs`; falta aplicarlo y repetirlo en el proyecto Supabase.)*
+- [ ] Verificar que una cuenta administradora sí puede leer/gestionar los datos permitidos. *(23/11: verificado localmente con claims simulados de `app_metadata.role=admin`; falta con una cuenta real.)*
+- [x] Implementar una operación de servidor/función para crear pedidos atómicamente, revalidar disponibilidad, precios, cantidades y totales, y evitar envíos duplicados. *(23/11: `public.create_order` en `supabase/migrations/202611230002_catalog_codes_and_order_rpc.sql`; elimina las inserciones públicas directas. Verificada con PGlite: 13 pruebas SQL. Pendiente aplicarla en Supabase y conectarla en `/pedidos`.)*
+
+### Auditoría de la migración (23/11)
+
+- [x] Añadir códigos de catálogo (`code`) para enlazar los ids de texto de `src/data/menu.ts` con las filas UUID.
+- [x] Limitar a los administradores a cambiar solo `status`, con transiciones válidas, y dejar las líneas de pedido como historial inmutable.
+- [x] Usar la fecha de Lima en la política de reservas y fijar `created_at` en el servidor.
+- [ ] Generar el seed de la carta (173 productos, 270 presentaciones, 35 categorías) desde `src/data/menu.ts` y verificarlo con PGlite antes de aplicarlo.
+- [ ] `npm audit` informa 12 avisos (3 altos) en dependencias de desarrollo preexistentes (vite, eslint, zod vía eslint-plugin-react-hooks). Revisar y actualizar con aprobación del usuario.
+- [ ] Limitación de frecuencia/abuso de envíos públicos (pedidos y reservas): definir al elegir hosting/Edge Functions.
 
 ## Pendientes técnicos heredados de otros días
 
@@ -65,7 +74,7 @@ Estos asuntos aparecen en los resultados o siguientes pasos de días anteriores.
 - [ ] Revisar el carrito, formularios de pedido/reserva y panel administrativo en anchuras pequeñas, incluidos 320 px, teclado virtual y áreas seguras. Ya hubo pruebas en emulación, pero queda la validación en teléfono físico.
 - [ ] Verificar zoom real al 200 %, navegación completa por teclado y lector de pantalla en páginas públicas y administración. Las comprobaciones automatizadas no sustituyen una pasada con lector de pantalla real.
 - [ ] Probar selectores nativos de fecha/hora y todos los controles táctiles en un teléfono físico.
-- [ ] Revisar el favicon: en una revisión anterior se registró una respuesta 404. Confirmar si sigue ocurriendo y añadir/referenciar el recurso si falta.
+- [x] Revisar el favicon: el 404 se confirmó el 23/11 (no había `public/` ni `<link rel="icon">`). `index.html` declara un icono vacío para evitar la petición; reemplazarlo por el logo cuando el restaurante lo entregue.
 - [ ] Hacer una pasada integral de errores al recargar y con conexión interrumpida en carta, carrito, pedido, reserva y backoffice después de conectar el almacenamiento compartido.
 
 ### Dependencias para cerrar esos pendientes
@@ -92,5 +101,5 @@ Estos asuntos aparecen en los resultados o siguientes pasos de días anteriores.
 - **Carrito:** controles de agregar, cantidades, eliminación, totales y almacenamiento local ya existen. Las notas antiguas que pedían implementarlos son obsoletas; quedan las pruebas físicas/de integración listadas arriba.
 - **Interfaz administrativa:** layout, gestión local de platos, tablas, filtros, estados de ejemplo y gestión de reservas ya están implementados. El pendiente es sustituir los datos/estados locales por operaciones conectadas, no rehacer las pantallas.
 - **Autenticación:** el login real ya está integrado localmente y el rol se valida desde `app_metadata`; lo pendiente es probarlo con credenciales y proyecto reales.
-- **RLS:** las políticas están definidas en la migración, pero no aplicadas ni verificadas contra un proyecto Supabase conectado.
+- **RLS:** las políticas están definidas en dos migraciones y verificadas localmente con PGlite (23/11), pero no aplicadas ni verificadas contra un proyecto Supabase conectado.
 - **No se incluyen los objetivos de los días 49 en adelante:** siguen en la sección futura del calendario y no son atrasos de días ya transcurridos.

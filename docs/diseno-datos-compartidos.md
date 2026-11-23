@@ -51,8 +51,17 @@ La migración `supabase/migrations/202611230001_shared_data_and_rls.sql` crea es
 
 El cliente anónimo puede leer únicamente carta y sedes activas y crear solicitudes pendientes; no tiene políticas de lectura de pedidos, detalles ni reservas. El rol administrativo puede leer y administrar los registros mediante las políticas indicadas. Las restricciones SQL validan campos básicos, estados iniciales, cantidades, personas y coherencia aritmética de los importes.
 
-La migración no valida precios actuales del catálogo ni recalcula el total de un pedido a partir de sus líneas, y las inserciones directas de pedidos y líneas no garantizan una transacción conjunta. Por eso no se deben habilitar escrituras públicas de pedidos en producción hasta mover la creación a una función/servidor confiable que valide catálogo, cantidades, precios, totales y operación atómica. RLS evita la lectura pública de datos personales, pero por sí sola no sustituye esa validación.
+La migración inicial no validaba precios del catálogo ni creaba pedido y líneas en una transacción. La auditoría del 23/11 añadió `supabase/migrations/202611230002_catalog_codes_and_order_rpc.sql`:
+
+- `code` en `menu_categories`, `dishes` (únicos) y `dish_presentations` (único por plato) para enlazar los ids de texto de la carta estática.
+- Sin inserciones públicas directas en `orders`/`order_items`. El público usa la función `public.create_order` (`security definer`), que valida cliente y líneas `{dish, presentation, quantity}`, toma precio y disponibilidad del catálogo, calcula importes en céntimos, inserta todo en una transacción y es idempotente por `orders.request_id`. Máximo técnico de 100 líneas por pedido.
+- `delivery_fee_cents` admite `null` («no calculado») mientras no se confirme el costo de delivery; `total_cents = subtotal_cents + coalesce(delivery_fee_cents, 0)`.
+- `order_items.presentation_id` referencia la presentación; nombre y precio siguen copiados como historial. Los administradores solo leen las líneas.
+- Los administradores solo actualizan la columna `status`; disparadores imponen las transiciones de la interfaz en pedidos y reservas.
+- Las reservas públicas validan la fecha mínima con la hora de Lima y `created_at` lo fija el servidor.
+
+Estas reglas se verifican con `tests/supabase-rls.test.mjs` sobre PostgreSQL embebido (PGlite). No hay control de horario, duración ni capacidad de reservas en servidor, ni limitación de frecuencia de envíos; dependen de reglas del restaurante y de la configuración del proyecto.
 
 ## Estado y siguiente paso
 
-La implementación de la interfaz sigue usando datos simulados y LocalStorage; no hay conexión con Supabase ni autenticación real. La migración define el esquema y RLS, pero aún no se ha aplicado a un proyecto porque no hay credenciales configuradas. Antes de habilitar escrituras públicas se debe implementar validación del lado servidor, configurar autenticación y rol administrativo, aplicar la migración y probarla en un entorno aislado.
+La interfaz sigue usando datos simulados y LocalStorage; el login administrativo usa Supabase Auth, pero no hay proyecto configurado. Las migraciones están verificadas localmente con PGlite y aún no se han aplicado a un proyecto Supabase. Siguiente: aplicarlas en un entorno aislado (ver [configuración](supabase.md)), cargar la carta desde `src/data/menu.ts` y conectar pantallas.
