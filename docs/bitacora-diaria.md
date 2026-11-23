@@ -695,15 +695,15 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 45 — Jueves 19/11/2026 — Datos compartidos: diseño
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 39 (Jueves 12/11/2026), conservados en su orden original.
-- **Estado:** Completado según confirmación del usuario.
+- **Estado:** Completado; diseño confirmado por el usuario y migración SQL preparada el 23/11.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 195/320 h.
 - [x] Definir tablas de platos, pedidos, detalles y reservas y sus relaciones.
 - [x] Documentar reglas de acceso, validaciones y tecnología de almacenamiento elegida.
 - [x] Documentar los cambios, resultados de las pruebas y el punto para continuar.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** El usuario confirma que completó el avance del jueves. No hay un artefacto nuevo de diseño de datos visible en el estado actual del repo para enlazar como evidencia.
-- **Commits / evidencia:** avance comunicado por el usuario; horas efectivas pendientes de registrar.
-- **Pendientes y siguiente paso:** Día 46: configurar el servicio de datos y las variables de entorno para desarrollo.
+- **Resultado y pruebas:** El usuario confirmó el diseño del jueves. El esquema se materializó en una migración SQL con tablas, relaciones, restricciones e índices.
+- **Commits / evidencia:** [migración compartida y RLS](../supabase/migrations/202611230001_shared_data_and_rls.sql); [diseño de datos](diseno-datos-compartidos.md). Horas efectivas pendientes de registrar.
+- **Pendientes y siguiente paso:** Aplicar la migración en un proyecto Supabase de desarrollo y verificar políticas contra roles anónimo y administrador.
 
 ### Día 46 — Viernes 20/11/2026 — Datos compartidos: entorno
 
@@ -721,28 +721,28 @@ Horas de los bloques de objetivos; sábado 17/10, lunes 19/10, miércoles 21/10 
 ### Día 47 — Sábado 21/11/2026 — Autenticación administrativa
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 41 (Sábado 14/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** En progreso; integración implementada, validación con cuentas reales pendiente de configurar el proyecto.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 205/320 h.
-- [ ] Sustituir el login simulado por autenticación real del personal.
-- [ ] Probar acceso autorizado, sesión vencida y rechazo de usuarios sin permiso.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Sustituir el login simulado por autenticación real del personal.
+- [ ] Probar acceso autorizado y sesión vencida con Supabase; comprobar rechazo de usuarios sin permiso.
+- [x] Documentar los cambios y el siguiente paso.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** El panel usa Supabase Auth con correo/contraseña, persiste la sesión durante la pestaña, renueva tokens, valida el usuario al restaurar una sesión y exige `app_metadata.role=admin`. Prueba unitaria: 94 aprobadas; `npm run lint` y `npm run build` correctos. La prueba unitaria cubre la regla de rol, no una sesión de proveedor real. Sin credenciales del proyecto faltan las verificaciones reales de inicio y expiración. La compilación advierte que el paquete JavaScript supera 500 kB.
+- **Commits / evidencia:** `src/config/supabaseClient.ts`, `src/context/AuthProvider.tsx`, `src/context/adminAccess.ts`, formulario en `src/pages/admin/AdminLoginPage.tsx` y [guía de configuración](supabase.md).
+- **Pendientes y siguiente paso:** Configurar `.env.local`, crear/invitar cuentas en Supabase y asignar el rol desde un proceso confiable. El día 48 contiene las políticas RLS que deben aplicarse para autorizar datos en servidor.
 
 ### Día 48 — Lunes 23/11/2026 — Permisos de datos
 
 - **Reprogramación del 26/10:** bloque desplazado una jornada; objetivos del antiguo día 42 (Lunes 16/11/2026), conservados en su orden original.
-- **Estado:** Pendiente.
+- **Estado:** En progreso; políticas implementadas en migración, pendientes de aplicar y verificar en Supabase.
 - **Horas previstas:** 5 h. **Acumulado previsto:** 210/320 h.
-- [ ] Aplicar permisos de lectura y escritura en el servicio o servidor.
-- [ ] Verificar que un visitante no pueda editar platos ni consultar pedidos ajenos.
-- [ ] Documentar los cambios, resultados de las pruebas y el punto para continuar.
+- [x] Definir permisos RLS de lectura y escritura en el servicio.
+- [ ] Aplicar la migración y verificar que un visitante no pueda editar platos ni consultar pedidos ajenos.
+- [x] Documentar los cambios y el siguiente paso.
 - **Horas efectivas:** pendientes de registrar.
-- **Resultado y pruebas:** —
-- **Commits / evidencia:** —
-- **Pendientes y siguiente paso:** —
+- **Resultado y pruebas:** La migración activa RLS, limita lectura pública a carta/sedes activas, restringe inserciones públicas a solicitudes pendientes y reserva la lectura/administración a administradores autenticados. No se pudo verificar en un servicio real: no hay credenciales de proyecto configuradas. La escritura pública de pedidos sigue necesitando validación transaccional del lado servidor antes de producción.
+- **Commits / evidencia:** [migración SQL](../supabase/migrations/202611230001_shared_data_and_rls.sql); [diseño y límites de seguridad](diseno-datos-compartidos.md). Horas efectivas pendientes de registrar.
+- **Pendientes y siguiente paso:** Configurar el proyecto Supabase, asignar `app_metadata.role=admin` desde un proceso confiable, aplicar y probar la migración en desarrollo; implementar un endpoint transaccional de pedidos. Día 49: conexión de reservas.
 
 ### Día 49 — Martes 24/11/2026 — Carta conectada
 

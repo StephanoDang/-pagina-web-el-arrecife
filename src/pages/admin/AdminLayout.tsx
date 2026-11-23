@@ -64,7 +64,7 @@ export default function AdminLayout() {
             <h1>{currentSection}</h1>
           </div>
           <div className="admin-topbar-actions">
-            <span className="admin-topbar-badge">Vista previa</span>
+            <span className="admin-topbar-badge">Sesión autenticada</span>
             <button className="admin-logout-button" type="button" onClick={handleSignOut}>Cerrar sesión</button>
           </div>
         </header>

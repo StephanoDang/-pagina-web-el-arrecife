@@ -4,24 +4,29 @@ import { useAuth } from '../../context/AuthContext'
 import './AdminLayout.css'
 
 export default function AdminLoginPage() {
-  const { isAuthenticated, signIn } = useAuth()
+  const { isAuthenticated, isLoading, signIn } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
   const [error, setError] = useState('')
-  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const from = (location.state as { from?: string } | null)?.from
   const destination = from?.startsWith('/admin') && from !== '/admin/login' ? from : '/admin'
 
   if (isAuthenticated) return <Navigate to={destination} replace />
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    if (signIn(username.trim(), password)) {
+    setError('')
+    const result = await signIn(email.trim(), password)
+    if (result === 'signed-in') {
       navigate(destination, { replace: true })
       return
     }
-    setError('Usuario o contraseña incorrectos. Revisa las credenciales de demostración.')
+    if (result === 'unconfigured') setError('El acceso administrativo no está configurado. Contacta al responsable del sistema.')
+    else if (result === 'not-admin') setError('Esta cuenta no tiene permisos de administración.')
+    else if (result === 'invalid') setError('Correo o contraseña incorrectos.')
+    else setError('No fue posible iniciar sesión. Inténtalo de nuevo.')
   }
 
   return (
@@ -30,16 +35,15 @@ export default function AdminLoginPage() {
         <span className="admin-brand-mark" aria-hidden="true">A</span>
         <p className="admin-eyebrow">EL ARRECIFE · ADMINISTRACIÓN</p>
         <h1 id="admin-login-title">Acceso al panel</h1>
-        <p>Acceso local de demostración para revisar el panel administrativo.</p>
+        <p>Ingresa con la cuenta autorizada por el administrador del sistema.</p>
         <form className="admin-login-form" onSubmit={handleSubmit}>
-          <label htmlFor="admin-username">Usuario</label>
-          <input id="admin-username" name="username" autoComplete="username" required value={username} onChange={(event) => setUsername(event.target.value)} />
+          <label htmlFor="admin-email">Correo electrónico</label>
+          <input id="admin-email" name="email" type="email" autoComplete="username" required value={email} onChange={(event) => setEmail(event.target.value)} />
           <label htmlFor="admin-password">Contraseña</label>
           <input id="admin-password" name="password" type="password" autoComplete="current-password" required value={password} onChange={(event) => setPassword(event.target.value)} />
           {error && <p className="admin-login-error" role="alert">{error}</p>}
-          <button className="admin-login-submit" type="submit">Entrar al panel</button>
+          <button className="admin-login-submit" type="submit" disabled={isLoading}>{isLoading ? 'Comprobando sesión…' : 'Entrar al panel'}</button>
         </form>
-        <p className="admin-demo-hint">Credenciales de prueba: <strong>admin</strong> / <strong>arrecife2026</strong></p>
         <Link className="admin-login-back" to="/">Volver a la web pública</Link>
       </section>
     </main>

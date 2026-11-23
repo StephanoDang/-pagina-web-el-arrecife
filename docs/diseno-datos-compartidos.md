@@ -45,6 +45,14 @@ Las validaciones de interfaz mejoran la experiencia, pero la base de datos y el 
 
 Los nombres y precios incluidos en `order_items` son instantáneas históricas. Cambiar o desactivar un plato no debe modificar pedidos ya recibidos.
 
+## Implementación SQL y RLS
+
+La migración `supabase/migrations/202611230001_shared_data_and_rls.sql` crea estas tablas, restricciones, índices y políticas RLS. El rol administrativo se toma de `app_metadata.role = 'admin'`, que solo debe asignar un operador confiable; no se debe usar `user_metadata`, editable por el usuario.
+
+El cliente anónimo puede leer únicamente carta y sedes activas y crear solicitudes pendientes; no tiene políticas de lectura de pedidos, detalles ni reservas. El rol administrativo puede leer y administrar los registros mediante las políticas indicadas. Las restricciones SQL validan campos básicos, estados iniciales, cantidades, personas y coherencia aritmética de los importes.
+
+La migración no valida precios actuales del catálogo ni recalcula el total de un pedido a partir de sus líneas, y las inserciones directas de pedidos y líneas no garantizan una transacción conjunta. Por eso no se deben habilitar escrituras públicas de pedidos en producción hasta mover la creación a una función/servidor confiable que valide catálogo, cantidades, precios, totales y operación atómica. RLS evita la lectura pública de datos personales, pero por sí sola no sustituye esa validación.
+
 ## Estado y siguiente paso
 
-La implementación actual sigue usando datos simulados y LocalStorage en el navegador; no hay conexión con Supabase ni autenticación real. El día 46 configura el entorno de desarrollo y variables sin secretos en Git. Antes de habilitar escrituras públicas se deben implementar RLS, validación del lado servidor, autenticación administrativa y pruebas contra un entorno aislado.
+La implementación de la interfaz sigue usando datos simulados y LocalStorage; no hay conexión con Supabase ni autenticación real. La migración define el esquema y RLS, pero aún no se ha aplicado a un proyecto porque no hay credenciales configuradas. Antes de habilitar escrituras públicas se debe implementar validación del lado servidor, configurar autenticación y rol administrativo, aplicar la migración y probarla en un entorno aislado.

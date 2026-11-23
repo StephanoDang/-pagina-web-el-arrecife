@@ -2,8 +2,9 @@ import { createContext, useContext } from 'react'
 
 export type AuthContextValue = {
   isAuthenticated: boolean
-  signIn: (username: string, password: string) => boolean
-  signOut: () => void
+  isLoading: boolean
+  signIn: (email: string, password: string) => Promise<'signed-in' | 'invalid' | 'not-admin' | 'unconfigured' | 'error'>
+  signOut: () => Promise<void>
 }
 
 export const AuthContext = createContext<AuthContextValue | null>(null)
